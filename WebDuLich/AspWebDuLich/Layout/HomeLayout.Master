@@ -1,6 +1,6 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomeLayout.master.cs" Inherits="AspWebDuLich.Layout.HomeLayout" %>
 
-<%--<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
 <head runat="server">
@@ -16,9 +16,9 @@
         </div>
     </form>
 </body>
-</html>--%>
+</html>
 
-<!DOCTYPE html>
+<%--<!DOCTYPE html>
 <html lang="zxx">
 
 <head>
@@ -1053,4 +1053,4 @@
 
 </body>
 
-</html>
+</html>--%>

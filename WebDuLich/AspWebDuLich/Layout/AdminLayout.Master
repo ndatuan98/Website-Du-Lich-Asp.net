@@ -39,9 +39,9 @@
             <a class="collapse-item" href="ListUser.aspx">Danh sách tài khoản</a>
             <a class="collapse-item" href="CreateUser.aspx">Thêm tài khoản</a>
             <div class="collapse-divider"></div>
-            <h6 class="collapse-header">Hàng hoá :</h6>
-            <a class="collapse-item" href="ListProducts.aspx">Danh sách mặt hàng</a>
-             <a class="collapse-item" href="CreateProducts.aspx">Thêm mặt hàng</a>
+            <h6 class="collapse-header">Tour :</h6>
+            <a class="collapse-item" href="ListProducts.aspx">Danh sách Tour</a>
+             <a class="collapse-item" href="CreateProducts.aspx">Thêm Tour</a>
             <a class="collapse-item active" href="blank.html"></a>
           </div>
         </div>

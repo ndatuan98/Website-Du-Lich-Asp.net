@@ -18,5 +18,19 @@ namespace AspWebDuLich
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
         }
+        public static void RegisterGlobalFilters(GlobalFilterCollection filters)
+        {
+            filters.Add(new HandleErrorAttribute());
+        }
+
+        public static void RegisterRoutes(RouteCollection routes)
+        {
+            routes.MapPageRoute(
+                "HomeRoute",
+                "Home",
+                "~HomePage.aspx"
+                );
+
+        }
     }
 }

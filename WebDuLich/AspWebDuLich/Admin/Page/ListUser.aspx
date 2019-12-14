@@ -5,8 +5,9 @@
         <Columns>
             <asp:BoundField DataField="Email" HeaderText="Tên đăng nhập" ReadOnly="True" SortExpression="Email" />
             <asp:BoundField DataField="Fullname" HeaderText="Tên đầy đủ" SortExpression="Fullname" />
-            <asp:BoundField DataField="Phone" HeaderText="Email" SortExpression="Phone" />
-            <asp:BoundField DataField="Date_Of_Birth" HeaderText="Số điện thoại" SortExpression="Date_Of_Birth" />
+            <asp:BoundField DataField="Date_Of_Birth" HeaderText="Ngày sinh" SortExpression="Address" />
+            <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Phone" />
+            <asp:BoundField DataField="Phone" HeaderText="Số điện thoại" SortExpression="Phone" />
             <asp:BoundField DataField="Address" HeaderText="Địa chỉ" SortExpression="Address" />
             <asp:CommandField EditText="Sửa" ShowEditButton="True" CancelText="Huỷ" UpdateText="Cập nhật" />
             <asp:CommandField DeleteText="Xoá" ShowDeleteButton="True" />

@@ -1,0 +1,1056 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="GUILayout.master.cs" Inherits="HanoiTourist.Layout.GUILayout" %>
+
+<%--<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>--%>
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Hanoitourist: Tour Du Lịch, Dịch Vụ du lịch hàng đầu Việt Nam</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Intense Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+    SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <!-- Custom Theme files -->
+    <link href="../content/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+    <link href="../content/css/style.css" type="text/css" rel="stylesheet" media="all">
+    <!-- font-awesome icons -->
+    <link href="../content/css/font-awesome.min.css" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <style>
+                .sticky-container{
+            padding:0px;
+            margin:0px;
+            position:fixed;
+            right:-130px;
+            top: 570px;
+            width:210px;
+            z-index: 1100;
+        }
+        .sticky li{
+            list-style-type:none;
+            background-color:#fff;
+            color:#efefef;
+            height:43px;
+            padding:0px;
+            margin:0px 0px 1px 0px;
+            -webkit-transition:all 0.25s ease-in-out;
+            -moz-transition:all 0.25s ease-in-out;
+            -o-transition:all 0.25s ease-in-out;
+            transition:all 0.25s ease-in-out;
+            cursor:pointer;
+        }
+        .sticky li:hover{
+            margin-left:-115px;
+        }
+        .sticky li img{
+            float:left;
+            margin:5px 4px;
+            margin-right:5px;
+        }
+        .sticky li p{
+            padding-top:5px;
+            margin:0px;
+            line-height:16px;
+            font-size:11px;
+        }
+        .sticky li p a{
+            text-decoration:none;
+            color:#2C3539;
+        }
+        .sticky li p a:hover{
+            text-decoration:underline;
+        }
+        .sticky2 {
+                 z-index: -1000;
+                  position: fixed;
+                  top: 0;
+                  w
+                  width: 100%;
+                }
+        .sticky2{
+            padding-top: 100px;
+        }
+</style>
+</head>
+
+<body>
+    <div class="sticky-container" style="background-color: #FFF;">
+    <ul class="sticky">
+        <li title="Gọi tổng đài 19004518">
+            <img src="../images/icon_phone_right.png" width="32" height="32">
+            <p><a href="#" target="_blank" >Gọi tổng đài 19004518<br></a></p>
+        </li>
+        <li title="Chat với HANOITOURIST trên Facebook">
+            <img src="../images/icon_message.jpg" width="40" height=32>
+            <p><a href="#" target="_blank" >Chat với HANOITOURIST trên Facebook<br></a></p>
+        </li>
+        <li title="Chat với HANOITOURIST trên Zalo">
+            <img src="../images/icon_zalo.png" width="32" height="32">
+            <p><a href="#" target="_blank" >Chat với HANOITOURIST trên Zalo<br></a></p>
+        </li>
+        <li title="Liên hệ với HANOITOURIST">
+            <img src="../images/icon_mail_2.png" width="32" height="32">
+            <p><a href="#" target="_blank" >Liên hệ với HANOITOURIST<br></a></p>
+        </li>
+    </ul>
+    </div>
+    <!-- header -->
+     <div class="clearfix container header col-md-12" style="background-color: #FFF; padding: 5px;">
+     <div class="clearfix container header col-md-8" style="background-color: #FFF;padding-left: 220px; padding-left: 0px;">
+        <div class="">
+            <a href="index.html">
+                <img src="../images/logo.png" style="width: 220px; height: 50px; margin: 10px; padding: 5px;">
+            </a>
+        </div>
+       <div class="col-md-12" style=" position: absolute;top: 5px; left: 170px; width: 100%;background-color: #FFF;">
+            <ul class="menu" style="color: #0F62AC; width: 80%;" >
+                <li class="nav-right-sty mt-lg-2 mt-sm-4 mt-3"  >
+                    <a href="login.html" style="font-size: 10px;" class="reqe-button text-uppercase">Du lich chau au</a>
+                    <a href="login.html" style="font-size: 10px;" class="reqe-button text-uppercase">Tour han quoc</a>
+                    <a href="login.html" style="font-size: 10px;" class="reqe-button text-uppercase">Tour cao cap</a>
+                    <a href="login.html" style="font-size: 10px;" class="reqe-button text-uppercase">Tour khuyen mai</a>
+                </li>
+            </ul>
+       </div>
+       <div class="col-md-4" style=" position: absolute;top: 46px; right: 300px; ">
+            <a href="">
+                <img src="../images/icon_phone.png" style="height: 16px; width: 16px;margin: 5px;">
+                19004518
+            </a>
+            <a href="">
+                <img src="../images/icon_mail.png" style="height: 16px; width: 16px; margin: 5px;">
+                sales@hanoitourist.vn
+            </a>
+           
+       </div>
+    </div>
+    </div>
+    <div class="col-md-12" style=" position: absolute;top: 15px; left: : 30px; padding-left: 1150px; ">
+
+            <a href="" title="Giới thiệu" style="padding: 5px;">
+                Giới thiệu
+            </a>
+            <a href="" title="Liên hệ" style="padding: 5px;">
+                Liên hệ
+            </a>
+            <a href="" title="Giỏ hàng">
+                Giỏ hàng
+            </a>
+           
+       </div>
+    <header id="home">
+        <div class="container">
+            <div class="header ">
+                <div class="col-lg-12">
+                    <nav>
+                        <label for="drop" class="toggle">Menu</label>
+                        <input type="checkbox" id="drop" />
+                        <ul class="menu">
+                            <li>
+                                <a href="index.html" class="active">TRANG CHỦ</a>
+                                
+                            </li>
+                            <li><a href="about.html">DU LỊCH TRONG NƯỚC</a></li>
+                            <li>
+                                <label for="drop-2" class="toggle toogle-2">DU LỊCH NƯỚC NGOÀI<span class="fa fa-angle-down"
+                                        aria-hidden="true"></span>
+                                </label>
+                                <a href="#">DU LỊCH NƯỚC NGOÀI <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                <input type="checkbox" id="drop-2" />
+                                <ul style="width: 1000px;">
+                                    <li><a href="portfolio.html" class="drop-text">Portfolio</a></li>
+                                    <li><a href="single.html" class="drop-text">Blog Post</a></li>
+                                    <li><a href="index.html" class="drop-text">More</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <label for="drop-2" class="toggle toogle-2">HOT TOUR<span class="fa fa-angle-down"
+                                        aria-hidden="true"></span>
+                                </label>
+                                <a href="#">HOT TOUR<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                <input type="checkbox" id="drop-2" />
+                                <ul>
+                                    <li><a href="portfolio.html" class="drop-text">Tour giờ chót</a></li>
+                                    <li><a href="single.html" class="drop-text">Tour khuyến mãi</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <label for="drop-2" class="toggle toogle-2">COMBO DU LỊCH<span class="fa fa-angle-down"
+                                        aria-hidden="true"></span>
+                                </label>
+                                <a href="#">COMBO DU LỊCH<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                <input type="checkbox" id="drop-2" />
+                                <ul>
+                                    <li><a href="portfolio.html" class="drop-text">Combo</a></li>
+                                    <li><a href="single.html" class="drop-text">Voucher</a></li>
+                                    <li><a href="index.html" class="drop-text">Khách sạn</a></li>
+                                    <li><a href="index.html" class="drop-text">Homestay</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">MICE</a></li>
+                            <li>
+                                <label for="drop-2" class="toggle toogle-2">VẬN CHUYỂN<span class="fa fa-angle-down"
+                                        aria-hidden="true"></span>
+                                </label>
+                                <a href="#">VẬN CHUYỂN<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                <input type="checkbox" id="drop-2" />
+                                <ul>
+                                    <li><a href="portfolio.html" class="drop-text">Thuê xe du lịch</a></li>
+                                    <li><a href="single.html" class="drop-text">Vé máy bay</a></li>
+                                    <li><a href="index.html" class="drop-text">Du thuyền</a></li>
+                                </ul>
+                            </li> 
+                            <li>
+                                <label for="drop-2" class="toggle toogle-2">THƯ VIỆN<span class="fa fa-angle-down"
+                                        aria-hidden="true"></span>
+                                </label>
+                                <a href="#">THƯ VIỆN<span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                <input type="checkbox" id="drop-2" />
+                                <ul>
+                                    <li><a href="portfolio.html" class="drop-text">Hình ảnh</a></li>
+                                    <li><a href="single.html" class="drop-text">Video</a></li>
+                                </ul>
+                            </li> 
+                            <li><a href="contact.html">TIN TỨC</a></li> 
+                            <li><a href="contact.html">LIÊN HỆ</a></li> 
+                        </ul>
+                    </nav>
+                </div>
+                <!-- //nav -->
+            </div>
+        </div>
+        <div class="col-md-12" style="position: absolute; top: 40px;padding-left: 1130px;">
+            <a  href="login.html" class="btn btn-default" style="font-size: 12px; border: 1px solid #FFA300; color: #FFA300;">Đăng ký</a>
+            <a  href="register.html" class="btn btn-warning" style="font-size: 12px; color: #FFF;">Đăng nhập</a>
+        </div>
+    </header>
+    <!-- //header -->
+
+    <!-- banner -->
+    <div class="col-md-12" style="padding-left: 0px;">
+        <script src="../content/Scripts/jssor.slider-28.0.0.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            window.jssor_1_slider_init = function() {
+
+                var jssor_1_options = {
+                  $AutoPlay: 1,
+                  $ArrowNavigatorOptions: {
+                    $Class: $JssorArrowNavigator$
+                  },
+                  $BulletNavigatorOptions: {
+                    $Class: $JssorBulletNavigator$
+                  }
+                };
+
+                var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+                /*#region responsive code begin*/
+
+                var MAX_WIDTH = 1549;
+
+                function ScaleSlider() {
+                    var containerElement = jssor_1_slider.$Elmt.parentNode;
+                    var containerWidth = containerElement.clientWidth;
+
+                    if (containerWidth) {
+
+                        var expectedWidth = Math.min(MAX_WIDTH || containerWidth, containerWidth);
+
+                        jssor_1_slider.$ScaleWidth(expectedWidth);
+                    }
+                    else {
+                        window.setTimeout(ScaleSlider, 30);
+                    }
+                }
+
+                ScaleSlider();
+
+                $Jssor$.$AddEvent(window, "load", ScaleSlider);
+                $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+                $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+                /*#endregion responsive code end*/
+            };
+        </script>
+        <style>
+            /* jssor slider loading skin double-tail-spin css */
+
+            .jssorl-004-double-tail-spin img {
+                animation-name: jssorl-004-double-tail-spin;
+                animation-duration: 1.2s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
+
+            @keyframes jssorl-004-double-tail-spin {
+                from {
+                    transform: rotate(0deg);
+                }
+
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+
+            .jssorb051 .i {position:absolute;cursor:pointer;}
+            .jssorb051 .i .b {fill:#fff;fill-opacity:0.5;stroke:#000;stroke-width:400;stroke-miterlimit:10;stroke-opacity:0.5;}
+            .jssorb051 .i:hover .b {fill-opacity:.7;}
+            .jssorb051 .iav .b {fill-opacity: 1;}
+            .jssorb051 .i.idn {opacity:.3;}
+
+            /*jssor slider arrow skin 051 css*/
+            .jssora051 {display:block;position:absolute;cursor:pointer;}
+            .jssora051 .a {fill:none;stroke:#fff;stroke-width:360;stroke-miterlimit:10;}
+            .jssora051:hover {opacity:.8;}
+            .jssora051.jssora051dn {opacity:.5;}
+            .jssora051.jssora051ds {opacity:.3;pointer-events:none;}
+        </style>
+        <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:980px;height:380px;overflow:hidden;visibility:hidden;">
+            <!-- Loading Screen -->
+            <div data-u="loading" class="jssorl-004-double-tail-spin" style="position:absolute;top:0px;left:0px;text-align:center;background-color:rgba(0,0,0,0.7);">
+                <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/double-tail-spin.svg" />
+            </div>
+            <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
+                <div>
+                    <img data-u="image" src="../images/banner1.jpg" />
+                </div>
+                <div>
+                    <img data-u="image" src="../images/banner2.jpg" />
+                </div>
+                <div>
+                    <img data-u="image" src="../images/banner3.jpg" />
+                </div>
+                <a data-u="any" href="https://www.jssor.com" style="display:none">web design</a>
+            </div>
+            <!-- Bullet Navigator -->
+            <div data-u="navigator" class="jssorb051" style="position:absolute;bottom:12px;right:12px;" data-autocenter="1" data-scale="0.5" data-scale-bottom="0.75">
+                <div data-u="prototype" class="i" style="width:16px;height:16px;">
+                    <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                        <circle class="b" cx="8000" cy="8000" r="5800"></circle>
+                    </svg>
+                </div>
+            </div>
+            <!-- Arrow Navigator -->
+            <div data-u="arrowleft" class="jssora051" style="width:55px;height:55px;top:0px;left:25px;" data-autocenter="2" data-scale="0.75" data-scale-left="0.75">
+                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <polyline class="a" points="11040,1920 4960,8000 11040,14080 "></polyline>
+                </svg>
+            </div>
+            <div data-u="arrowright" class="jssora051" style="width:55px;height:55px;top:0px;right:25px;" data-autocenter="2" data-scale="0.75" data-scale-right="0.75">
+                <svg viewbox="0 0 16000 16000" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+                    <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
+                </svg>
+            </div>
+        </div>
+        <script type="text/javascript">jssor_1_slider_init();
+        </script>
+    </div>
+    
+    <section class="banner">
+        <!-- banner text -->
+        <div class="container">
+            <div class="banner_text_wthree_pvt">
+            </div>
+        </div>
+    </section>
+    <!-- //banner -->
+    <!-- about-->
+    <section class="single_grid_w3_main align-w3-abt" id="about">
+        <div class="container">
+            <div class="wthree_pvt_title text-center">
+                <h4 class="w3pvt-title">Superior Services</h4>
+                <p class="sub-title">Subheadings stand out because they are like mini titles. They make your post stand
+                    out and
+                    make it more readable.</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="abt-grid">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="abt-icon">
+                                    <span class="fa fa-ravelry"></span>
+                                </div>
+                            </div>
+                            <div class="col-9">
+                                <div class="abt-txt">
+                                    <h4>takimata sanctus</h4>
+                                    <p>Lo sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 my-lg-0 my-4">
+                    <div class="abt-grid">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="abt-icon">
+                                    <span class="fa fa-pencil"></span>
+                                </div>
+                            </div>
+                            <div class="col-9">
+                                <div class="abt-txt">
+                                    <h4>takimata sanctus</h4>
+                                    <p>Lo sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="abt-grid">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="abt-icon">
+                                    <span class="fa fa-laptop"></span>
+                                </div>
+                            </div>
+                            <div class="col-9">
+                                <div class="abt-txt">
+                                    <h4>takimata sanctus</h4>
+                                    <p>Lo sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="about.html" class="btn w3ls-btn">view more</a>
+            </div>
+        </div>
+    </section>
+    <!-- //about -->
+    <!-- services -->
+    <section class="bg-services position-relative align-w3" id="services">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="services-bg-color">
+                        <div class="wthree_pvt_title mb-3">
+                            <h4 class="w3pvt-title">what we provide
+                            </h4>
+                            <span class="sub-title">add your caption here</span>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 service-title my-4">
+                                <h4 class="home-title text-theme">Sub heading</h4>
+                                <p class="sec-4">Itaque earum rerum hic tenetur a sapiente delectusum hic
+                                    tenetur yua.
+                                </p>
+                            </div>
+                            <div class="col-md-6 service-title my-md-4">
+                                <h4 class="home-title text-theme">Sub heading</h4>
+                                <p class="sec-4">Itaque earum rerum hic tenetur a sapiente delectusum hic
+                                    tenetur ap.
+                                </p>
+                            </div>
+                            <div class="col-md-6 service-title mt-4">
+                                <h4 class="home-title text-theme">Sub heading</h4>
+                                <p class="sec-4">Itaque earum rerum hic tenetur a sapiente delectusum hic
+                                    tenetur ar.
+                                </p>
+                            </div>
+                            <div class="col-md-6 service-title mt-4">
+                                <h4 class="home-title text-theme">Sub heading</h4>
+                                <p class="sec-4">Itaque earum rerum hic tenetur a sapiente delectusum hic
+                                    tenetur as.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-start">
+                            <a href="about.html" class="btn w3ls-btn">view more</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="offset-lg-2"></div>
+            </div>
+        </div>
+    </section>
+    <!-- //services -->
+
+    <!-- Portfolio -->
+    <div class="wthree_pvtits-services align-w3" id="portfolio">
+        <div class="container">
+            <div class="wthree_pvt_title text-center">
+                <h4 class="w3pvt-title">Portfolio
+                </h4>
+                <p class="sub-title">Subheadings stand out because they are like mini titles. They make your post stand
+                    out and
+                    make it more readable.</p>
+            </div>
+            <ul class="demo row">
+                <li class="col-lg-4">
+                    <div class="img-grid">
+                        <div class="Portfolio-grid1">
+                            <a href="#gal1">
+                                <img src="../image/g1.jpg" alt=" " class="img-fluid" />
+                            </a>
+                        </div>
+                        <div class="port-desc text-center">
+                            <h6 class="main-title-w3pvt text-center">Some Description</h6>
+                            <p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed
+                                diam
+                                nonumy eirmod tempor invidunt ut.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-lg-4">
+                    <div class="img-grid">
+                        <div class="Portfolio-grid1">
+                            <a href="#gal2">
+                                <img src="images/g2.jpg" alt=" " class="img-fluid" />
+                            </a>
+                        </div>
+                        <div class="port-desc text-center">
+                            <h6 class="main-title-w3pvt text-center">Some Description</h6>
+                            <p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed
+                                diam
+                                nonumy eirmod tempor invidunt ut.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-lg-4">
+                    <div class="img-grid">
+                        <div class="Portfolio-grid1">
+                            <a href="#gal3">
+                                <img src="../image/g3.jpg" alt=" " class="img-fluid" />
+                            </a>
+                        </div>
+                        <div class="port-desc text-center">
+                            <h6 class="main-title-w3pvt text-center">Some Description</h6>
+                            <p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed
+                                diam
+                                nonumy eirmod tempor invidunt ut.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-lg-4">
+                    <div class="img-grid">
+                        <div class="Portfolio-grid1">
+                            <a href="#gal4">
+                                <img src="images/g4.jpg" alt=" " class="img-fluid" />
+                            </a>
+                        </div>
+                        <div class="port-desc text-center">
+                            <h6 class="main-title-w3pvt text-center">Some Description</h6>
+                            <p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed
+                                diam
+                                nonumy eirmod tempor invidunt ut.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-lg-4">
+                    <div class="img-grid">
+                        <div class="Portfolio-grid1">
+                            <a href="#gal5">
+                                <img src="images/g5.jpg" alt=" " class="img-fluid" />
+                            </a>
+                        </div>
+                        <div class="port-desc text-center">
+                            <h6 class="main-title-w3pvt text-center">Some Description</h6>
+                            <p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed
+                                diam
+                                nonumy eirmod tempor invidunt ut.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="col-lg-4">
+                    <div class="img-grid">
+                        <div class="Portfolio-grid1">
+                            <a href="#gal6">
+                                <img src="images/g6.jpg" alt=" " class="img-fluid" />
+                            </a>
+                        </div>
+                        <div class="port-desc text-center">
+                            <h6 class="main-title-w3pvt text-center">Some Description</h6>
+                            <p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed
+                                diam
+                                nonumy eirmod tempor invidunt ut.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="d-flex justify-content-center">
+                <a href="portfolio.html" class="btn w3ls-btn">view more</a>
+            </div>
+            <!-- popup-->
+            <div id="gal1" class="popup-effect animate">
+                <div class="popup">
+                    <img src="images/g1.jpg" alt="Popup Image" class="img-fluid" />
+                    <p class="editContent mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int.
+                        placerat placerat
+                        dolor.</p>
+                    <a class="close" href="#gallery">&times;</a>
+                </div>
+            </div>
+            <!-- //popup -->
+            <!-- popup-->
+            <div id="gal2" class="popup-effect animate">
+                <div class="popup">
+                    <img src="images/g2.jpg" alt="Popup Image" class="img-fluid" />
+                    <p class="editContent mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int.
+                        placerat placerat
+                        dolor.</p>
+                    <a class="close" href="#gallery">&times;</a>
+                </div>
+            </div>
+            <!-- //popup -->
+            <!-- popup-->
+            <div id="gal3" class="popup-effect animate">
+                <div class="popup">
+                    <img src="images/g3.jpg" alt="Popup Image" class="img-fluid" />
+                    <p class="editContent mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int.
+                        placerat placerat
+                        dolor.</p>
+                    <a class="close" href="#gallery">&times;</a>
+                </div>
+            </div>
+            <!-- //popup3 -->
+            <!-- popup-->
+            <div id="gal4" class="popup-effect animate">
+                <div class="popup">
+                    <img src="images/g4.jpg" alt="Popup Image" class="img-fluid" />
+                    <p class="editContent mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int.
+                        placerat placerat
+                        dolor.</p>
+                    <a class="close" href="#gallery">&times;</a>
+                </div>
+            </div>
+            <!-- //popup -->
+            <!-- popup-->
+            <div id="gal5" class="popup-effect animate">
+                <div class="popup">
+                    <img src="images/g5.jpg" alt="Popup Image" class="img-fluid" />
+                    <p class="editContent mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int.
+                        placerat placerat
+                        dolor.</p>
+                    <a class="close" href="#gallery">&times;</a>
+                </div>
+            </div>
+            <!-- //popup -->
+            <!-- popup-->
+            <div id="gal6" class="popup-effect animate">
+                <div class="popup">
+                    <img src="images/g6.jpg" alt="Popup Image" class="img-fluid" />
+                    <p class="editContent mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int.
+                        placerat placerat
+                        dolor.</p>
+                    <a class="close" href="#gallery">&times;</a>
+                </div>
+            </div>
+            <!-- //popup -->
+        </div>
+    </div>
+    <!-- //Portfolio -->
+
+    <!-- slide -->
+    <section class="wthree-slie-btm py-lg-5">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="slide-banner pl-0">
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-lg-0 mt-4">
+                    <div class="container">
+                        <div class="wthree_pvt_title">
+                            <h4 class="w3pvt-title">creative solutions
+                            </h4>
+                            <span class="sub-title">add your caption here</span>
+                        </div>
+                        <div class="row flex-column">
+                            <div class="abt-grid">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <div class="abt-icon">
+                                            <span class="fa fa-ravelry"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="abt-txt ml-0">
+                                            <h4>sanctus takimata </h4>
+                                            <p>Lo sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="abt-grid mt-4 pt-lg-2">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <div class="abt-icon">
+                                            <span class="fa fa-laptop"></span>
+                                        </div>
+                                    </div>
+                                    <div class="col-9">
+                                        <div class="abt-txt ml-0">
+                                            <h4>takimata sanctus</h4>
+                                            <p>Lo sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-start">
+                            <a href="about.html" class="btn w3ls-btn">view more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- //slide -->
+    <!-- blog -->
+    <section class="blog_w3ls align-w3" id="posts">
+        <div class="container">
+            <div class="wthree_pvt_title tex t-center">
+                <h4 class="w3pvt-title">latest posts
+                </h4>
+                <p class="sub-title">Subheadings stand out because they are like mini titles. They make your post stand
+                    out and
+                    make it more readable.</p>
+            </div>
+            <div class="row space-sec">
+                <!-- blog grid -->
+                <div class="col-lg-4 col-md-6 mt-sm-0 mt-4">
+                    <div class="card">
+                        <div class="card-header p-0 position-relative">
+                            <a href="single.html">
+                                <img class="card-img-bottom" src="images/g1.jpg" alt="Card image cap">
+                                <span class="post-icon">blog post</span>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="blog-title card-title font-weight-bold">
+                                <a href="single.html">Cras ultricies ligula sed.</a>
+                            </h5>
+                            <p>At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit
+                                ametLorem ipsum dolor sit amet,sed diam nonumy.</p>
+                            <a href="single.html" class="blog_link">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- //blog grid -->
+                <!-- blog grid -->
+                <div class="col-lg-4 col-md-6 mt-md-0  mt-4">
+                    <div class="card">
+                        <div class="card-header p-0 position-relative">
+                            <a href="single.html">
+                                <img class="card-img-bottom" src="images/g2.jpg" alt="Card image cap">
+                                <span class="post-icon">blog post</span>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="blog-title card-title font-weight-bold">
+                                <a href="single.html">magna porta au blandita.</a>
+                            </h5>
+                            <p>At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit
+                                ametLorem ipsum dolor sit amet,sed diam nonumy.</p>
+                            <a href="single.html" class="blog_link">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- //blog grid -->
+                <!-- blog grid -->
+                <div class="col-lg-4 col-md-6 mt-lg-0 mt-4 mx-auto blog-end">
+                    <div class="card">
+                        <div class="card-header p-0  position-relative">
+                            <a href="single.html">
+                                <img class="card-img-bottom" src="images/g3.jpg" alt="Card image cap">
+                                <span class="post-icon">blog post</span>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="blog-title card-title font-weight-bold">
+                                <a href="single.html">Cras ultricies ligula sed.</a>
+                            </h5>
+                            <p>At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit
+                                ametLorem ipsum dolor sit amet,sed diam nonumy.</p>
+                            <a href="single.html" class="blog_link">Read more</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- //blog grid -->
+            </div>
+        </div>
+    </section>
+    <div class="col-md-12" style="width: 100%; padding: 0px; background-color: #FFF;">
+        <img src="../images/footer_banner1.jpg" width="33%">
+        <img src="../images/footer_banner2.jpg" width="33%">
+        <img src="../images/footer_banner3.png" width="33%">
+         
+     </div>
+
+     <!--Footer -->
+ <footer class="footer py-md-5 pt-md-3 pb-sm-5">
+        <div style="background-image: url(../images/footer_banner4.png); position: fixed;width: 100%;bottom: 20px; z-index: -100;background-attachment: fixed;background-size: cover;">
+        </div>
+        <div class="container" >
+            <div class="row p-sm-4 px-3 py-3">
+                <div class="col-lg-3  col-md-6 mt-lg-0 mt-4">
+                    <div class="footerv2-w3ls">
+                        <h3 class="mb-3 w3f_title">TOUR TRONG NƯỚC</h3>
+                        <hr>
+                        <ul class="list-w3pvtits">
+                            <li>
+                                <a href="index.html">
+                                    Combo du lịch
+                                </a>
+                            </li>
+                            <li class="my-2">
+                                <a href="about.html">
+                                    Tour giờ chót
+                                </a>
+                            </li>
+                            <li class="my-2">
+                                <a href="portfolio.html">
+                                    Tour thường xuyên
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="single.html">
+                                    Tour giờ chót
+                                </a>
+                            </li>
+                            <li>
+                                <a href="contact.html">
+                                    Combo du lịch
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3  col-md-6 mt-lg-0 mt-4">
+                    <div class="footerv2-w3ls">
+                        <h3 class="mb-3 w3f_title">TOUR NƯỚC NGOÀI</h3>
+                        <hr>
+                        <ul class="list-w3pvtits">
+                            <li class="my-2">
+                                <a href="single.html">
+                                    Tour theo điểm đến
+                                </a>
+                            </li>
+                            <li class="my-2">
+                                <a href="portfolio.html">
+                                    Tour thường xuyên
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="contact.html">
+                                    Tour giờ chót
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html">
+                                    Combo du lịch
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-lg-0 mt-4">
+                    <div class="footerv2-w3ls">
+                        <h3 class="mb-3 w3f_title">DỊCH VỤ</h3>
+                        <hr>
+                        <ul class="list-w3pvtits">
+                            <li>
+                                <a href="single.html">
+                                    Visa
+                                </a>
+                            </li>
+                            <li class="my-2">
+                                <a href="portfolio.html">
+                                    Du thuyền
+                                </a>
+                            </li>
+                            <li class="my-2">
+                                <a href="about.html">
+                                    Khách sạn
+                                </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="contact.html">
+                                    Vé máy bay
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html">
+                                    Du lịch MICE
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3  col-md-6 mt-lg-0 mt-4">
+                    <div class="footerv2-w3ls">
+                        <h3 class="mb-3 w3f_title" >VỀ HANOITOURIST</h3>
+                        <hr>
+                        <ul class="list-w3pvtits">
+                            <li class="my-2">
+                                <a href="portfolio.html">
+                                    Giới thiệu
+                                </a>
+                            </li>
+                            <li>
+                                <a href="about.html">
+                                    Liên hệ
+                                </a>
+                            </li>
+                            <li class="my-2">
+                                <a href="single.html">
+                                    Tin tức
+                                </a>
+                            </li>
+
+                            <li class="mb-2">
+                                <a href="contact.html">
+                                    Thư viện
+                                </a>
+                            </li>
+                            <li>
+                                <a href="index.html">
+                                    Cam kết bảo mật
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr style="height: 4px; color: #FFF;">
+            <div class="p-sm-4 px-3 py-3">
+                <p>
+                    <img src="../images/logo_footer.png" width="250px" height="86px" />
+                </p>
+                <h5 style="color: #FFF;" >
+                        HANOITOURIST*UY TÍN*CHẤT LƯỢNG
+                </h5>
+            </div>
+            <div class="row p-sm-12 px-3 py-3">
+                 <div class="col-lg-6  col-md-6 mt-lg-0 mt-4" style="color: #FFF;">
+                    <ul>
+                        <li class="fv3-contact mt-2">
+                            <img src="../images/icon1.png">
+                            Trụ sở chính:18 Lý Thường Kiệt, Ph.Phan Chu Trinh, Q.Hoàn Kiếm, Hà Nội
+                        </li>
+                        <li class="fv3-contact my-2">
+                            <img src="../images/icon1.png">
+                            +Chi nhánh:Hanoitourist Ba Đình, 134 Nguyễn Thái Học, Q.Ba Đình, Hà Nội
+                        </li>
+                        <li class="fv3-contact">
+                            <img src="../images/icon13.png"><span> </span>
+                           Website: <a href="#">http://www.hanoitourist.vn</a>
+                        </li>
+                        <li class="fv3-contact">
+                            <img src="../images/icon14.png"><span> </span>
+                           Email: sales@hanoitourist.vn
+                        </li>
+                        <li class="fv3-contact">
+                            <img src="../images/icon15.png"><span> </span>
+                           Hotline:19004518 ( Ext: 8)
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6  col-md-6 mt-lg-0 mt-4" style="color: #FFF;">
+                    <div class="fv3-contact mt-2">
+                        <p>
+                            <img src="../images/icon1.png">
+                            Phòng Du Lịch Nước Ngoài 1: 19004518 (Ext: 218)
+                        </p>
+                    </div>
+                     <div class="fv3-contact mt-2">
+                        <p>
+                            <img src="../images/icon1.png">
+                            Phòng Du Lịch Nước Ngoài 2: 19004518 (Ext: 258)
+                        </p>
+                    </div>
+                     <div class="fv3-contact mt-2">
+                        <p>
+                            <img src="../images/icon1.png">
+                            Phòng Du Lịch Nội Địa: 19004518 (Ext: 108)
+                        </p>
+                    </div>
+                     <div class="fv3-contact mt-2">
+                        <p>
+                            <img src="../images/icon1.png">
+                            VP Hanoitourist Ba Đình: 19004518 (Ext: 508)
+                        </p>
+                    </div>
+                     <div class="fv3-contact mt-2">
+                        <p>
+                            <img src="../images/icon1.png">
+                           Giấy phép KDLHQT: 01-442/2019/TCDL-GP LHQT
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr style="height: 4px; color: #FFF;">
+            <div class="row p-sm-12 px-3 py-3">
+                <div class="col-lg-6  col-md-6 mt-lg-0 mt-4 ">
+                    <img src="../images/logo5.png">
+                    <img src="../images/logo6.png" style="padding-left: 10px;">
+                    <img src="../images/sdlhn.png" style="padding-left: 10px;">
+                </div>
+                <div class="col-lg-6  col-md-6 mt-lg-0 mt-4" >
+                Liên hệ cộng đồng : 
+                    <a href=""><img src="../images/icon16.png" style="padding-left: 10px;"></a> 
+                    <a href=""> <img src="../images/icon17.png" style="padding-left: 10px;"></a>
+                    <a href=""><img src="../images/icon18.png" style="padding-left: 10px;"></a> 
+                    <a href=""><img src="../images/icon19.png" style="padding-left: 10px;"></a> 
+                </div>
+            </div>
+        </div>
+        <!-- //footer bottom -->
+    </footer>
+    <div style="width: 100%;">
+        <img src="../images/footer_banner5.png" height="500px" width="100%" style="background-attachment: fixed; background-size: cover;z-index: -300;position: fixed;bottom: 400px;">
+        <img src="../images/footer_banner4.png" height="754px" width="100%" style="background-attachment: fixed; background-size: cover;z-index: -300;position: fixed;bottom: 0px;">
+    </div>
+       <!-- copyright -->
+    <div class="cpy-right text-center col-md-12" >
+
+        <p class="text-bl">© 2019 Intense. All rights reserved | Design by
+            <a href="#"> Nhóm 4.</a>
+        </p>
+    </div>
+
+</body>
+
+</html>
