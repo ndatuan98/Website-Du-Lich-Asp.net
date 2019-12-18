@@ -101,6 +101,11 @@
                 <img style="margin-top:-19px;position:relative;top:50%;width:38px;height:38px;" src="img/double-tail-spin.svg" />
             </div>
             <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
+                <%--<asp:DataList ID="ListBanner" runat="server">
+                    <ItemTemplate>
+                        <asp:Image runat="server" ImageUrl='<%#Eval("Image") %>' data-u="image" Width="100%"/>
+                    </ItemTemplate>
+                </asp:DataList>--%>
                 <div>
                     <img data-u="image" src="../images/banner1.jpg" />
                 </div>
@@ -131,13 +136,13 @@
                     <polyline class="a" points="4960,1920 11040,8000 4960,14080 "></polyline>
                 </svg>
             </div>
-        </div>
+       
         <script type="text/javascript">jssor_1_slider_init();
         </script>
-    </div>
+     </div>
 
     <!--TÌM KIẾM -->
-    <div style="width: 100%; background-color: #FFFFFF;padding: 10px;">
+    <div style="width: 101%; background-color: #FFFFFF;padding: 10px;">
         <div class="col-md-10" style="background-color: #FFFFFF; padding-left: 240px;">
             <h4><u>TÌM KIẾM TOUR</u></h4>
             <form runat="server" style="width: 100%;padding-top: 10px;">
@@ -160,14 +165,14 @@
         </div>
     </div>
     <!--DỊCH VỤ CỦA CHÚNG TÔI -->
-    <div style="background-color:#F1F1F1;">
+    <div style="background-color:#F1F1F1;width: 101%;">
         <h3 style="text-align: center;">DỊCH VỤ CỦA CHÚNG TÔI</h3>
         <div class="col-md-10">
 
         </div>
     </div>
     <!--HOT TOUR  -->
-    <div style="background-color: #FFF;padding-top: 10px;">
+    <div style="background-color: #FFF;padding-top: 10px;width: 101%;">
         <div class="col-md-10" style="padding-left: 250px;padding-bottom: 10px;">
             <u><h3 >HOT TOUR</h3></u>
         </div>
@@ -179,12 +184,14 @@
 		                <div class="hover14 column" style="padding: 1px;height:390px;border:1px solid #808080;">
 			                <div class="agile_top_brand_left_grid">
 				                <div class="agile_top_brand_left_grid1">
-                                    <asp:HyperLink ID="imagesp" runat="server" ImageUrl='<%#Eval("Image") %>' ImageWidth="292px" ImageHeight="260px"  >HyperLink</asp:HyperLink>
+                                    <asp:HyperLink ID="imag" runat="server" ImageUrl='<%#Eval("Image") %>' ImageWidth="292px" ImageHeight="260px"  NavigateUrl='<%#"Detail_Tour.aspx?Detail_Id=" + Eval("Detail_Id") %>' ></asp:HyperLink>
 					                <figure id="formTour" style="margin:10px;">
 						                <div class="snipcart-item block" >
 							                <div class="snipcart-thumb" >
                                                <center>
-                                                   <h4><asp:Label runat="server" Text='<%#Eval("NAME_TOUR") %>'></asp:Label></h4>
+                                                   <h4>
+                                                       <asp:HyperLink runat="server" Text='<%#Eval("NAME_TOUR") %>'  NavigateUrl='<%#"Detail_Tour.aspx?Detail_Id=" + Eval("Detail_Id") %>' ForeColor="#000000" ></asp:HyperLink>
+                                                   </h4>
                                                </center> 
 								                <p>
                                                     <img  src="../images/traveler.png" width="14px" height="14px"/>
@@ -214,7 +221,7 @@
             </asp:DataList>
         </div>
             <div style="text-align: center; padding: 15px;color: #FFF;">
-                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary"></asp:HyperLink>
+                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary" NavigateUrl="ListTour.aspx?Country_ID=0"></asp:HyperLink>
             </div>
            
         </div>
@@ -223,7 +230,7 @@
     <!--DANH MỤC TOUR -->
     <!--TOUR TRONG NƯỚC -->
     <div>
-        <div style="background-color: #FFF;padding-top: 10px;">
+        <div style="background-color: #FFF;padding-top: 10px;width: 101%;">
         <div class="col-md-10" style="padding-left: 250px;padding-bottom: 10px;">
             <u><h3 >TOUR TRONG NƯỚC</h3></u>
         </div>
@@ -235,12 +242,14 @@
 		                <div class="hover14 column" style="padding: 1px;height:390px;border:1px solid #808080;">
 			                <div class="agile_top_brand_left_grid">
 				                <div class="agile_top_brand_left_grid1">
-                                    <asp:HyperLink ID="imagesp" runat="server" ImageUrl='<%#Eval("Image") %>' ImageWidth="292px" ImageHeight="260px"  >HyperLink</asp:HyperLink>
+                                    <asp:HyperLink ID="imag" runat="server" ImageUrl='<%#Eval("Image") %>' ImageWidth="292px" ImageHeight="260px"  NavigateUrl='<%#"Detail_Tour.aspx?Detail_Id=" + Eval("Detail_Id") %>' ></asp:HyperLink>
 					                <figure id="formTour" style="margin:10px;">
 						                <div class="snipcart-item block" >
 							                <div class="snipcart-thumb" >
                                                <center>
-                                                   <h4><asp:Label runat="server" Text='<%#Eval("NAME_TOUR") %>'></asp:Label></h4>
+                                                   <h4>
+                                                       <asp:HyperLink runat="server" Text='<%#Eval("NAME_TOUR") %>'  NavigateUrl='<%#"Detail_Tour.aspx?Detail_Id=" + Eval("Detail_Id") %>' ForeColor="#000000" ></asp:HyperLink>
+                                                   </h4>
                                                </center> 
 								                <p>
                                                     <img  src="../images/traveler.png" width="14px" height="14px"/>
@@ -270,7 +279,7 @@
             </asp:DataList>
         </div>
             <div style="text-align: center; padding: 15px;color: #FFF;">
-                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary"></asp:HyperLink>
+                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary" NavigateUrl="ListTour.aspx?Country_ID=1"></asp:HyperLink>
             </div>
            
         </div>
@@ -279,7 +288,7 @@
     </div>
     <!-- TOUR NƯỚC NGOÀI -->
     <div>
-        <div style="background-color: #FFF;padding-top: 10px;">
+        <div style="background-color: #FFF;padding-top: 10px;width: 101%;">
         <div class="col-md-10" style="padding-left: 250px;padding-bottom: 10px;">
             <u><h3 >TOUR NƯỚC NGOÀI</h3></u>
         </div>
@@ -291,12 +300,14 @@
 		                <div class="hover14 column" style="padding: 1px;height:390px;border:1px solid #808080;">
 			                <div class="agile_top_brand_left_grid">
 				                <div class="agile_top_brand_left_grid1">
-                                    <asp:HyperLink ID="imagesp" runat="server" ImageUrl='<%#Eval("Image") %>' ImageWidth="292px" ImageHeight="260px"  >HyperLink</asp:HyperLink>
+                                    <asp:HyperLink ID="imag" runat="server" ImageUrl='<%#Eval("Image") %>' ImageWidth="292px" ImageHeight="260px"  NavigateUrl='<%#"Detail_Tour.aspx?Detail_Id=" + Eval("Detail_Id") %>' ></asp:HyperLink>
 					                <figure id="formTour" style="margin:10px;">
 						                <div class="snipcart-item block" >
 							                <div class="snipcart-thumb" >
                                                <center>
-                                                   <h4><asp:Label runat="server" Text='<%#Eval("NAME_TOUR") %>'></asp:Label></h4>
+                                                   <h4>
+                                                       <asp:HyperLink runat="server" Text='<%#Eval("NAME_TOUR") %>'  NavigateUrl='<%#"Detail_Tour.aspx?Detail_Id=" + Eval("Detail_Id") %>' ForeColor="#000000" ></asp:HyperLink>
+                                                   </h4>
                                                </center> 
 								                <p>
                                                     <img  src="../images/traveler.png" width="14px" height="14px"/>
@@ -326,7 +337,7 @@
             </asp:DataList>
         </div>
             <div style="text-align: center; padding: 15px;color: #FFF;">
-                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary"></asp:HyperLink>
+                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary"  NavigateUrl="ListTour.aspx?Country_ID=2"></asp:HyperLink>
             </div>
            
         </div>
