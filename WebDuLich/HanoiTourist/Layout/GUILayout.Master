@@ -186,7 +186,7 @@
                                 <label for="drop-2" class="toggle toogle-2">DU LỊCH TRONG NƯỚC<span class="fa fa-angle-down"
                                         aria-hidden="true"></span>
                                 </label>
-                                <asp:HyperLink runat="server" Text="Xem thêm" NavigateUrl="~/Views/ListTour.aspx?Country_ID=1" >TOUR TRONG NƯỚC</asp:HyperLink>
+                                <asp:HyperLink runat="server" Text="Xem thêm" NavigateUrl="~/Views/ListTour.aspx?Country_ID=-1" >TOUR TRONG NƯỚC</asp:HyperLink>
                                 <input type="checkbox" id="drop-2" />
                                 <ul >
                                     <asp:DataList runat="server" ID="MenuTN" RepeatColumns="2" Width="100%">
@@ -200,12 +200,12 @@
                                 <label for="drop-2" class="toggle toogle-2">DU LỊCH NƯỚC NGOÀI<span class="fa fa-angle-down"
                                         aria-hidden="true"></span>
                                 </label>
-                                 <asp:HyperLink runat="server" Text="Xem thêm" NavigateUrl="~/Views/ListTour.aspx?Country_ID=2" >TOUR NƯỚC NGOÀI</asp:HyperLink>
+                                 <asp:HyperLink runat="server" Text="Xem thêm" NavigateUrl="~/Views/ListTour.aspx?Country_ID=-3" >TOUR NƯỚC NGOÀI</asp:HyperLink>
                                 <input type="checkbox" id="drop-2" />
                                 <ul>
                                     <asp:DataList runat="server" ID="MenuNN" RepeatColumns="4" Width="100%">
                                         <ItemTemplate>
-                                            <li><asp:HyperLink runat="server" Text='<%#Eval("COUNTRY_NAME") %>' NavigateUrl='<%# "~/Views/ListTour.aspx?CountryId=" + Eval("Id") %>'></asp:HyperLink> </li>
+                                            <li><asp:HyperLink runat="server" Text='<%#Eval("COUNTRY_NAME") %>' NavigateUrl='<%# "~/Views/ListTour.aspx?Country_ID=" + Eval("Id") %>'></asp:HyperLink> </li>
                                         </ItemTemplate>
                                      </asp:DataList>
                                 </ul>
@@ -213,7 +213,7 @@
                             <li>
                                 <label for="drop-2" class="toggle toogle-2">HOT TOUR
                                 </label>
-                                 <asp:HyperLink runat="server" Text="Xem thêm" NavigateUrl="~/Views/ListTour.aspx?Country_ID=0" >HOT TOUR</asp:HyperLink>
+                                 <asp:HyperLink runat="server" Text="Xem thêm" NavigateUrl="~/Views/ListTour.aspx?Country_ID=-3" >HOT TOUR</asp:HyperLink>
                             </li>
                             <li>
                                 <label for="drop-2" class="toggle toogle-2">COMBO DU LỊCH

@@ -16,7 +16,7 @@ namespace HanoiTourist.Layout
         {
             SqlConnection conn = connectDB.getConnection();
             conn.Open();
-            string sqlTN = "SELECT DESTINATION FROM dbo.DETAILS_TOUR";
+            string sqlTN = "SELECT DISTINCT DESTINATION FROM dbo.DETAILS_TOUR";
             string sqlNN = "SELECT id,COUNTRY_NAME FROM dbo.COUNTRIES where id !=0";
             DataTable dt = connectDB.getTable(sqlTN);
             MenuTN.DataSource = dt;

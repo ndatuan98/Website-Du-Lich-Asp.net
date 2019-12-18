@@ -221,7 +221,7 @@
             </asp:DataList>
         </div>
             <div style="text-align: center; padding: 15px;color: #FFF;">
-                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary" NavigateUrl="ListTour.aspx?Country_ID=0"></asp:HyperLink>
+                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary" NavigateUrl="ListTour.aspx?Country_ID=-3"></asp:HyperLink>
             </div>
            
         </div>
@@ -279,7 +279,7 @@
             </asp:DataList>
         </div>
             <div style="text-align: center; padding: 15px;color: #FFF;">
-                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary" NavigateUrl="ListTour.aspx?Country_ID=1"></asp:HyperLink>
+                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary" NavigateUrl="ListTour.aspx?Country_ID=-1"></asp:HyperLink>
             </div>
            
         </div>
@@ -337,7 +337,7 @@
             </asp:DataList>
         </div>
             <div style="text-align: center; padding: 15px;color: #FFF;">
-                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary"  NavigateUrl="ListTour.aspx?Country_ID=2"></asp:HyperLink>
+                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary"  NavigateUrl="ListTour.aspx?Country_ID=-2"></asp:HyperLink>
             </div>
            
         </div>
