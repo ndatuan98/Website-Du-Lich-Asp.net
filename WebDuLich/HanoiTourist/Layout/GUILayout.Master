@@ -106,7 +106,6 @@
 
 <body>
     <form id="form1" runat="server">
-
     <div class="sticky-container" style="background-color: #FFF;">
     <ul class="sticky">
         <li title="Gọi tổng đài 19004518">

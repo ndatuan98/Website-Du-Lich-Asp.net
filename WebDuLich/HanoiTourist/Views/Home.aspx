@@ -145,7 +145,7 @@
     <div style="width: 101%; background-color: #FFFFFF;padding: 10px;">
         <div class="col-md-10" style="background-color: #FFFFFF; padding-left: 240px;">
             <h4><u>TÌM KIẾM TOUR</u></h4>
-            <form  style="width: 100%;padding-top: 10px;">
+            <form style="width: 100%;padding-top: 10px;">
                 <asp:DropDownList runat="server" Width="17%" Height="35px" ID="DrDiemXuatPhat">
                     <asp:ListItem></asp:ListItem>
                 </asp:DropDownList>
