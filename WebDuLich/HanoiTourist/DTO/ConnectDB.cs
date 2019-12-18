@@ -20,6 +20,7 @@ namespace HanoiTourist.DTO
             SqlDataAdapter da = new SqlDataAdapter(sql, con);
             DataTable dt = new DataTable();
             da.Fill(dt);
+            con.Close();
             return dt;
         }
 
@@ -31,6 +32,7 @@ namespace HanoiTourist.DTO
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             cmd.Clone();
+            con.Close();
         }
     }
 }

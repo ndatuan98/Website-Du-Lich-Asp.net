@@ -1,22 +1,19 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout/AdminLayout.Master" AutoEventWireup="true" CodeBehind="UpdateUser.aspx.cs" Inherits="HanoiTourist.Admin.View.UpdateUser" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout/AdminLayout.Master" AutoEventWireup="true" CodeBehind="AccountInfo.aspx.cs" Inherits="HanoiTourist.Admin.View.AccountInfo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <title>Thông tin tài khoản</title>
     <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
-  <title>Cập nhật tài khoản</title>
-
   <!-- Custom fonts for this template-->
   <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
   <!-- Custom styles for this template-->
   <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-        <h1 class=" h3 text-gray-900 mb-4">Cập nhật tài khoản</h1>
+    <h1 class=" h3 text-gray-900 mb-4">Thông tin tài khoản</h1>
      <div class="p-5">
             <form class="user">
                 <div class="form-group row">
@@ -48,20 +45,10 @@
                     <asp:Label runat="server" ID="txtThongbao"></asp:Label>
                 </div><br />
                 <div class="col-sm-8">
-                    <asp:Button runat="server" Text="Cập nhật tài khoản" class="btn btn-primary btn-user btn-block" OnClick="Unnamed1_Click">
-                    </asp:Button>
-                    <asp:Button runat="server" Text="Quay lại" class="btn btn-basic btn-user btn-block" OnClick="Unnamed2_Click">
-                    </asp:Button>
+                    <asp:Button runat="server" Text="Cập nhật tài khoản" class="btn btn-primary btn-user btn-block" />
+                    <asp:Button runat="server" Text="Quay lại" class="btn btn-basic btn-user btn-block" OnClick="Back_Click"/>
                 </div>
                     <hr>
             </form>
       </div>
-      <script src="../Admin/vendor/jquery/jquery.min.js"></script>
-      <script src="../Admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-      <!-- Core plugin JavaScript-->
-      <script src="../Admin/vendor/jquery-easing/jquery.easing.min.js"></script>
-
-      <!-- Custom scripts for all pages-->
-      <script src="../Admin/js/sb-admin-2.min.js"></script>
 </asp:Content>

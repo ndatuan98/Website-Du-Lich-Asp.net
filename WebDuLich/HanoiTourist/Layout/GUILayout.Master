@@ -19,11 +19,8 @@
 </html>--%>
 
 <!DOCTYPE html>
-<html lang="zxx">
-
-<head>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+<html>
+<head runat="server">
     <title>Hanoitourist: Tour Du Lịch, Dịch Vụ du lịch hàng đầu Việt Nam</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
@@ -53,8 +50,8 @@
             padding:0px;
             margin:0px;
             position:fixed;
-            right:-130px;
-            top: 570px;
+            right:-170px;
+            bottom: 10px;
             width:210px;
             z-index: 1100;
         }
@@ -103,10 +100,13 @@
             padding-top: 100px;
         }
 </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
 </head>
 
 <body>
-    <form runat="server">
+    <form id="form1" runat="server">
+
     <div class="sticky-container" style="background-color: #FFF;">
     <ul class="sticky">
         <li title="Gọi tổng đài 19004518">
@@ -249,8 +249,43 @@
             </div>
         </div>
         <div class="col-md-12" style="position: absolute; top: 40px;padding-left: 1130px;">
-<%--            <a  href="login.html" class="btn btn-default" style="font-size: 12px; border: 1px solid #FFA300; color: #FFA300;">Đăng ký</a>
-            <asp:Button runat="server" Text="Đăng nhập" CssClass="btn btn-warning" OnClick="btnLogin_Click" />--%>
+            <asp:Panel ID="pnLogin" runat="server">
+                <asp:Button runat="server" Text="Đăng ký" CssClass="btn btn-default" style="font-size: 12px; border: 1px solid #FFA300; color: #FFA300; padding: 3px 5px;" OnClick="btnRegister_Click" />
+                <asp:Button runat="server" Text="Đăng nhập" CssClass="btn btn-warning" style="font-size: 12px; border: 1px solid #FFA300; color: #FFF; padding: 3px 5px;" OnClick="btnLogin_Click" />
+            </asp:Panel>
+            <asp:Panel ID="pnLogged" runat="server">
+                <style>
+                    .showhide{
+                        height: 30px;
+                    }
+                </style>
+                <script>
+                    function showInfo() {
+                        var x = document.getElementById("showInfo");
+                        if (x.style.display === "none") {
+                            x.style.display = "block";
+                        } else {
+                            x.style.display = "none";
+                        }
+                    }
+                </script>
+               <a class="showhide" onclick="showInfo()">
+                   <asp:Label runat="server" ID="lblFullname" CssClass="mr-2 d-none d-lg-inline text-gray-600 small" />
+                    <img height="35px" class="rounded-circle" src="../images/avatar.png">
+              </a>
+              <!-- Dropdown - User Information -->
+              <div style="z-index: 9999; right: 200px;" class="dropdown-menu dropdown-menu-right shadow animated--grow-in" id="showInfo">
+                <a class="dropdown-item" href="#">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile
+                </a>
+                <div class="dropdown-divider"></div>
+                  <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click" CssClass="dropdown-item">
+                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Đăng xuất</asp:LinkButton>
+                </a>
+              </div>
+            </asp:Panel>
            <%-- <a  href="register.html" class="btn btn-warning" style="font-size: 12px; color: #FFF;">Đăng nhập</a>--%>
         </div>
     </header>
@@ -499,7 +534,7 @@
             <a href="#"> Nhóm 4.</a>
         </p>
     </div>
-        </form>
+    </form>
 </body>
 
 </html>

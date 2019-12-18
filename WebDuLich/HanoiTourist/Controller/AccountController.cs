@@ -25,6 +25,47 @@ namespace HanoiTourist.Controllers
             pass = s.ToString();
             return pass;
         }
+        public bool CheckRegister(string email)
+        {
+            string cmd = "SELECT * FROM dbo.ACCOUNT where EMAIL = '" + email + "'";
+            DataTable dt = connectDB.getTable(cmd);
+            if (dt.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+        public void Register(string email, string fullName, string pass)
+        {
+            SqlConnection conn = connectDB.getConnection();
+            string sqlInsert = "INSERT INTO dbo.ACCOUNT  ( EMAIL ,FULLNAME , PASS)" +
+                            " VALUES  ( @Email,@FullName,@Pass)";
+            SqlCommand cmd = new SqlCommand(sqlInsert, conn);
+            cmd.Parameters.AddWithValue("@Email", email);
+            cmd.Parameters.AddWithValue("@FullName", fullName);
+            cmd.Parameters.AddWithValue("@Pass", EncodeMD5(pass));
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
+        public bool CheckForgot(string email, string phone)
+        {
+            string cmd = "SELECT * FROM dbo.ACCOUNT where EMAIL = '" + email.Trim() + "' and PHONE = '" + phone.Trim() + "'";
+            DataTable dt = connectDB.getTable(cmd);
+            if (dt.Rows.Count > 0)
+                return true;
+            else
+                return false;
+        }
+        public void ForgotPass(string email, string phone, string pass)
+        {
+            SqlConnection conn = connectDB.getConnection();
+            string sqlUpdate = "UPDATE dbo.ACCOUNT SET PASS = @pass WHERE email = '" + email + "' and PHONE = '" + phone + "'";
+            SqlCommand cmd = new SqlCommand(sqlUpdate, conn);
+            cmd.Parameters.AddWithValue("@pass", EncodeMD5(pass));
+            conn.Open();
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
         public int Login(string email, string pass)
         {
             string cmd = "SELECT * FROM dbo.ACCOUNT where EMAIL = '" + email + "' AND PASS='"+ EncodeMD5(pass)+ "' AND IS_ADMIN = 1";
@@ -59,7 +100,8 @@ namespace HanoiTourist.Controllers
             cmd.ExecuteNonQuery();
             conn.Close();
         }
-        public void CreateAccount( string email, string fullname, string pass, string phone, string dateOfBirth, string Address)
+
+        public void CreateAccount(string email, string fullname, string pass, string phone, string dateOfBirth, string Address)
         {
             SqlConnection conn = connectDB.getConnection();
             string sqlInsert = "INSERT INTO dbo.ACCOUNT  ( EMAIL ,FULLNAME , PASS ,PHONE ,DATE_OF_BIRTH ,ADDRESS)" +
@@ -67,7 +109,7 @@ namespace HanoiTourist.Controllers
             SqlCommand cmd = new SqlCommand(sqlInsert, conn);
             cmd.Parameters.AddWithValue("@Email", email);
             cmd.Parameters.AddWithValue("@FullName", fullname);
-            cmd.Parameters.AddWithValue("@Pass", pass);
+            cmd.Parameters.AddWithValue("@Pass", EncodeMD5(pass));
             cmd.Parameters.AddWithValue("@Phone", phone);
             cmd.Parameters.AddWithValue("@DateOfBirth", dateOfBirth);
             cmd.Parameters.AddWithValue("@address", Address);

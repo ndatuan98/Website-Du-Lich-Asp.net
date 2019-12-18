@@ -48,9 +48,10 @@
                       <asp:TextBox ID="txtRePass" runat="server" TextMode="Password" CssClass="form-control form-control-user" SkinID="exampleRepeatPassword" placeholder="Nhập lại mật khẩu" />
                   </div>
                 </div>
-                <a href="login.html" class="btn btn-primary btn-user btn-block">
-                  Đăng ký tài khoản
-                </a>
+                <div class="form-group">
+                    <asp:Label runat="server" ID="lblThongbao"></asp:Label>
+                </div>
+                  <asp:Button runat="server" CssClass="btn btn-primary btn-user btn-block" Text="Đăng ký tài khoản" OnClick="CreateAccount" />
                 <hr>
                 <a href="#" class="btn btn-google btn-user btn-block">
                   <i class="fab fa-google fa-fw"></i> Register with Google

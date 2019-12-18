@@ -60,6 +60,10 @@ namespace HanoiTourist.Views
             DrKhoangGia.Items.Insert(3, new ListItem("Từ 10 Triệu - 25 Triệu", "3"));
             DrKhoangGia.Items.Insert(4, new ListItem("Từ 25 Triệu - 40 Triệu", "4"));
             DrKhoangGia.Items.Insert(5, new ListItem("Trên 40 Triệu", "5"));
+            if(conn.State == ConnectionState.Open)
+            {
+                conn.Close();
+            }
         }
 
         public SqlDataReader GetDataReader(string sql)
@@ -79,8 +83,6 @@ namespace HanoiTourist.Views
             string khoangGia = DrKhoangGia.SelectedValue.ToString();
             string chuoiTimKiem = diemXP + "," + dich + "," + lichTrinh + "," + ngayKhoiHanh + "," + khoangGia;
             Response.Redirect("SearchResult.aspx?chuoiTimKiem=" + chuoiTimKiem);
-            
-
         }
 
         protected void ListHotTour_SelectedIndexChanged(object sender, EventArgs e)

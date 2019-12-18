@@ -36,11 +36,13 @@ namespace HanoiTourist.Admin.View
                 else
                 {
                     lblThongbao.Text = "Tài khoản hoặc mật khẩu không chính xác!";
+                    lblThongbao.ForeColor = System.Drawing.Color.Red;
                 }
             }
             catch(Exception)
             {
                 lblThongbao.Text = "Lỗi kết nối database";
+                lblThongbao.ForeColor = System.Drawing.Color.Red;
             }
         }
 

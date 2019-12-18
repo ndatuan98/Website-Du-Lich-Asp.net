@@ -14,23 +14,51 @@ namespace HanoiTourist.Layout
         ConnectDB connectDB = new ConnectDB();
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlConnection conn = connectDB.getConnection();
-            conn.Open();
-            string sqlTN = "SELECT DISTINCT DESTINATION FROM dbo.DETAILS_TOUR";
-            string sqlNN = "SELECT id,COUNTRY_NAME FROM dbo.COUNTRIES where id !=0";
-            DataTable dt = connectDB.getTable(sqlTN);
-            MenuTN.DataSource = dt;
-            MenuTN.DataBind();
+            pnLogged.Style.Add("display", "none");
+            if (Session["user"] != null)
+            {
+                lblFullname.Text = Session["user"].ToString();
+                pnLogin.Style.Add("display", "none");
+                pnLogged.Style.Add("display", "inherit");
+            }
+            else
+            {
+                lblFullname.Text = "";
+                pnLogin.Style.Add("display", "inherit");
+                pnLogged.Style.Add("display", "none");
+            }
+            try
+            {
+                SqlConnection conn = connectDB.getConnection();
+                conn.Open();
+                string sqlTN = "SELECT DESTINATION FROM dbo.DETAILS_TOUR";
+                string sqlNN = "SELECT id,COUNTRY_NAME FROM dbo.COUNTRIES where id !=0";
+                DataTable dt = connectDB.getTable(sqlTN);
+                MenuTN.DataSource = dt;
+                MenuTN.DataBind();
+                DataTable dt2 = connectDB.getTable(sqlNN);
+                MenuNN.DataSource = dt2;
+                MenuNN.DataBind();
+                conn.Close();
+            }
+            catch (Exception)
+            {
 
-            DataTable dt2 = connectDB.getTable(sqlNN);
-            MenuNN.DataSource = dt2;
-            MenuNN.DataBind();
-
+            }
         }
 
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             Response.Redirect("../Admin/View/Login.aspx");
+        }
+        protected void btnRegister_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../Admin/View/Register.aspx");
+        }
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Remove("user");
+            Page_Load(sender,e);
         }
     }
 }
