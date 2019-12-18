@@ -22,6 +22,24 @@ namespace HanoiTourist.Layout {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
         
         /// <summary>
+        /// MenuTN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList MenuTN;
+        
+        /// <summary>
+        /// MenuNN control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList MenuNN;
+        
+        /// <summary>
         /// ContentPlaceHolderID1 control.
         /// </summary>
         /// <remarks>

@@ -17,14 +17,19 @@ namespace HanoiTourist.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string sqlHotTour = "SELECT b.NAME_TOUR,b.VEHICLE,a.DEPARTURE_DATE,b.ADULT_FARE,b.Image FROM dbo.TOUR a,dbo.DETAILS_TOUR b WHERE a.DETAIL_ID = b.ID";
-            string sqlTourTN = "SELECT b.NAME_TOUR,b.VEHICLE,a.DEPARTURE_DATE,b.ADULT_FARE,b.Image FROM dbo.TOUR a,dbo.DETAILS_TOUR b WHERE a.DETAIL_ID = b.ID";
-            string sqlTourNN = "SELECT b.NAME_TOUR,b.VEHICLE,a.DEPARTURE_DATE,b.ADULT_FARE,b.Image FROM dbo.TOUR a,dbo.DETAILS_TOUR b WHERE a.DETAIL_ID = b.ID";
+            string sqlHotTour = "SELECT b.NAME_TOUR,b.VEHICLE,a.DEPARTURE_DATE,b.ADULT_FARE,b.Image,a.Detail_Id FROM dbo.TOUR a,dbo.DETAILS_TOUR b WHERE a.DETAIL_ID = b.ID and b.IS_HOT_TOUR = 1";
+            string sqlTourTN = "SELECT b.NAME_TOUR,b.VEHICLE,a.DEPARTURE_DATE,b.ADULT_FARE,b.Image,a.Detail_Id FROM dbo.TOUR a,dbo.DETAILS_TOUR b WHERE a.DETAIL_ID = b.ID and a.COUNTRY_ID = 0";
+            string sqlTourNN = "SELECT a.NAME_TOUR,a.VEHICLE,b.DEPARTURE_DATE,a.ADULT_FARE,a.Image,b.Detail_Id "+
+                                  "  FROM dbo.DETAILS_TOUR AS  a INNER JOIN dbo.TOUR AS b on a.ID = b.DETAIL_ID "+
+                                  "  WHERE b.COUNTRY_ID != 0";
+            string sqlBanner = "SELECT image FROM dbo.DETAILS_TOUR WHERE CODE='BANNER'";
             SqlConnection conn = connectDB.getConnection();
             conn.Open();
             DataTable dt = connectDB.getTable(sqlHotTour);
             DataTable dt1 = connectDB.getTable(sqlTourTN);
             DataTable dt2 = connectDB.getTable(sqlTourNN);
+            DataTable dt3 = connectDB.getTable(sqlBanner);
+
             ListHotTour.DataSource = dt;
             ListHotTour.DataBind();
             ListTourTN.DataSource = dt1;
@@ -47,6 +52,9 @@ namespace HanoiTourist.Views
             DrLichTrinh.DataTextField = "SCHEDULE_TOUR";
             DrLichTrinh.DataValueField = "SCHEDULE_TOUR";
             DrLichTrinh.DataBind();
+
+            //ListBanner.DataSource = dt3;
+            //ListBanner.DataBind();
 
             DrKhoangGia.Items.Insert(0, new ListItem("Khoảng giá", "0"));
             DrKhoangGia.Items.Insert(1, new ListItem("Nhỏ Hơn 3 Triệu", "1"));

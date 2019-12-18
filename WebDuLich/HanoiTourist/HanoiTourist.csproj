@@ -1825,9 +1825,16 @@
     <Content Include="images\logo_footer.png" />
     <Content Include="images\sdlhn.png" />
     <Content Include="images\traveler.png" />
+    <Content Include="Views\ComboDuLich.aspx" />
+    <Content Include="Views\Contact.aspx" />
     <Content Include="Views\Detail_Tour.aspx" />
     <Content Include="Views\Home.aspx" />
+    <Content Include="Views\Library.aspx" />
+    <Content Include="Views\ListTour.aspx" />
+    <Content Include="Views\ListTourWithMenu.aspx" />
+    <Content Include="Views\News.aspx" />
     <Content Include="Views\SearchResult.aspx" />
+    <Content Include="Views\Transport.aspx" />
     <Content Include="Web.config" />
     <Content Include="Layout\GUILayout.Master" />
   </ItemGroup>
@@ -1930,6 +1937,20 @@
     <Compile Include="Model\Tours.cs" />
     <Compile Include="Model\Type_Payment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\ComboDuLich.aspx.cs">
+      <DependentUpon>ComboDuLich.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ComboDuLich.aspx.designer.cs">
+      <DependentUpon>ComboDuLich.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Detail_Tour.aspx.cs">
       <DependentUpon>Detail_Tour.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1944,12 +1965,47 @@
     <Compile Include="Views\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\Library.aspx.cs">
+      <DependentUpon>Library.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Library.aspx.designer.cs">
+      <DependentUpon>Library.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListTour.aspx.cs">
+      <DependentUpon>ListTour.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ListTour.aspx.designer.cs">
+      <DependentUpon>ListTour.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListTourWithMenu.aspx.cs">
+      <DependentUpon>ListTourWithMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ListTourWithMenu.aspx.designer.cs">
+      <DependentUpon>ListTourWithMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\SearchResult.aspx.cs">
       <DependentUpon>SearchResult.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\SearchResult.aspx.designer.cs">
       <DependentUpon>SearchResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Transport.aspx.cs">
+      <DependentUpon>Transport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Transport.aspx.designer.cs">
+      <DependentUpon>Transport.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -24,6 +24,7 @@
             <h2>Thắng cảnh</h2>
             <p>London is the capital city of England.</p>
         </div>
+        <asp:Label ID="test" runat="server"></asp:Label>
 
         <div id="DuKhach" class="w3-container city" style="display:none">
             <h2>Du khách</h2>
