@@ -60,7 +60,9 @@ body a:focus {
 .list-group-item {
     background-color: transparent;
 }
-
+.hover14:hover {
+    box-shadow: 5px 10px 10px #888888;
+}
 button,
 html [type="button"],
 [type="reset"],
@@ -582,16 +584,7 @@ input.form-control.bg-theme {
 
 /* banner */
 
-.banner {
-    background: url(../images/banner.jpg) center no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover;
-    position: relative;
-    z-index: 1;
-}
+
 
 .banner_text_wthree_pvt {
     padding: 15vw 0;

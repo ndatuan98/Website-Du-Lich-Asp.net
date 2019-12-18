@@ -1687,11 +1687,16 @@
     <Content Include="content\css\bootstrap-theme.min.css" />
     <Content Include="content\css\bootstrap.css" />
     <Content Include="content\css\bootstrap.min.css" />
+    <Content Include="content\css\demo.css" />
+    <Content Include="content\css\flexslider-rtl-min.css" />
+    <Content Include="content\css\flexslider-rtl.css" />
     <Content Include="content\css\flexslider.css" />
+    <Content Include="content\css\flexsliderThumbail.css" />
     <Content Include="content\css\font-awesome.min.css" />
     <Content Include="content\css\single.css" />
     <Content Include="content\css\Site.css" />
     <Content Include="content\css\style.css" />
+    <Content Include="content\css\style_tabs.css" />
     <Content Include="content\font\fontawesome-webfont.svg" />
     <Content Include="content\font\glyphicons-halflings-regular.svg" />
     <Content Include="content\Scripts\bootstrap.bundle.js" />
@@ -1700,24 +1705,96 @@
     <Content Include="content\Scripts\bootstrap.min.js" />
     <Content Include="content\font\FontAwesome.otf" />
     <None Include="content\Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="content\Scripts\demo.js" />
+    <Content Include="content\Scripts\froogaloop.js" />
+    <Content Include="content\Scripts\index_tabs.js" />
     <Content Include="content\Scripts\jquery-3.3.1.js" />
     <Content Include="content\Scripts\jquery-3.3.1.min.js" />
     <Content Include="content\Scripts\jquery-3.3.1.slim.js" />
     <Content Include="content\Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="content\Scripts\jquery.easing.js" />
+    <Content Include="content\Scripts\jquery.fitvid.js" />
     <Content Include="content\Scripts\jquery.flexslider.js" />
     <None Include="content\Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="content\Scripts\jquery.flexsliderThumbail.js" />
+    <Content Include="content\Scripts\jquery.mousewheel.js" />
     <Content Include="content\Scripts\jquery.validate.js" />
     <Content Include="content\Scripts\jquery.validate.min.js" />
     <Content Include="content\Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="content\Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="content\Scripts\jssor.slider-28.0.0.min.js" />
     <Content Include="content\Scripts\modernizr-2.8.3.js" />
+    <Content Include="content\Scripts\modernizr.js" />
+    <Content Include="content\Scripts\shBrushCss.js" />
+    <Content Include="content\Scripts\shBrushJScript.js" />
+    <Content Include="content\Scripts\shBrushXml.js" />
+    <Content Include="content\Scripts\shCore.js" />
+    <Content Include="images\63490.png" />
+    <Content Include="images\63607.png" />
+    <Content Include="images\63658.png" />
+    <Content Include="images\63690.png" />
+    <Content Include="images\63762.png" />
+    <Content Include="images\63819.png" />
+    <Content Include="images\63983.png" />
+    <Content Include="images\64238.png" />
+    <Content Include="images\64530.png" />
+    <Content Include="images\64554.png" />
+    <Content Include="images\64575.png" />
+    <Content Include="images\64668.png" />
+    <Content Include="images\64784.png" />
+    <Content Include="images\78805 %281%29.png" />
+    <Content Include="images\78805.png" />
+    <Content Include="images\78840.png" />
+    <Content Include="images\82354.png" />
+    <Content Include="images\82616.png" />
+    <Content Include="images\83249.png" />
+    <Content Include="images\83275.png" />
+    <Content Include="images\83548.png" />
+    <Content Include="images\85109.png" />
+    <Content Include="images\85162.png" />
+    <Content Include="images\85770.png" />
+    <Content Include="images\86067.png" />
+    <Content Include="images\87127.png" />
+    <Content Include="images\87522.png" />
+    <Content Include="images\88461.png" />
+    <Content Include="images\88935.png" />
+    <Content Include="images\88996.png" />
+    <Content Include="images\89486.png" />
+    <Content Include="images\90066.png" />
+    <Content Include="images\90359.png" />
+    <Content Include="images\91062.png" />
+    <Content Include="images\91261.png" />
+    <Content Include="images\91630.png" />
+    <Content Include="images\92094.png" />
+    <Content Include="images\92166.png" />
+    <Content Include="images\92373.png" />
+    <Content Include="images\92439.png" />
+    <Content Include="images\92581 %281%29.png" />
+    <Content Include="images\92581.png" />
+    <Content Include="images\92708.png" />
+    <Content Include="images\92798.png" />
+    <Content Include="images\92991.png" />
+    <Content Include="images\93335.png" />
+    <Content Include="images\93447.png" />
+    <Content Include="images\93742.png" />
+    <Content Include="images\98936.png" />
     <Content Include="images\banner1.jpg" />
     <Content Include="images\banner2.jpg" />
     <Content Include="images\banner3.jpg" />
     <Content Include="images\dangky.png" />
+    <Content Include="images\date.png" />
     <Content Include="images\favicon.ico" />
     <Content Include="images\favicon.png" />
+    <Content Include="images\flagCountries\102.png" />
+    <Content Include="images\flagCountries\149.png" />
+    <Content Include="images\flagCountries\187.jpg" />
+    <Content Include="images\flagCountries\232.png" />
+    <Content Include="images\flagCountries\3.png" />
+    <Content Include="images\flagCountries\3239.png" />
+    <Content Include="images\flagCountries\40.png" />
+    <Content Include="images\flagCountries\45.png" />
+    <Content Include="images\flagCountries\7.png" />
+    <Content Include="images\flagCountries\71.png" />
     <Content Include="images\footer_banner1.jpg" />
     <Content Include="images\footer_banner2.jpg" />
     <Content Include="images\footer_banner3.png" />
@@ -1743,7 +1820,10 @@
     <Content Include="images\logo6.png" />
     <Content Include="images\logo_footer.png" />
     <Content Include="images\sdlhn.png" />
+    <Content Include="images\traveler.png" />
+    <Content Include="Views\Detail_Tour.aspx" />
     <Content Include="Views\Home.aspx" />
+    <Content Include="Views\SearchResult.aspx" />
     <Content Include="Web.config" />
     <Content Include="Layout\GUILayout.Master" />
   </ItemGroup>
@@ -1839,12 +1919,26 @@
     <Compile Include="Model\Tours.cs" />
     <Compile Include="Model\Type_Payment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Detail_Tour.aspx.cs">
+      <DependentUpon>Detail_Tour.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Detail_Tour.aspx.designer.cs">
+      <DependentUpon>Detail_Tour.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SearchResult.aspx.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\SearchResult.aspx.designer.cs">
+      <DependentUpon>SearchResult.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
