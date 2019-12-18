@@ -19,10 +19,13 @@ namespace HanoiTourist.Admin.View
         Account account = new Account();
         protected void Page_Load(object sender, EventArgs e)
         {
-            IdUser.Text = Session["ID"].ToString();
-
+            if (Session["user"] == null)
+            {
+                Response.Redirect("../Login.aspx");
+            }
             if (!Page.IsPostBack)
             {
+                ViewState["RefUrl"] = Request.UrlReferrer.ToString();
                 int userId = Convert.ToInt32(Session["ID"].ToString());
                 SqlConnection conn = connectDB.getConnection();
                 conn.Open();
@@ -69,7 +72,7 @@ namespace HanoiTourist.Admin.View
                     else
                     {
                         ac.Update(account.Id, account.Email, account.Fullname, account.Pass, account.Phone, account.DateOfBirth, account.Address);
-                        Response.Redirect("ListUser.aspx");
+                        Response.Redirect("Index.aspx");
                     }
 
                 }
@@ -79,6 +82,13 @@ namespace HanoiTourist.Admin.View
             {
 
             }
+        }
+
+        protected void Unnamed2_Click(object sender, EventArgs e)
+        {
+            object refUrl = ViewState["RefUrl"];
+            if (refUrl != null)
+                Response.Redirect((string)refUrl);
         }
     }
 }

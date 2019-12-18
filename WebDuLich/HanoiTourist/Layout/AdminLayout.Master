@@ -36,12 +36,12 @@
         <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Danh mục :</h6>
-            <a class="collapse-item" href="ListUser.aspx">Danh sách tài khoản</a>
-            <a class="collapse-item" href="CreateUser.aspx">Thêm tài khoản</a>
+            <a class="collapse-item" href="../Accounts/Index.aspx">Danh sách tài khoản</a>
+            <a class="collapse-item" href="../Accounts/CreateUser.aspx">Thêm tài khoản</a>
             <div class="collapse-divider"></div>
             <h6 class="collapse-header">Tour :</h6>
-            <a class="collapse-item" href="ListProducts.aspx">Danh sách Tour</a>
-             <a class="collapse-item" href="CreateProducts.aspx">Thêm Tour</a>
+            <a class="collapse-item" href="../Tours/Index.aspx">Danh sách Tour</a>
+             <a class="collapse-item" href="../Tours/CreateTour.aspx">Thêm Tour</a>
             <a class="collapse-item active" href="blank.html"></a>
           </div>
         </div>

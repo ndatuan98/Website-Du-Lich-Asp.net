@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout/AdminLayout.Master" AutoEventWireup="true" CodeBehind="CreateUser.aspx.cs" Inherits="HanoiTourist.Admin.View.CreateUser" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-  <meta charset="utf-8">
+    <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
@@ -9,24 +9,19 @@
   <title>Tạo tài khoản</title>
 
   <!-- Custom fonts for this template-->
-  <link href="../Admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="../admin/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <asp:Label runat="server" id="ThongBao" ></asp:Label>
     <h1 class=" h3 text-gray-900 mb-4">Tạo tài khoản</h1>
      <div class="p-5">
             <form class="user">
-                <div class="form-group row">
-                    <div class="col-sm-4 mb-3 mb-sm-0">
-                        <asp:TextBox  runat="server" class="form-control form-control-user" id="txtId" placeholder="Mã tài khoản(Kiểu số)"></asp:TextBox>
-                    </div>
-                    <div class="col-sm-4">
+                <div class="form-group col-sm-8">
                         <asp:TextBox runat="server" class="form-control form-control-user" id="txtEmail" placeholder="Địa chỉ Email"></asp:TextBox>
-                    </div   >
                 </div>
                   <div class="form-group col-sm-8">
                         <asp:TextBox runat="server" class="form-control form-control-user" id="txtFullname" placeholder="Họ tên"></asp:TextBox>
@@ -55,6 +50,8 @@
                 <div class="col-sm-8">
                     <asp:Button runat="server" Text="Tạo tài khoản" class="btn btn-primary btn-user btn-block" OnClick="Unnamed1_Click1" >
                     </asp:Button>
+                    <asp:Button runat="server" Text="Quay lại" class="btn btn-basic btn-user btn-block" OnClick="Unnamed2_Click" >
+                    </asp:Button>
                 </div>
                     <hr>
         <%--    <a href="index.html" class="btn btn-google btn-user btn-block">
@@ -73,13 +70,13 @@
             </div>--%>
             </form>
       </div>
-      <script src="../Admin/vendor/jquery/jquery.min.js"></script>
-      <script src="../Admin/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="../../vendor/jquery/jquery.min.js"></script>
+      <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
       <!-- Core plugin JavaScript-->
-      <script src="../Admin/vendor/jquery-easing/jquery.easing.min.js"></script>
+      <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
       <!-- Custom scripts for all pages-->
-      <script src="../Admin/js/sb-admin-2.min.js"></script>
+      <script src="../../js/sb-admin-2.min.js"></script>
 
 </asp:Content>

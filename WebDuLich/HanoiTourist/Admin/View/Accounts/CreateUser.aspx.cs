@@ -17,23 +17,13 @@ namespace HanoiTourist.Admin.View
         AccountController acount = new AccountController();
         ConnectDB connectDB = new ConnectDB();
         Account account = new Account();
-        private string EncodeMD5(string pass)
-
-        {
-            MD5CryptoServiceProvider md5 = new MD5CryptoServiceProvider();
-            byte[] bs = System.Text.Encoding.UTF8.GetBytes(pass);
-            bs = md5.ComputeHash(bs);
-            System.Text.StringBuilder s = new System.Text.StringBuilder();
-            foreach (byte b in bs)
-            {
-                s.Append(b.ToString("x1").ToLower());
-            }
-            pass = s.ToString();
-            return pass;
-        }
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["user"] == null)
+            {
+                Response.Redirect("../Login.aspx");
+            }
+            ViewState["RefUrl"] = Request.UrlReferrer.ToString();
         }
 
         protected void Unnamed1_Click1(object sender, EventArgs e)
@@ -44,10 +34,9 @@ namespace HanoiTourist.Admin.View
                 account.Phone = txtPhone.Text.Trim();
                 account.Address = txtAdress.Text.Trim();
                 account.Email = txtEmail.Text.Trim();
-                account.Pass = txtPass.Text;
-                string passMD5 = EncodeMD5(account.Pass);
+                account.Pass = txtPass.Text.Trim();
+                string passMD5 = acount.EncodeMD5(account.Pass);
                 account.DateOfBirth = txtDateOfBirth.Text.Trim();
-                account.Id = Convert.ToInt32(txtId.Text.Trim());
                 string rePass = txtRepass.Text.Trim();
                 if (account.Pass != rePass)
                 {
@@ -63,18 +52,19 @@ namespace HanoiTourist.Admin.View
                     }
                     else
                     {
-                        string sql = "SELECT *FROM dbo.ACCOUNT WHERE ID = " + account.Id;
+                        string sql = "SELECT *FROM dbo.ACCOUNT WHERE EMAIL = '" + account.Email + "'";
                         DataTable dt = connectDB.getTable(sql);
                         if (dt.Rows.Count >= 1)
                         {
-                            txtThongbao.Text = "Mã toàn khoản đã tồn tại! Vui lòng nhập lại!";
+                            txtThongbao.Text = "Tài khoản đã tồn tại";
                             txtThongbao.ForeColor = System.Drawing.Color.Red;
                         }
                         else
                         {
-                            acount.CreateAccount(account.Id, account.Email, account.Fullname, passMD5, account.Phone, account.DateOfBirth, account.Address);
+                            acount.CreateAccount(account.Email, account.Fullname, passMD5, account.Phone, account.DateOfBirth, account.Address);
                             txtThongbao.Text = "Tạo tài khoản thành công!";
                             txtThongbao.ForeColor = System.Drawing.Color.LightGreen;
+                            Response.Redirect("Index.aspx");
                         }
 
                     }
@@ -84,9 +74,14 @@ namespace HanoiTourist.Admin.View
             }
             catch (Exception ex)
             {
-                txtThongbao.Text = "Tạo tài khoản thất bại do giá trị của 'Mã tài khoản quá' lớn!";
+                txtThongbao.Text = "Lỗi không xác định!";
                 txtThongbao.ForeColor = System.Drawing.Color.Red;
             }
+        }
+
+        protected void Unnamed2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Index.aspx");
         }
     }
 }

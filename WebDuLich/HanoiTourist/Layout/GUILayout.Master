@@ -106,6 +106,7 @@
 </head>
 
 <body>
+    <form runat="server">
     <div class="sticky-container" style="background-color: #FFF;">
     <ul class="sticky">
         <li title="Gọi tổng đài 19004518">
@@ -250,7 +251,8 @@
         </div>
         <div class="col-md-12" style="position: absolute; top: 40px;padding-left: 1130px;">
             <a  href="login.html" class="btn btn-default" style="font-size: 12px; border: 1px solid #FFA300; color: #FFA300;">Đăng ký</a>
-            <a  href="register.html" class="btn btn-warning" style="font-size: 12px; color: #FFF;">Đăng nhập</a>
+            <asp:Button runat="server" Text="Đăng nhập" CssClass="btn btn-warning" OnClick="btnLogin_Click" />
+           <%-- <a  href="register.html" class="btn btn-warning" style="font-size: 12px; color: #FFF;">Đăng nhập</a>--%>
         </div>
     </header>
     <!-- //header -->
@@ -927,7 +929,7 @@
             <a href="#"> Nhóm 4.</a>
         </p>
     </div>
-
+        </form>
 </body>
 
 </html>

@@ -18,7 +18,10 @@ namespace HanoiTourist.Admin.View
         AccountController accountController = new AccountController();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(Session["user"] == null)
+            {
+                Response.Redirect("../Login.aspx");
+            }
             SqlConnection conn = connect.getConnection();
             string sql = "SELECT *FROM dbo.ACCOUNT";
             DataTable dt = new DataTable();
@@ -40,7 +43,7 @@ namespace HanoiTourist.Admin.View
                 Session["ID"] = account.Id;
                 accountController.DeleteAccount(account.Id);
                 Response.Write("<script>alert('Xoá thành công')</script>");
-                Response.Redirect("ListUser.aspx");
+                Response.Redirect("Index.aspx");
             }
             catch (Exception ex)
             { }

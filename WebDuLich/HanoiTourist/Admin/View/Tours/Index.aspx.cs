@@ -5,18 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace HanoiTourist.Layout
+namespace HanoiTourist.Admin.View.Tours
 {
-    public partial class GUILayout : System.Web.UI.MasterPage
+    public partial class Index : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
-        }
-
-        protected void btnLogin_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("../Admin/View/Login.aspx");
         }
     }
 }

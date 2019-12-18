@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HanoiTourist.Admin.View {
-    
-    
-    public partial class CreateUser {
-        
+namespace HanoiTourist.Admin.View
+{
+
+
+    public partial class CreateUser
+    {
+
         /// <summary>
         /// ThongBao control.
         /// </summary>
@@ -20,16 +22,7 @@ namespace HanoiTourist.Admin.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label ThongBao;
-        
-        /// <summary>
-        /// txtId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtId;
-        
+
         /// <summary>
         /// txtEmail control.
         /// </summary>
@@ -38,7 +31,7 @@ namespace HanoiTourist.Admin.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtEmail;
-        
+
         /// <summary>
         /// txtFullname control.
         /// </summary>
@@ -47,7 +40,7 @@ namespace HanoiTourist.Admin.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFullname;
-        
+
         /// <summary>
         /// txtPhone control.
         /// </summary>
@@ -56,7 +49,7 @@ namespace HanoiTourist.Admin.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPhone;
-        
+
         /// <summary>
         /// txtDateOfBirth control.
         /// </summary>
@@ -65,7 +58,7 @@ namespace HanoiTourist.Admin.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtDateOfBirth;
-        
+
         /// <summary>
         /// txtAdress control.
         /// </summary>
@@ -74,7 +67,7 @@ namespace HanoiTourist.Admin.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAdress;
-        
+
         /// <summary>
         /// txtPass control.
         /// </summary>
@@ -83,7 +76,7 @@ namespace HanoiTourist.Admin.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtPass;
-        
+
         /// <summary>
         /// txtRepass control.
         /// </summary>
@@ -92,7 +85,7 @@ namespace HanoiTourist.Admin.View {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRepass;
-        
+
         /// <summary>
         /// txtThongbao control.
         /// </summary>
