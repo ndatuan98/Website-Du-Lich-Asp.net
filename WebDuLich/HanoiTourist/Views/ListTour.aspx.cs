@@ -28,6 +28,9 @@ namespace HanoiTourist.Views
             
         }
 
-        
+        protected void btnGiuCho_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

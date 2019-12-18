@@ -145,7 +145,7 @@
     <div style="width: 101%; background-color: #FFFFFF;padding: 10px;">
         <div class="col-md-10" style="background-color: #FFFFFF; padding-left: 240px;">
             <h4><u>TÌM KIẾM TOUR</u></h4>
-            <form runat="server" style="width: 100%;padding-top: 10px;">
+            <form  style="width: 100%;padding-top: 10px;">
                 <asp:DropDownList runat="server" Width="17%" Height="35px" ID="DrDiemXuatPhat">
                     <asp:ListItem></asp:ListItem>
                 </asp:DropDownList>
@@ -206,8 +206,8 @@
 								                <form action="#" method="post" style="padding-left: 175px; position:relative; bottom: 50px;">
 									                <fieldset>
                                                        <label style="margin-bottom:0px;">Giá từ</label><br />
-                                                       <asp:Label runat="server" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
-										                <input type="submit" name="submit" value="Giữ chỗ" style="color: #FFF;" class="btn btn-warning"/>
+                                                       <asp:Label runat="server" ForeColor="#FF0013" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
+                                                        <asp:Button ID="btnGiuCho" runat="server" Text="Giữ chỗ" class="btn btn-warning"  ForeColor="#FFFFFF" OnClick="btnGiuCho_Click"/>
 									                </fieldset>
 								                </form>
 							                </div>
@@ -258,14 +258,15 @@
                                                 <p>
                                                     <img src="../images/date.png"/>
                                                     <asp:Label runat="server" Text='<%#Eval("DEPARTURE_DATE") %>'> </asp:Label>
-                                                </p>
+                                                </p>s
 							                </div>
 							                <div class="snipcart-details top_brand_home_details" style="height:70px;">
 								                <form action="#" method="post" style="padding-left: 175px; position:relative; bottom: 50px;">
 									                <fieldset>
                                                        <label style="margin-bottom:0px;">Giá từ</label><br />
-                                                       <asp:Label runat="server" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
-										                <input type="submit" name="submit" value="Giữ chỗ" style="color: #FFF;" class="btn btn-warning"/>
+                                                       <asp:Label runat="server" ForeColor="#FF0013" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
+										                <asp:Button ID="btnGiuCho" runat="server" Text="Giữ chỗ" class="btn btn-warning"  ForeColor="#FFFFFF" OnClick="btnGiuCho_Click2" />
+                                                        <asp:HyperLink runat="server" Text="Giữ chỗ"  NavigateUrl='<%#"Cart.aspx?Detail_Id=" + Eval("Detail_Id") %>' ForeColor="#000000" class="btn btn-warning" ></asp:HyperLink>
 									                </fieldset>
 								                </form>
 							                </div>
@@ -322,8 +323,8 @@
 								                <form action="#" method="post" style="padding-left: 175px; position:relative; bottom: 50px;">
 									                <fieldset>
                                                        <label style="margin-bottom:0px;">Giá từ</label><br />
-                                                       <asp:Label runat="server" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
-										                <input type="submit" name="submit" value="Giữ chỗ" style="color: #FFF;" class="btn btn-warning"/>
+                                                       <asp:Label runat="server" ForeColor="#FF0013" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
+										                <asp:Button ID="btnGiuCho" runat="server" Text="Giữ chỗ" class="btn btn-warning"  ForeColor="#FFFFFF" OnClick="btnGiuCho_Click1" />
 									                </fieldset>
 								                </form>
 							                </div>

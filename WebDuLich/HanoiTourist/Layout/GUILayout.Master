@@ -106,6 +106,7 @@
 </head>
 
 <body>
+    <form runat="server">
     <div class="sticky-container" style="background-color: #FFF;">
     <ul class="sticky">
         <li title="Gọi tổng đài 19004518">
@@ -238,10 +239,6 @@
                                 </label>
                                 <a href="../Views/Library.aspx">THƯ VIỆN</a>
                                 <input type="checkbox" id="drop-2" />
-                                <ul>
-                                    <li><a href="portfolio.html" class="drop-text">Hình ảnh</a></li>
-                                    <li><a href="single.html" class="drop-text">Video</a></li>
-                                </ul>
                             </li> 
                             <li><a href="../Views/News.aspx">TIN TỨC</a></li> 
                             <li><a href="../Views/Contact.aspx">LIÊN HỆ</a></li> 
@@ -502,6 +499,7 @@
             <a href="#"> Nhóm 4.</a>
         </p>
     </div>
+        </form>
 </body>
 
 </html>
