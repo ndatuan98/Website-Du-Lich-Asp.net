@@ -260,14 +260,6 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolderID1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
-    
-    <section class="banner">
-        <!-- banner text -->
-        <div class="container">
-            <div class="banner_text_wthree_pvt">
-            </div>
-        </div>
-    </section>
     <!-- //banner -->
     <!-- about-->
   <%--  <section class="single_grid_w3_main align-w3-abt" id="about">

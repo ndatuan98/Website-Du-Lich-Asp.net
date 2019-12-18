@@ -584,16 +584,7 @@ input.form-control.bg-theme {
 
 /* banner */
 
-.banner {
-    background: url(../images/banner.jpg) center no-repeat;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    -ms-background-size: cover;
-    background-size: cover;
-    position: relative;
-    z-index: 1;
-}
+
 
 .banner_text_wthree_pvt {
     padding: 15vw 0;

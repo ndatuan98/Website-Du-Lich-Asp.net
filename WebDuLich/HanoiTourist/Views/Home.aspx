@@ -135,9 +135,45 @@
         <script type="text/javascript">jssor_1_slider_init();
         </script>
     </div>
-    <div>
-        <div class="row" style="margin-right:0px; background-color: #FFF;">
-            <asp:DataList runat="server" ID="ListTour" RepeatColumns="5">
+
+    <!--TÌM KIẾM -->
+    <div style="width: 100%; background-color: #FFFFFF;padding: 10px;">
+        <div class="col-md-10" style="background-color: #FFFFFF; padding-left: 240px;">
+            <h4><u>TÌM KIẾM TOUR</u></h4>
+            <form runat="server" style="width: 100%;padding-top: 10px;">
+                <asp:DropDownList runat="server" Width="17%" Height="35px" ID="DrDiemXuatPhat">
+                    <asp:ListItem></asp:ListItem>
+                </asp:DropDownList>
+                <asp:DropDownList runat="server" Width="17%" Height="35px" ID="DrDich">
+
+                </asp:DropDownList>
+                <asp:DropDownList runat="server" Width="17%" Height="35px" ID="DrLichTrinh">
+
+                </asp:DropDownList>
+                <asp:TextBox TextMode="Date" runat="server" Width="17%" Height="35px" ID="NgayThang"></asp:TextBox>
+                <asp:DropDownList runat="server" Width="17%" Height="35px" ID="DrKhoangGia">
+
+                </asp:DropDownList>
+                <asp:Button ForeColor="#FFFFFF" Text="Tìm kiếm" runat="server" CssClass="btn btn-warning" Height="35px" OnClick="Unnamed2_Click"/>
+            </form>
+            
+        </div>
+    </div>
+    <!--DỊCH VỤ CỦA CHÚNG TÔI -->
+    <div style="background-color:#F1F1F1;">
+        <h3 style="text-align: center;">DỊCH VỤ CỦA CHÚNG TÔI</h3>
+        <div class="col-md-10">
+
+        </div>
+    </div>
+    <!--HOT TOUR  -->
+    <div style="background-color: #FFF;padding-top: 10px;">
+        <div class="col-md-10" style="padding-left: 250px;padding-bottom: 10px;">
+            <u><h3 >HOT TOUR</h3></u>
+        </div>
+        <div>
+            <div class="row" style="margin-right:0px; background-color: #FFF;">
+            <asp:DataList runat="server" ID="ListHotTour" RepeatColumns="5">
                 <ItemTemplate>
                     <div class="form-Tour" style="background-color: #FFF; padding-left:0px; padding-left: 8px;width:20%;box-sizing:border-box;border-radius: 2px; width:100%;">
 		                <div class="hover14 column" style="padding: 1px;height:390px;border:1px solid #808080;">
@@ -147,11 +183,8 @@
 					                <figure id="formTour" style="margin:10px;">
 						                <div class="snipcart-item block" >
 							                <div class="snipcart-thumb" >
-								        
                                                <center>
-                                                   <h4><asp:Label runat="server" Text='<%#Eval("NAME_TOUR") %>'>
-
-                                                       </asp:Label></h4>
+                                                   <h4><asp:Label runat="server" Text='<%#Eval("NAME_TOUR") %>'></asp:Label></h4>
                                                </center> 
 								                <p>
                                                     <img  src="../images/traveler.png" width="14px" height="14px"/>
@@ -167,7 +200,6 @@
 									                <fieldset>
                                                        <label style="margin-bottom:0px;">Giá từ</label><br />
                                                        <asp:Label runat="server" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
-                                                
 										                <input type="submit" name="submit" value="Giữ chỗ" style="color: #FFF;" class="btn btn-warning"/>
 									                </fieldset>
 								                </form>
@@ -175,13 +207,134 @@
 						                </div>
 					                </figure>
 				                </div>
-			        </div>
+			                </div>
 		                </div>
 	                </div>
                 </ItemTemplate>
             </asp:DataList>
-            
+        </div>
+            <div style="text-align: center; padding: 15px;color: #FFF;">
+                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary"></asp:HyperLink>
+            </div>
+           
         </div>
         
+    </div>
+    <!--DANH MỤC TOUR -->
+    <!--TOUR TRONG NƯỚC -->
+    <div>
+        <div style="background-color: #FFF;padding-top: 10px;">
+        <div class="col-md-10" style="padding-left: 250px;padding-bottom: 10px;">
+            <u><h3 >TOUR TRONG NƯỚC</h3></u>
+        </div>
+        <div>
+            <div class="row" style="margin-right:0px; background-color: #FFF;">
+            <asp:DataList runat="server" ID="ListTourTN" RepeatColumns="5">
+                <ItemTemplate>
+                    <div class="form-Tour" style="background-color: #FFF; padding-left:0px; padding-left: 8px;width:20%;box-sizing:border-box;border-radius: 2px; width:100%;">
+		                <div class="hover14 column" style="padding: 1px;height:390px;border:1px solid #808080;">
+			                <div class="agile_top_brand_left_grid">
+				                <div class="agile_top_brand_left_grid1">
+                                    <asp:HyperLink ID="imagesp" runat="server" ImageUrl='<%#Eval("Image") %>' ImageWidth="292px" ImageHeight="260px"  >HyperLink</asp:HyperLink>
+					                <figure id="formTour" style="margin:10px;">
+						                <div class="snipcart-item block" >
+							                <div class="snipcart-thumb" >
+                                               <center>
+                                                   <h4><asp:Label runat="server" Text='<%#Eval("NAME_TOUR") %>'></asp:Label></h4>
+                                               </center> 
+								                <p>
+                                                    <img  src="../images/traveler.png" width="14px" height="14px"/>
+                                                    <asp:Label runat="server" Text='<%#Eval("VEHICLE") %>'> </asp:Label>
+								                </p>
+                                                <p>
+                                                    <img src="../images/date.png"/>
+                                                    <asp:Label runat="server" Text='<%#Eval("DEPARTURE_DATE") %>'> </asp:Label>
+                                                </p>
+							                </div>
+							                <div class="snipcart-details top_brand_home_details" style="height:70px;">
+								                <form action="#" method="post" style="padding-left: 175px; position:relative; bottom: 50px;">
+									                <fieldset>
+                                                       <label style="margin-bottom:0px;">Giá từ</label><br />
+                                                       <asp:Label runat="server" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
+										                <input type="submit" name="submit" value="Giữ chỗ" style="color: #FFF;" class="btn btn-warning"/>
+									                </fieldset>
+								                </form>
+							                </div>
+						                </div>
+					                </figure>
+				                </div>
+			                </div>
+		                </div>
+	                </div>
+                </ItemTemplate>
+            </asp:DataList>
+        </div>
+            <div style="text-align: center; padding: 15px;color: #FFF;">
+                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary"></asp:HyperLink>
+            </div>
+           
+        </div>
+        
+    </div>
+    </div>
+    <!-- TOUR NƯỚC NGOÀI -->
+    <div>
+        <div style="background-color: #FFF;padding-top: 10px;">
+        <div class="col-md-10" style="padding-left: 250px;padding-bottom: 10px;">
+            <u><h3 >TOUR NƯỚC NGOÀI</h3></u>
+        </div>
+        <div>
+            <div class="row" style="margin-right:0px; background-color: #FFF;">
+            <asp:DataList runat="server" ID="ListTourNN" RepeatColumns="5">
+                <ItemTemplate>
+                    <div class="form-Tour" style="background-color: #FFF; padding-left:0px; padding-left: 8px;width:20%;box-sizing:border-box;border-radius: 2px; width:100%;">
+		                <div class="hover14 column" style="padding: 1px;height:390px;border:1px solid #808080;">
+			                <div class="agile_top_brand_left_grid">
+				                <div class="agile_top_brand_left_grid1">
+                                    <asp:HyperLink ID="imagesp" runat="server" ImageUrl='<%#Eval("Image") %>' ImageWidth="292px" ImageHeight="260px"  >HyperLink</asp:HyperLink>
+					                <figure id="formTour" style="margin:10px;">
+						                <div class="snipcart-item block" >
+							                <div class="snipcart-thumb" >
+                                               <center>
+                                                   <h4><asp:Label runat="server" Text='<%#Eval("NAME_TOUR") %>'></asp:Label></h4>
+                                               </center> 
+								                <p>
+                                                    <img  src="../images/traveler.png" width="14px" height="14px"/>
+                                                    <asp:Label runat="server" Text='<%#Eval("VEHICLE") %>'> </asp:Label>
+								                </p>
+                                                <p>
+                                                    <img src="../images/date.png"/>
+                                                    <asp:Label runat="server" Text='<%#Eval("DEPARTURE_DATE") %>'> </asp:Label>
+                                                </p>
+							                </div>
+							                <div class="snipcart-details top_brand_home_details" style="height:70px;">
+								                <form action="#" method="post" style="padding-left: 175px; position:relative; bottom: 50px;">
+									                <fieldset>
+                                                       <label style="margin-bottom:0px;">Giá từ</label><br />
+                                                       <asp:Label runat="server" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
+										                <input type="submit" name="submit" value="Giữ chỗ" style="color: #FFF;" class="btn btn-warning"/>
+									                </fieldset>
+								                </form>
+							                </div>
+						                </div>
+					                </figure>
+				                </div>
+			                </div>
+		                </div>
+	                </div>
+                </ItemTemplate>
+            </asp:DataList>
+        </div>
+            <div style="text-align: center; padding: 15px;color: #FFF;">
+                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary"></asp:HyperLink>
+            </div>
+           
+        </div>
+        
+    </div>
+    </div>
+    <!-- SLIDE CỜ CÁC NƯỚC-->
+    <div>
+
     </div>
 </asp:Content>
