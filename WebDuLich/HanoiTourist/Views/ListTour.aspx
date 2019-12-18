@@ -37,8 +37,8 @@
 								                <form action="#" method="post" style="padding-left: 175px; position:relative; bottom: 50px;">
 									                <fieldset>
                                                        <label style="margin-bottom:0px;">Giá từ</label><br />
-                                                       <asp:Label runat="server" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
-										                <input type="submit" name="submit" value="Giữ chỗ" style="color: #FFF;" class="btn btn-warning"/>
+                                                       <asp:Label runat="server" ForeColor="#FF0013" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
+										                <asp:Button ID="btnGiuCho" runat="server" Text="Giữ chỗ" class="btn btn-warning"  ForeColor="#FFFFFF" OnClick="btnGiuCho_Click" />
 									                </fieldset>
 								                </form>
 							                </div>

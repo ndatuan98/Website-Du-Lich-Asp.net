@@ -22,13 +22,11 @@ namespace HanoiTourist.Views
             string sqlTourNN = "SELECT a.NAME_TOUR,a.VEHICLE,b.DEPARTURE_DATE,a.ADULT_FARE,a.Image,b.Detail_Id "+
                                   "  FROM dbo.DETAILS_TOUR AS  a INNER JOIN dbo.TOUR AS b on a.ID = b.DETAIL_ID "+
                                   "  WHERE b.COUNTRY_ID != 0";
-            string sqlBanner = "SELECT image FROM dbo.DETAILS_TOUR WHERE CODE='BANNER'";
             SqlConnection conn = connectDB.getConnection();
             conn.Open();
             DataTable dt = connectDB.getTable(sqlHotTour);
             DataTable dt1 = connectDB.getTable(sqlTourTN);
             DataTable dt2 = connectDB.getTable(sqlTourNN);
-            DataTable dt3 = connectDB.getTable(sqlBanner);
 
             ListHotTour.DataSource = dt;
             ListHotTour.DataBind();
@@ -85,6 +83,26 @@ namespace HanoiTourist.Views
             string khoangGia = DrKhoangGia.SelectedValue.ToString();
             string chuoiTimKiem = diemXP + "," + dich + "," + lichTrinh + "," + ngayKhoiHanh + "," + khoangGia;
             Response.Redirect("SearchResult.aspx?chuoiTimKiem=" + chuoiTimKiem);
+        }
+
+        protected void ListHotTour_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnGiuCho_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnGiuCho_Click1(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnGiuCho_Click2(object sender, EventArgs e)
+        {
+
         }
     }
 }

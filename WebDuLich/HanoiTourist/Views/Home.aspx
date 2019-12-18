@@ -206,8 +206,8 @@
 								                <form action="#" method="post" style="padding-left: 175px; position:relative; bottom: 50px;">
 									                <fieldset>
                                                        <label style="margin-bottom:0px;">Giá từ</label><br />
-                                                       <asp:Label runat="server" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
-										                <input type="submit" name="submit" value="Giữ chỗ" style="color: #FFF;" class="btn btn-warning"/>
+                                                       <asp:Label runat="server" ForeColor="#FF0013" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
+                                                        <asp:Button ID="btnGiuCho" runat="server" Text="Giữ chỗ" class="btn btn-warning"  ForeColor="#FFFFFF" OnClick="btnGiuCho_Click"/>
 									                </fieldset>
 								                </form>
 							                </div>
@@ -221,7 +221,7 @@
             </asp:DataList>
         </div>
             <div style="text-align: center; padding: 15px;color: #FFF;">
-                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary" NavigateUrl="ListTour.aspx?Country_ID=0"></asp:HyperLink>
+                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary" NavigateUrl="ListTour.aspx?Country_ID=-3"></asp:HyperLink>
             </div>
            
         </div>
@@ -258,14 +258,15 @@
                                                 <p>
                                                     <img src="../images/date.png"/>
                                                     <asp:Label runat="server" Text='<%#Eval("DEPARTURE_DATE") %>'> </asp:Label>
-                                                </p>
+                                                </p>s
 							                </div>
 							                <div class="snipcart-details top_brand_home_details" style="height:70px;">
 								                <form action="#" method="post" style="padding-left: 175px; position:relative; bottom: 50px;">
 									                <fieldset>
                                                        <label style="margin-bottom:0px;">Giá từ</label><br />
-                                                       <asp:Label runat="server" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
-										                <input type="submit" name="submit" value="Giữ chỗ" style="color: #FFF;" class="btn btn-warning"/>
+                                                       <asp:Label runat="server" ForeColor="#FF0013" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
+										                <asp:Button ID="btnGiuCho" runat="server" Text="Giữ chỗ" class="btn btn-warning"  ForeColor="#FFFFFF" OnClick="btnGiuCho_Click2" />
+                                                        <asp:HyperLink runat="server" Text="Giữ chỗ"  NavigateUrl='<%#"Cart.aspx?Detail_Id=" + Eval("Detail_Id") %>' ForeColor="#000000" class="btn btn-warning" ></asp:HyperLink>
 									                </fieldset>
 								                </form>
 							                </div>
@@ -279,7 +280,7 @@
             </asp:DataList>
         </div>
             <div style="text-align: center; padding: 15px;color: #FFF;">
-                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary" NavigateUrl="ListTour.aspx?Country_ID=1"></asp:HyperLink>
+                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary" NavigateUrl="ListTour.aspx?Country_ID=-1"></asp:HyperLink>
             </div>
            
         </div>
@@ -322,8 +323,8 @@
 								                <form action="#" method="post" style="padding-left: 175px; position:relative; bottom: 50px;">
 									                <fieldset>
                                                        <label style="margin-bottom:0px;">Giá từ</label><br />
-                                                       <asp:Label runat="server" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
-										                <input type="submit" name="submit" value="Giữ chỗ" style="color: #FFF;" class="btn btn-warning"/>
+                                                       <asp:Label runat="server" ForeColor="#FF0013" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
+										                <asp:Button ID="btnGiuCho" runat="server" Text="Giữ chỗ" class="btn btn-warning"  ForeColor="#FFFFFF" OnClick="btnGiuCho_Click1" />
 									                </fieldset>
 								                </form>
 							                </div>
@@ -337,7 +338,7 @@
             </asp:DataList>
         </div>
             <div style="text-align: center; padding: 15px;color: #FFF;">
-                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary"  NavigateUrl="ListTour.aspx?Country_ID=2"></asp:HyperLink>
+                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary"  NavigateUrl="ListTour.aspx?Country_ID=-2"></asp:HyperLink>
             </div>
            
         </div>
