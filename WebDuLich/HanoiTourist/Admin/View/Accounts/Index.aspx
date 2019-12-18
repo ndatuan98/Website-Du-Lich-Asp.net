@@ -1,12 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout/AdminLayout.Master" AutoEventWireup="true" CodeBehind="ListUser.aspx.cs" Inherits="HanoiTourist.Admin.View.ListUser" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout/AdminLayout.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="HanoiTourist.Admin.View.ListUser" %>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <asp:GridView runat="server" ID="DanhSachUser" CellPadding="4" Width="100%" AllowPaging="True" AutoGenerateColumns="False" ForeColor="#333333" GridLines="None" OnRowDeleting="DanhSachUser_Delete" OnRowEditing="DanhSachUser_Editing">
+    <asp:GridView runat="server" ID="DanhSachUser" CellPadding="4" Width="100%" AllowPaging="True" AutoGenerateColumns="False" ForeColor="#333333" GridLines="None" OnRowDeleting="DanhSachUser_Delete" OnRowEditing="DanhSachUser_Editing" DataKeyNames="ID">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
-            <asp:BoundField DataField="Email" HeaderText="Tên đăng nhập" ReadOnly="True" SortExpression="Email" />
+            <asp:BoundField DataField="ID" HeaderText="ID" Visible="False" />
+            <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Phone" />
             <asp:BoundField DataField="Fullname" HeaderText="Tên đầy đủ" SortExpression="Fullname" />
             <asp:BoundField DataField="Date_Of_Birth" HeaderText="Ngày sinh" SortExpression="Address" />
-            <asp:BoundField DataField="Email" HeaderText="Email" SortExpression="Phone" />
             <asp:BoundField DataField="Phone" HeaderText="Số điện thoại" SortExpression="Phone" />
             <asp:BoundField DataField="Address" HeaderText="Địa chỉ" SortExpression="Address" />
             <asp:CommandField EditText="Sửa" ShowEditButton="True" CancelText="Huỷ" UpdateText="Cập nhật" />

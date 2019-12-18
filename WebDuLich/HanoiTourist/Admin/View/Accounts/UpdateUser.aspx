@@ -16,8 +16,6 @@
   <link href="../admin/css/sb-admin-2.min.css" rel="stylesheet">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h2 class="text-gray-900">Mã tài khoản: </h2>
-    <h3 class="text-gray-900"><asp:Label ID="IdUser" runat="server" Text="Label"></asp:Label></h3>
         <h1 class=" h3 text-gray-900 mb-4">Cập nhật tài khoản</h1>
      <div class="p-5">
             <form class="user">
@@ -51,6 +49,8 @@
                 </div><br />
                 <div class="col-sm-8">
                     <asp:Button runat="server" Text="Cập nhật tài khoản" class="btn btn-primary btn-user btn-block" OnClick="Unnamed1_Click">
+                    </asp:Button>
+                    <asp:Button runat="server" Text="Quay lại" class="btn btn-basic btn-user btn-block" OnClick="Unnamed2_Click">
                     </asp:Button>
                 </div>
                     <hr>

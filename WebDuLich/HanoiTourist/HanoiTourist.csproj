@@ -1670,9 +1670,15 @@
     <Content Include="Admin\vendor\jquery\jquery.min.js" />
     <Content Include="Admin\vendor\jquery\jquery.slim.js" />
     <Content Include="Admin\vendor\jquery\jquery.slim.min.js" />
-    <Content Include="Admin\View\CreateUser.aspx" />
-    <Content Include="Admin\View\ListUser.aspx" />
-    <Content Include="Admin\View\UpdateUser.aspx" />
+    <Content Include="Admin\View\Accounts\CreateUser.aspx" />
+    <Content Include="Admin\View\Accounts\Index.aspx" />
+    <Content Include="Admin\View\Accounts\UpdateUser.aspx" />
+    <Content Include="Admin\View\ForgotPassword.aspx" />
+    <Content Include="Admin\View\Login.aspx" />
+    <Content Include="Admin\View\Register.aspx" />
+    <Content Include="Admin\View\Tours\CreateTour.aspx" />
+    <Content Include="Admin\View\Tours\Index.aspx" />
+    <Content Include="Admin\View\Tours\UpdateTour.aspx" />
     <Content Include="content\css\bootstrap-grid.css" />
     <Content Include="content\css\bootstrap-grid.min.css" />
     <Content Include="content\css\bootstrap-reboot.css" />
@@ -1742,26 +1748,68 @@
     <Content Include="Layout\GUILayout.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Admin\View\CreateUser.aspx.cs">
+    <Compile Include="Admin\View\Accounts\CreateUser.aspx.cs">
       <DependentUpon>CreateUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\View\CreateUser.aspx.designer.cs">
+    <Compile Include="Admin\View\Accounts\CreateUser.aspx.designer.cs">
       <DependentUpon>CreateUser.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\View\ListUser.aspx.cs">
-      <DependentUpon>ListUser.aspx</DependentUpon>
+    <Compile Include="Admin\View\Accounts\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\View\ListUser.aspx.designer.cs">
-      <DependentUpon>ListUser.aspx</DependentUpon>
+    <Compile Include="Admin\View\Accounts\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Admin\View\UpdateUser.aspx.cs">
+    <Compile Include="Admin\View\Accounts\UpdateUser.aspx.cs">
       <DependentUpon>UpdateUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Admin\View\UpdateUser.aspx.designer.cs">
+    <Compile Include="Admin\View\Accounts\UpdateUser.aspx.designer.cs">
       <DependentUpon>UpdateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\View\ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\View\ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\View\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\View\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\View\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\View\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\View\Tours\CreateTour.aspx.cs">
+      <DependentUpon>CreateTour.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\View\Tours\CreateTour.aspx.designer.cs">
+      <DependentUpon>CreateTour.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\View\Tours\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\View\Tours\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\View\Tours\UpdateTour.aspx.cs">
+      <DependentUpon>UpdateTour.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\View\Tours\UpdateTour.aspx.designer.cs">
+      <DependentUpon>UpdateTour.aspx</DependentUpon>
     </Compile>
     <Compile Include="Controller\AccountController.cs" />
     <Compile Include="Controller\HomeController.cs" />
