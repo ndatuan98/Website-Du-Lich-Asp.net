@@ -34,8 +34,8 @@ namespace HanoiTourist.Admin.View.Tours
                 tour.Seat = Int32.Parse(txtSeats.Text);
                 tour.Schedule_tour = txtChedule.Text.Trim();
                 tour.Vehicle = txtVeicle.Text.Trim();
-                tour.Create_date = txtCreatedate.Text.Trim();
-                tourController.CreateTour(tour.Code, tour.Departure, tour.Destination, tour.Period, tour.Vehicle, tour.Seat, tour.Schedule_tour, tour.Vehicle, tour.Create_date);
+                tour.Create_date = DateTime.Parse(txtCreatedate.Text.Trim());
+                tourController.CreateTour(tour.Code, tour.Departure, tour.Destination, tour.Period, tour.Vehicle, tour.Seat.ToString(), tour.Schedule_tour, tour.Vehicle, tour.Create_date.ToString());
                 txtThongbao.Text = "Tạo tour thành công!";
                 txtThongbao.ForeColor = System.Drawing.Color.LightGreen;
                 Response.Redirect("Index.aspx");
