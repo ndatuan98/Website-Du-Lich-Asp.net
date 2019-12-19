@@ -1871,6 +1871,7 @@
     <Content Include="Views\ListTour.aspx" />
     <Content Include="Views\ListTourWithMenu.aspx" />
     <Content Include="Views\News.aspx" />
+    <Content Include="Views\ProfileAcc.aspx" />
     <Content Include="Views\SearchResult.aspx" />
     <Content Include="Views\Transport.aspx" />
     <Content Include="Web.config" />
@@ -2041,6 +2042,13 @@
     </Compile>
     <Compile Include="Views\News.aspx.designer.cs">
       <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProfileAcc.aspx.cs">
+      <DependentUpon>ProfileAcc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ProfileAcc.aspx.designer.cs">
+      <DependentUpon>ProfileAcc.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\SearchResult.aspx.cs">
       <DependentUpon>SearchResult.aspx</DependentUpon>

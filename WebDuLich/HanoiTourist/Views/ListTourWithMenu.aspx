@@ -15,7 +15,7 @@
 		                <div class="hover14 column" style="padding: 1px;height:450px;border:1px solid #808080;">
 			                <div class="agile_top_brand_left_grid">
 				                <div class="agile_top_brand_left_grid1">
-                                    <asp:HyperLink ID="imag" runat="server" ImageUrl='<%#Eval("Image") %>' ImageWidth="292px" ImageHeight="260px"  NavigateUrl='<%#"Detail_Tour.aspx?Detail_Id=" + Eval("Detail_Id") %>' ></asp:HyperLink>
+                                    <asp:HyperLink ID="imag" runat="server" ImageUrl='<%#Eval("Image") %>' ImageWidth="330px" ImageHeight="260px"  NavigateUrl='<%#"Detail_Tour.aspx?Detail_Id=" + Eval("Detail_Id") %>' ></asp:HyperLink>
 					                <figure id="formTour" style="margin:10px;  width: 305px;">
 						                <div class="snipcart-item block" >
 							                <div class="snipcart-thumb" >
@@ -24,6 +24,8 @@
                                                        <asp:HyperLink runat="server" Text='<%#Eval("NAME_TOUR") %>'  NavigateUrl='<%#"Detail_Tour.aspx?Detail_Id=" + Eval("Detail_Id") %>' ForeColor="#000000" ></asp:HyperLink>
                                                    </h4>
                                                </center> 
+                                                <div class="row">
+                                                    <div class="col-md-6">
 								                <p>
                                                     <img  src="../images/traveler.png" width="14px" height="14px"/>
                                                     <asp:Label runat="server" Text='<%#Eval("VEHICLE") %>'> </asp:Label>
@@ -32,15 +34,18 @@
                                                     <img src="../images/date.png"/>
                                                     <asp:Label runat="server" Text='<%#Eval("DEPARTURE_DATE","{0:d}") %>'> </asp:Label>
                                                 </p>
-							                </div>
-							                <div class="snipcart-details top_brand_home_details" style="height:70px;">
-								                <form action="#" method="post" style="padding-left: 175px; position:relative; bottom: 100px; padding-top: 30px;">
-									                <fieldset style="padding-left: 175px; position:relative; bottom: 75px; padding-top: 30px;>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        
+								                <form action="#" method="post" style="">
+									                <fieldset style="">
                                                        <label style="margin-bottom:0px;">Giá từ</label><br />
                                                        <asp:Label runat="server" ForeColor="#FF0013" Text='<%#Eval("ADULT_FARE","{0:#,###đ}") %>'> </asp:Label><br />
 										                <asp:Button ID="btnGiuCho" runat="server" Text="Giữ chỗ" class="btn btn-warning"  ForeColor="#FFFFFF" />
 									                </fieldset>
 								                </form>
+                                                    </div>
+                                                </div>
 							                </div>
 						                </div>
 					                </figure>

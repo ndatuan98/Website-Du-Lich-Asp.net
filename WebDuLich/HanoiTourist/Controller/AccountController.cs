@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using HanoiTourist.DTO;
 using System.Security.Cryptography;
+using HanoiTourist.Models;
 
 namespace HanoiTourist.Controllers
 {
@@ -83,6 +84,20 @@ namespace HanoiTourist.Controllers
                     return -1;
                 }
             }
+        }
+        public Account getByEmail(string email)
+        {
+            Account res = new Account();
+            string sql = "select * from dbo.ACCOUNT where EMAIL = '" + email.Trim() + "'";
+            DataTable dt = connectDB.getTable(sql);
+            res.Id = Int32.Parse(dt.Rows[0][0].ToString());
+            res.Email = dt.Rows[0][1].ToString();
+            res.Fullname = dt.Rows[0][2].ToString();
+            res.Pass = dt.Rows[0][3].ToString();
+            res.Phone = dt.Rows[0][4].ToString();
+            res.DateOfBirth = dt.Rows[0][5].ToString();
+            res.Address = dt.Rows[0][6].ToString();
+            return res;
         }
         public void Update(int userId,string email, string fullname, string pass, string phone, string dateOfBirth, string Address)
         {

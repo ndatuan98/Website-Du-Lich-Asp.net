@@ -55,6 +55,10 @@ namespace HanoiTourist.Layout
         {
             Response.Redirect("../Admin/View/Register.aspx");
         }
+        protected void btnProfile_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ProfileAcc.aspx");
+        }
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             Session.Remove("user");
