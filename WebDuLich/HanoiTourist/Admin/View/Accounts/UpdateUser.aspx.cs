@@ -40,8 +40,24 @@ namespace HanoiTourist.Admin.View
                     txtPhone.Text = reader["Phone"].ToString();
                     txtDateOfBirth.Text = reader["Date_OF_Birth"].ToString();
                     txtAdress.Text = reader["ADDRESS"].ToString();
+                    if (Session["user"].ToString() == reader["Email"].ToString())
+                    {
+                        cbIsAdmin.Enabled = false;
+                    }
+                    if (bool.Parse(reader["IS_ADMIN"].ToString()) == true)
+                    {
+                        cbIsAdmin.Checked = true;
+                    }
+                    else
+                    {
+                        cbIsAdmin.Checked = false;
+                    }
                 }
             }
+        }
+        protected void cbIsAdmin_Checked(object sender, EventArgs e)
+        {
+
         }
 
         protected void Unnamed1_Click(object sender, EventArgs e)
@@ -56,6 +72,14 @@ namespace HanoiTourist.Admin.View
                 account.Email = txtEmail.Text.Trim();
                 account.Pass = txtPass.Text;
                 account.DateOfBirth = txtDateOfBirth.Text.Trim();
+                if(cbIsAdmin.Checked == true)
+                {
+                    account.Is_Admin = true;
+                }
+                else
+                {
+                    account.Is_Admin = false;
+                }
                 string repass = txtRepass.Text.Trim();
                 if (account.Pass != repass)
                 {
@@ -71,7 +95,7 @@ namespace HanoiTourist.Admin.View
                     }
                     else
                     {
-                        ac.Update(account.Id, account.Email, account.Fullname, account.Pass, account.Phone, account.DateOfBirth, account.Address);
+                        ac.Update(account.Id, account.Email, account.Fullname, ac.EncodeMD5(account.Pass), account.Phone, account.DateOfBirth, account.Address, account.Is_Admin);
                         Response.Redirect("Index.aspx");
                     }
 

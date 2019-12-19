@@ -97,13 +97,14 @@ namespace HanoiTourist.Controllers
             res.Phone = dt.Rows[0][4].ToString();
             res.DateOfBirth = dt.Rows[0][5].ToString();
             res.Address = dt.Rows[0][6].ToString();
-            return res;
+            res.Is_Admin = bool.Parse(dt.Rows[0][7].ToString());
+            return res; 
         }
-        public void Update(int userId,string email, string fullname, string pass, string phone, string dateOfBirth, string Address)
+        public void Update(int userId,string email, string fullname, string pass, string phone, string dateOfBirth, string Address , bool isAdmin)
         {
             SqlConnection conn = connectDB.getConnection();
             string sqlUpdate = "UPDATE dbo.ACCOUNT SET EMAIL=@email,FULLNAME = @fullname, PASS = @pass, " +
-                        "PHONE = @phone, DATE_OF_BIRTH = @date_of_birth, ADDRESS = @address WHERE ID =" + userId;
+                        "PHONE = @phone, DATE_OF_BIRTH = @date_of_birth, ADDRESS = @address, IS_ADMIN = @isAdmin WHERE ID =" + userId;
             SqlCommand cmd =  new SqlCommand(sqlUpdate, conn);
             cmd.Parameters.AddWithValue("@Email",email);
             cmd.Parameters.AddWithValue("@FullName", fullname);
@@ -111,6 +112,7 @@ namespace HanoiTourist.Controllers
             cmd.Parameters.AddWithValue("@Phone", phone);
             cmd.Parameters.AddWithValue("@date_of_birth", dateOfBirth);
             cmd.Parameters.AddWithValue("@address", Address);
+            cmd.Parameters.AddWithValue("@isAdmin", isAdmin);
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();

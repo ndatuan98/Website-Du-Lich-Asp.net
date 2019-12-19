@@ -50,7 +50,7 @@ namespace HanoiTourist.Views
                     }
                     else
                     {
-                        ac.Update(acc.Id, acc.Email, txtFullname.Text, acc.Pass, txtPhone.Text, txtBirthdate.Text, txtAddress.Text);
+                        ac.Update(acc.Id, acc.Email, txtFullname.Text, acc.Pass, txtPhone.Text, txtBirthdate.Text, txtAddress.Text, acc.Is_Admin);
                         lblThongbao.Text = "Cập nhật thông tin thành công!";
                         lblThongbao.ForeColor = System.Drawing.Color.Blue;
                     }
@@ -80,7 +80,7 @@ namespace HanoiTourist.Views
                     }
                     else
                     {
-                        ac.Update(acc.Id, acc.Email, acc.Fullname, ac.EncodeMD5(txtNewPass.Text), acc.Phone, acc.DateOfBirth, acc.Address);
+                        ac.Update(acc.Id, acc.Email, acc.Fullname, ac.EncodeMD5(txtNewPass.Text), acc.Phone, acc.DateOfBirth, acc.Address, acc.Is_Admin);
                         lblChangePass.Text = "Thay đổi mật khẩu thành công";
                         lblChangePass.ForeColor = System.Drawing.Color.Blue;
                     }
