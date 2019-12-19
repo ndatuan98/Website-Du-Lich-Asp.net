@@ -104,7 +104,7 @@
     </asp:ContentPlaceHolder>
 </head>
 
-<body>
+<body style="overflow-x: hidden;">
     <form id="form1" runat="server">
     <div class="sticky-container" style="background-color: #FFF;">
     <ul class="sticky">
@@ -303,38 +303,38 @@
      </div>
 
      <!--Footer -->
- <footer class="footer py-md-5 pt-md-3 pb-sm-5">
+ <footer class="footer py-md-5 pt-md-3 pb-sm-5" style="padding-bottom: 0px !important;">
         <div style="background-image: url(../images/footer_banner4.png); position: fixed;width: 100%;bottom: 20px; z-index: -100;background-attachment: fixed;background-size: cover;">
         </div>
         <div class="container" >
             <div class="row p-sm-4 px-3 py-3">
                 <div class="col-lg-3  col-md-6 mt-lg-0 mt-4">
                     <div class="footerv2-w3ls">
-                        <h3 class="mb-3 w3f_title">TOUR TRONG NƯỚC</h3>
+                        <h3 class="mb-3 w3f_title" style="border-left:3px solid #ff9300; padding-left: 7px;">TOUR TRONG NƯỚC</h3>
                         <hr>
                         <ul class="list-w3pvtits">
                             <li>
-                                <a href="index.html">
+                                <a href="#">
                                     Combo du lịch
                                 </a>
                             </li>
                             <li class="my-2">
-                                <a href="about.html">
+                                <a href="#">
                                     Tour giờ chót
                                 </a>
                             </li>
                             <li class="my-2">
-                                <a href="portfolio.html">
+                                <a href="#">
                                     Tour thường xuyên
                                 </a>
                             </li>
                             <li class="mb-2">
-                                <a href="single.html">
+                                <a href="#">
                                     Tour giờ chót
                                 </a>
                             </li>
                             <li>
-                                <a href="contact.html">
+                                <a href="#">
                                     Combo du lịch
                                 </a>
                             </li>
@@ -343,26 +343,26 @@
                 </div>
                 <div class="col-lg-3  col-md-6 mt-lg-0 mt-4">
                     <div class="footerv2-w3ls">
-                        <h3 class="mb-3 w3f_title">TOUR NƯỚC NGOÀI</h3>
+                        <h3 class="mb-3 w3f_title" style="border-left:3px solid #ff9300; padding-left: 7px;">TOUR NƯỚC NGOÀI</h3>
                         <hr>
                         <ul class="list-w3pvtits">
                             <li class="my-2">
-                                <a href="single.html">
+                                <a href="#">
                                     Tour theo điểm đến
                                 </a>
                             </li>
                             <li class="my-2">
-                                <a href="portfolio.html">
+                                <a href="#">
                                     Tour thường xuyên
                                 </a>
                             </li>
                             <li class="mb-2">
-                                <a href="contact.html">
+                                <a href="#">
                                     Tour giờ chót
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html">
+                                <a href="#">
                                     Combo du lịch
                                 </a>
                             </li>
@@ -371,31 +371,31 @@
                 </div>
                 <div class="col-lg-3 col-md-6 mt-lg-0 mt-4">
                     <div class="footerv2-w3ls">
-                        <h3 class="mb-3 w3f_title">DỊCH VỤ</h3>
+                        <h3 class="mb-3 w3f_title" style="border-left:3px solid #ff9300; padding-left: 7px;">DỊCH VỤ</h3>
                         <hr>
                         <ul class="list-w3pvtits">
                             <li>
-                                <a href="single.html">
+                                <a href="#">
                                     Visa
                                 </a>
                             </li>
                             <li class="my-2">
-                                <a href="portfolio.html">
+                                <a href="#">
                                     Du thuyền
                                 </a>
                             </li>
                             <li class="my-2">
-                                <a href="about.html">
+                                <a href="#">
                                     Khách sạn
                                 </a>
                             </li>
                             <li class="mb-2">
-                                <a href="contact.html">
+                                <a href="#">
                                     Vé máy bay
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html">
+                                <a href="#">
                                     Du lịch MICE
                                 </a>
                             </li>
@@ -404,32 +404,32 @@
                 </div>
                 <div class="col-lg-3  col-md-6 mt-lg-0 mt-4">
                     <div class="footerv2-w3ls">
-                        <h3 class="mb-3 w3f_title" >VỀ HANOITOURIST</h3>
+                        <h3 class="mb-3 w3f_title" style="border-left:3px solid #ff9300; padding-left: 7px;">VỀ HANOITOURIST</h3>
                         <hr>
-                        <ul class="list-w3pvtits">
+                        <ul class="list-w3pvtits" style="">
                             <li class="my-2">
-                                <a href="portfolio.html">
+                                <a href="#">
                                     Giới thiệu
                                 </a>
                             </li>
                             <li>
-                                <a href="about.html">
+                                <a href="#">
                                     Liên hệ
                                 </a>
                             </li>
                             <li class="my-2">
-                                <a href="single.html">
+                                <a href="#">
                                     Tin tức
                                 </a>
                             </li>
 
                             <li class="mb-2">
-                                <a href="contact.html">
+                                <a href="#">
                                     Thư viện
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html">
+                                <a href="#">
                                     Cam kết bảo mật
                                 </a>
                             </li>
@@ -437,8 +437,8 @@
                     </div>
                 </div>
             </div>
-            <hr style="height: 4px; color: #FFF;">
-            <div class="p-sm-4 px-3 py-3">
+            <hr style="height: 0.3px; border: 0.3px solid white;" />
+            <div class="p-sm-4 px-3 py-3" style="padding: 0px !important;">
                 <p>
                     <img src="../images/logo_footer.png" width="250px" height="86px" />
                 </p>
@@ -446,30 +446,38 @@
                         HANOITOURIST*UY TÍN*CHẤT LƯỢNG
                 </h5>
             </div>
-            <div class="row p-sm-12 px-3 py-3">
-                 <div class="col-lg-6  col-md-6 mt-lg-0 mt-4" style="color: #FFF;">
-                    <ul>
-                        <li class="fv3-contact mt-2">
-                            <img src="../images/icon1.png">
+            <div class="row p-sm-12 px-3 py-3" style="padding-bottom: 0px !important;">
+                 <div class="col-lg-6  col-md-6 mt-lg-0 mt-4" style="color: #FFF; font-size: 14px;">
+                     <div class="fv3-contact mt-2">
+                        <p>
+                            <img src="../images/icon12.png">
                             Trụ sở chính:18 Lý Thường Kiệt, Ph.Phan Chu Trinh, Q.Hoàn Kiếm, Hà Nội
-                        </li>
-                        <li class="fv3-contact my-2">
-                            <img src="../images/icon1.png">
-                            +Chi nhánh:Hanoitourist Ba Đình, 134 Nguyễn Thái Học, Q.Ba Đình, Hà Nội
-                        </li>
-                        <li class="fv3-contact">
+                        </p>
+                    </div>
+                     <div class="fv3-contact mt-2">
+                        <p>
+                            <img src="../images/icon12.png">
+                            Chi nhánh:Hanoitourist Ba Đình, 134 Nguyễn Thái Học, Q.Ba Đình, Hà Nội
+                        </p>
+                    </div>
+                     <div class="fv3-contact mt-2">
+                        <p>
                             <img src="../images/icon13.png"><span> </span>
                            Website: <a href="#">http://www.hanoitourist.vn</a>
-                        </li>
-                        <li class="fv3-contact">
+                        </p>
+                    </div>
+                     <div class="fv3-contact mt-2">
+                        <p>
                             <img src="../images/icon14.png"><span> </span>
                            Email: sales@hanoitourist.vn
-                        </li>
-                        <li class="fv3-contact">
+                        </p>
+                    </div>
+                     <div class="fv3-contact mt-2">
+                        <p>
                             <img src="../images/icon15.png"><span> </span>
                            Hotline:19004518 ( Ext: 8)
-                        </li>
-                    </ul>
+                        </p>
+                    </div>
                 </div>
                 <div class="col-lg-6  col-md-6 mt-lg-0 mt-4" style="color: #FFF;">
                     <div class="fv3-contact mt-2">
@@ -504,15 +512,15 @@
                     </div>
                 </div>
             </div>
-            <hr style="height: 4px; color: #FFF;">
+            <hr style="height: 0.3px; border: 0.3px solid white;">
             <div class="row p-sm-12 px-3 py-3">
                 <div class="col-lg-6  col-md-6 mt-lg-0 mt-4 ">
                     <img src="../images/logo5.png">
                     <img src="../images/logo6.png" style="padding-left: 10px;">
                     <img src="../images/sdlhn.png" style="padding-left: 10px;">
                 </div>
-                <div class="col-lg-6  col-md-6 mt-lg-0 mt-4" >
-                Liên hệ cộng đồng : 
+                <div class="col-lg-6  col-md-6 mt-lg-0 mt-4" style="text-align: right; color: #fff;" >
+                    Liên hệ cộng đồng : 
                     <a href=""><img src="../images/icon16.png" style="padding-left: 10px;"></a> 
                     <a href=""> <img src="../images/icon17.png" style="padding-left: 10px;"></a>
                     <a href=""><img src="../images/icon18.png" style="padding-left: 10px;"></a> 
@@ -527,9 +535,9 @@
         <img src="../images/footer_banner4.png" height="754px" width="100%" style="background-attachment: fixed; background-size: cover;z-index: -300;position: fixed;bottom: 0px;">
     </div>
        <!-- copyright -->
-    <div class="cpy-right text-center col-md-12" >
+    <div class="cpy-right text-center col-md-12" style="padding: 0px;" >
 
-        <p class="text-bl">© 2019 Intense. All rights reserved | Design by
+        <p class="text-bl" style="margin: 0px;">© 2019 Intense. All rights reserved | Design by
             <a href="#"> Nhóm 4.</a>
         </p>
     </div>

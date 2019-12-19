@@ -17,9 +17,9 @@ namespace HanoiTourist.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string sqlHotTour = "SELECT b.NAME_TOUR,b.VEHICLE,a.DEPARTURE_DATE,b.ADULT_FARE,b.Image,a.Detail_Id FROM dbo.TOUR a,dbo.DETAILS_TOUR b WHERE a.DETAIL_ID = b.ID and b.IS_HOT_TOUR = 1";
-            string sqlTourTN = "SELECT b.NAME_TOUR,b.VEHICLE,a.DEPARTURE_DATE,b.ADULT_FARE,b.Image,a.Detail_Id FROM dbo.TOUR a,dbo.DETAILS_TOUR b WHERE a.DETAIL_ID = b.ID and a.COUNTRY_ID = 0";
-            string sqlTourNN = "SELECT a.NAME_TOUR,a.VEHICLE,b.DEPARTURE_DATE,a.ADULT_FARE,a.Image,b.Detail_Id "+
+            string sqlHotTour = "SELECT top 5 b.NAME_TOUR,b.VEHICLE,a.DEPARTURE_DATE,b.ADULT_FARE,b.Image,a.Detail_Id FROM dbo.TOUR a,dbo.DETAILS_TOUR b WHERE a.DETAIL_ID = b.ID and b.IS_HOT_TOUR = 1";
+            string sqlTourTN = "SELECT top 5 b.NAME_TOUR,b.VEHICLE,a.DEPARTURE_DATE,b.ADULT_FARE,b.Image,a.Detail_Id FROM dbo.TOUR a,dbo.DETAILS_TOUR b WHERE a.DETAIL_ID = b.ID and a.COUNTRY_ID = 0";
+            string sqlTourNN = "SELECT top 5 a.NAME_TOUR,a.VEHICLE,b.DEPARTURE_DATE,a.ADULT_FARE,a.Image,b.Detail_Id "+
                                   "  FROM dbo.DETAILS_TOUR AS  a INNER JOIN dbo.TOUR AS b on a.ID = b.DETAIL_ID "+
                                   "  WHERE b.COUNTRY_ID != 0";
             SqlConnection conn = connectDB.getConnection();
@@ -35,20 +35,22 @@ namespace HanoiTourist.Views
             ListTourNN.DataSource = dt2;
             ListTourNN.DataBind();
 
-            string sqlDiemXP = " SELECT DEPARTURE,DESTINATION,SCHEDULE_TOUR FROM dbo.DETAILS_TOUR ";
+            string sqlDiemXP = " SELECT DISTINCT DEPARTURE FROM dbo.DETAILS_TOUR ";
             DrDiemXuatPhat.DataSource = GetDataReader(sqlDiemXP);
             DrDiemXuatPhat.DataTextField = "DEPARTURE";
             DrDiemXuatPhat.DataValueField = "DEPARTURE";
             DrDiemXuatPhat.DataBind();
 
+            sqlDiemXP = " SELECT DISTINCT DESTINATION FROM dbo.DETAILS_TOUR ";
             DrDich.DataSource = GetDataReader(sqlDiemXP);
             DrDich.DataTextField = "DESTINATION";
             DrDich.DataValueField = "DESTINATION";
             DrDich.DataBind();
 
+            sqlDiemXP = " SELECT DISTINCT PERIOD FROM dbo.DETAILS_TOUR ";
             DrLichTrinh.DataSource = GetDataReader(sqlDiemXP);
-            DrLichTrinh.DataTextField = "SCHEDULE_TOUR";
-            DrLichTrinh.DataValueField = "SCHEDULE_TOUR";
+            DrLichTrinh.DataTextField = "PERIOD";
+            DrLichTrinh.DataValueField = "PERIOD";
             DrLichTrinh.DataBind();
 
             //ListBanner.DataSource = dt3;

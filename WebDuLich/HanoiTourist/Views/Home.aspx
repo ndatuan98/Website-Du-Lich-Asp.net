@@ -177,36 +177,36 @@
             <u><h3 >HOT TOUR</h3></u>
         </div>
         <div>
-            <div class="row" style="margin-right:0px; background-color: #FFF;">
+            <div class="row" style="margin-right:0px; background-color: #FFF;width: 95%; ">
             <asp:DataList runat="server" ID="ListHotTour" RepeatColumns="5">
                 <ItemTemplate>
-                    <div class="form-Tour" style="background-color: #FFF; padding-left:0px; padding-left: 8px;width:20%;box-sizing:border-box;border-radius: 2px; width:100%;">
-		                <div class="hover14 column" style="padding: 1px;height:390px;border:1px solid #808080;">
+                    <div class="form-Tour" style="background-color: #FFF; padding-left:0px; padding-left: 8px;box-sizing:border-box;border-radius: 2px;  width: 305px;">
+		                <div class="hover14 column" style="padding: 1px;height:450px;border:1px solid #808080;">
 			                <div class="agile_top_brand_left_grid">
 				                <div class="agile_top_brand_left_grid1">
-                                    <asp:HyperLink ID="imag" runat="server" ImageUrl='<%#Eval("Image") %>' ImageWidth="292px" ImageHeight="260px"  NavigateUrl='<%#"Detail_Tour.aspx?Detail_Id=" + Eval("Detail_Id") %>' ></asp:HyperLink>
-					                <figure id="formTour" style="margin:10px;">
+                                    <asp:HyperLink ID="imag" runat="server" ImageUrl='<%#Eval("Image") %>' ImageWidth="290px" ImageHeight="260px"  NavigateUrl='<%#"Detail_Tour.aspx?Detail_Id=" + Eval("Detail_Id") %>' ></asp:HyperLink>
+					                <figure id="formTour" style="margin:10px;  width: 305px;">
 						                <div class="snipcart-item block" >
 							                <div class="snipcart-thumb" >
                                                <center>
-                                                   <h4>
+                                                   <h5 style="margin-left: -10px; margin-right: 20px;">
                                                        <asp:HyperLink runat="server" Text='<%#Eval("NAME_TOUR") %>'  NavigateUrl='<%#"Detail_Tour.aspx?Detail_Id=" + Eval("Detail_Id") %>' ForeColor="#000000" ></asp:HyperLink>
-                                                   </h4>
+                                                   </h5>
                                                </center> 
-								                <p>
+								                <p style="margin-bottom: 0px;">
                                                     <img  src="../images/traveler.png" width="14px" height="14px"/>
                                                     <asp:Label runat="server" Text='<%#Eval("VEHICLE") %>'> </asp:Label>
 								                </p>
                                                 <p>
                                                     <img src="../images/date.png"/>
-                                                    <asp:Label runat="server" Text='<%#Eval("DEPARTURE_DATE") %>'> </asp:Label>
+                                                    <asp:Label runat="server" Text='<%#Eval("DEPARTURE_DATE","{0:d}") %>'> </asp:Label>
                                                 </p>
 							                </div>
 							                <div class="snipcart-details top_brand_home_details" style="height:70px;">
-								                <form action="#" method="post" style="padding-left: 175px; position:relative; bottom: 50px;">
+								                <form action="#" method="post" style="padding-left: 175px; position:relative; bottom: 100px; padding-top: 30px;">
 									                <fieldset>
                                                        <label style="margin-bottom:0px;">Giá từ</label><br />
-                                                       <asp:Label runat="server" ForeColor="#FF0013" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
+                                                       <asp:Label runat="server" ForeColor="#FF0013" Text='<%#Eval("ADULT_FARE","{0:#,###đ}") %>'> </asp:Label><br />
                                                         <asp:Button ID="btnGiuCho" runat="server" Text="Giữ chỗ" class="btn btn-warning"  ForeColor="#FFFFFF" OnClick="btnGiuCho_Click"/>
 									                </fieldset>
 								                </form>
@@ -238,35 +238,41 @@
             <div class="row" style="margin-right:0px; background-color: #FFF;">
             <asp:DataList runat="server" ID="ListTourTN" RepeatColumns="5">
                 <ItemTemplate>
-                    <div class="form-Tour" style="background-color: #FFF; padding-left:0px; padding-left: 8px;width:20%;box-sizing:border-box;border-radius: 2px; width:100%;">
-		                <div class="hover14 column" style="padding: 1px;height:390px;border:1px solid #808080;">
+                    <div class="form-Tour" style="background-color: #FFF; padding-left:0px; padding-left: 8px; box-sizing:border-box;border-radius: 2px;  width: 305px;">
+		                <div class="hover14 column" style="padding: 1px;height:450px;border:1px solid #808080;">
 			                <div class="agile_top_brand_left_grid">
 				                <div class="agile_top_brand_left_grid1">
                                     <asp:HyperLink ID="imag" runat="server" ImageUrl='<%#Eval("Image") %>' ImageWidth="292px" ImageHeight="260px"  NavigateUrl='<%#"Detail_Tour.aspx?Detail_Id=" + Eval("Detail_Id") %>' ></asp:HyperLink>
-					                <figure id="formTour" style="margin:10px;">
+					                <figure id="formTour" style="margin:10px; width: 305px;">
 						                <div class="snipcart-item block" >
 							                <div class="snipcart-thumb" >
                                                <center>
-                                                   <h4>
+                                                   <h5 style="margin-left: -10px; margin-right: 20px;">
                                                        <asp:HyperLink runat="server" Text='<%#Eval("NAME_TOUR") %>'  NavigateUrl='<%#"Detail_Tour.aspx?Detail_Id=" + Eval("Detail_Id") %>' ForeColor="#000000" ></asp:HyperLink>
-                                                   </h4>
+                                                   </h5>
                                                </center> 
-								                <p>
+                                                <table>
+                                                    <tr>
+                                                        <td>
+
+                                                        </td>
+                                                    </tr>
+                                                </table>
+								                <p style="margin-bottom: 0px;">
                                                     <img  src="../images/traveler.png" width="14px" height="14px"/>
                                                     <asp:Label runat="server" Text='<%#Eval("VEHICLE") %>'> </asp:Label>
 								                </p>
                                                 <p>
                                                     <img src="../images/date.png"/>
-                                                    <asp:Label runat="server" Text='<%#Eval("DEPARTURE_DATE") %>'> </asp:Label>
-                                                </p>s
+                                                    <asp:Label runat="server" Text='<%#Eval("DEPARTURE_DATE","{0:d}") %>'> </asp:Label>
+                                                </p>
 							                </div>
 							                <div class="snipcart-details top_brand_home_details" style="height:70px;">
-								                <form action="#" method="post" style="padding-left: 175px; position:relative; bottom: 50px;">
+								                <form action="#" method="post" style="padding-left: 175px; position:relative; bottom: 100px; padding-top: 30px;">
 									                <fieldset>
                                                        <label style="margin-bottom:0px;">Giá từ</label><br />
-                                                       <asp:Label runat="server" ForeColor="#FF0013" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
-										                <asp:Button ID="btnGiuCho" runat="server" Text="Giữ chỗ" class="btn btn-warning"  ForeColor="#FFFFFF" OnClick="btnGiuCho_Click2" />
-                                                        <asp:HyperLink runat="server" Text="Giữ chỗ"  NavigateUrl='<%#"Cart.aspx?Detail_Id=" + Eval("Detail_Id") %>' ForeColor="#000000" class="btn btn-warning" ></asp:HyperLink>
+                                                       <asp:Label runat="server" ForeColor="#FF0013" Text='<%#Eval("ADULT_FARE","{0:#,###đ}") %>'> </asp:Label><br />
+                                                        <asp:HyperLink runat="server" Text="Giữ chỗ"  NavigateUrl='<%#"Cart.aspx?Detail_Id=" + Eval("Detail_Id") %>' ForeColor="#FFFFFF" class="btn btn-warning" ></asp:HyperLink>
 									                </fieldset>
 								                </form>
 							                </div>
@@ -294,36 +300,36 @@
             <u><h3 >TOUR NƯỚC NGOÀI</h3></u>
         </div>
         <div>
-            <div class="row" style="margin-right:0px; background-color: #FFF;">
+            <div class="row" style="margin-right:0px; background-color: #FFF; width: 100%;">
             <asp:DataList runat="server" ID="ListTourNN" RepeatColumns="5">
                 <ItemTemplate>
-                    <div class="form-Tour" style="background-color: #FFF; padding-left:0px; padding-left: 8px;width:20%;box-sizing:border-box;border-radius: 2px; width:100%;">
-		                <div class="hover14 column" style="padding: 1px;height:390px;border:1px solid #808080;">
+                    <div class="form-Tour" style="background-color: #FFF; padding-left:0px; padding-left: 8px;box-sizing:border-box;border-radius: 2px;  width: 305px;">
+		                <div class="hover14 column" style="padding: 1px;height:450px;border:1px solid #808080;">
 			                <div class="agile_top_brand_left_grid">
 				                <div class="agile_top_brand_left_grid1">
                                     <asp:HyperLink ID="imag" runat="server" ImageUrl='<%#Eval("Image") %>' ImageWidth="292px" ImageHeight="260px"  NavigateUrl='<%#"Detail_Tour.aspx?Detail_Id=" + Eval("Detail_Id") %>' ></asp:HyperLink>
-					                <figure id="formTour" style="margin:10px;">
+					                <figure id="formTour" style="margin:10px; width: 305px;">
 						                <div class="snipcart-item block" >
 							                <div class="snipcart-thumb" >
                                                <center>
-                                                   <h4>
+                                                   <h5 style="margin-left: -10px; margin-right: 20px;">
                                                        <asp:HyperLink runat="server" Text='<%#Eval("NAME_TOUR") %>'  NavigateUrl='<%#"Detail_Tour.aspx?Detail_Id=" + Eval("Detail_Id") %>' ForeColor="#000000" ></asp:HyperLink>
-                                                   </h4>
+                                                   </h5>
                                                </center> 
-								                <p>
+								                <p style="margin-bottom: 0px;>
                                                     <img  src="../images/traveler.png" width="14px" height="14px"/>
                                                     <asp:Label runat="server" Text='<%#Eval("VEHICLE") %>'> </asp:Label>
 								                </p>
                                                 <p>
                                                     <img src="../images/date.png"/>
-                                                    <asp:Label runat="server" Text='<%#Eval("DEPARTURE_DATE") %>'> </asp:Label>
+                                                    <asp:Label runat="server" Text='<%#Eval("DEPARTURE_DATE","{0:d}") %>'> </asp:Label>
                                                 </p>
 							                </div>
 							                <div class="snipcart-details top_brand_home_details" style="height:70px;">
-								                <form action="#" method="post" style="padding-left: 175px; position:relative; bottom: 50px;">
+								                <form action="#" method="post" style="padding-left: 175px; position:relative; bottom: 100px; padding-top: 30px;">
 									                <fieldset>
                                                        <label style="margin-bottom:0px;">Giá từ</label><br />
-                                                       <asp:Label runat="server" ForeColor="#FF0013" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
+                                                       <asp:Label runat="server" ForeColor="#FF0013" Text='<%#Eval("ADULT_FARE","{0:#,###đ}") %>'> </asp:Label><br />
 										                <asp:Button ID="btnGiuCho" runat="server" Text="Giữ chỗ" class="btn btn-warning"  ForeColor="#FFFFFF" OnClick="btnGiuCho_Click1" />
 									                </fieldset>
 								                </form>
