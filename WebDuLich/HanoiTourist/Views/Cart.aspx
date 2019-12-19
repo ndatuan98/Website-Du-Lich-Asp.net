@@ -7,7 +7,7 @@
             <div style="background-color: rgba(0,135,255,.3);">
                 <asp:DataList runat="server" ID="ListCart">
                 <ItemTemplate>
-                    <asp:LinkButton runat="server" ID="btnHuyTour" Text="X"  CommandArgument='<%# Eval("ID") %>' OnClick="btnHuyTour_Click"/>
+                    <asp:LinkButton runat="server" ID="btnHuyTour" Text="X"  CommandArgument='<%# Eval("DETAIL_ID") %>' OnClick="btnHuyTour_Click"/>
                     <table>
                         <tr style="margin: 10px;">
                             <td width="30%">
@@ -47,9 +47,10 @@
                                     <p>
                                         <asp:Label runat="server" ForeColor="#ff0000" Text="Số lượng:"></asp:Label>
                                         <span></span><b>
-                                        <asp:Label runat="server" Text='<%#Eval("count") %>'></asp:Label>
+                                        <asp:Label runat="server" Text='<%#Eval("SL") %>'></asp:Label>
                                         </b>
                                     </p>
+                                    <h5 style="padding-top:10px;">TỔNG TIỀN: <span> </span><asp:Label runat="server" ID="txtTongTien" ForeColor="Red" Text='<%# Eval("TONGTIEN","{0:#,###đ}") %>'></asp:Label></h5>
                                 </p>
                                 
                             </td>
@@ -58,7 +59,7 @@
                 </ItemTemplate>
             </asp:DataList>
             </div>
-            <h5 style="padding-top:10px;">TỔNG TIỀN: <span> </span><asp:Label runat="server" ID="txtTongTien" ForeColor="Red"></asp:Label></h5>
+            <h5 style="padding-top:10px;">TỔNG TIỀN CÁC TOUR: <span> </span><asp:Label runat="server" ID="txtTongTien"  ForeColor="Red" ></asp:Label></h5>
             <div>
                 <h5 style="margin-top: 10px;">THÔNG TIN LIÊN HỆ</h5>
                 <p>Thông tin có dấu (*) là bắt buộc phải nhập. Xin quý khách vui lòng kiểm tra kỹ thông tin email, điện thoại để tránh bị sai sót.</p>

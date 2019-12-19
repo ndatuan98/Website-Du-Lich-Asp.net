@@ -18,40 +18,42 @@ namespace HanoiTourist.Views
         ConnectDB connectDB = new ConnectDB();
         CartController cartController = new CartController();
         AccountController accountController = new AccountController();
+        SqlConnection conn = new SqlConnection();
         protected void Page_Load(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(Request.QueryString["Detail_Id"]);
-            string sqlHienThi = "SELECT DISTINCT b.ID, b.DETAIL_ID,b.CODE,b.NAME_TOUR,b.Image,b.DEPARTURE,b.DEPARTURE_DATE,b.VEHICLE,b.SEATS,b.SCHEDULE_TOUR,a.count " +
-                                  "  FROM dbo.Cart_Memory AS b " +
-                                  "  LEFT JOIN(SELECT DETAIL_ID AS id, COUNT(DETAIL_ID) AS count FROM dbo.CART_MEMORY GROUP BY DETAIL_ID) AS a "+
-                                  "  ON a.id = b.DETAIL_ID";
             string sqlQuocGia = "SELECT id,COUNTRY_NAME FROM dbo.COUNTRIES ";
-            string sqlTongTien = "SELECT SUM(adult_fare) AS TongTien FROM dbo.CART_MEMORY";
-            string sqlCart2 = "SELECT detail_id,code,name_tour,departure,destination,period,vehicle,seats,image,schedule_tour,adult_fare,child_fare_5_11,child_fare_2_4,child_fare_less_2 FROM dbo.TOUR a,dbo.DETAILS_TOUR b WHERE a.DETAIL_ID = b.ID AND a.DETAIL_ID = " + id;
-            SqlConnection conn = connectDB.getConnection();
+            string sqlCart2 = "SELECT detail_id,code,name_tour,departure,destination,period,vehicle,seats,image,adult_fare,a.DEPARTURE_DATE FROM dbo.TOUR a,dbo.DETAILS_TOUR b WHERE a.DETAIL_ID = b.ID AND a.DETAIL_ID = " + id;
+            string sqlSL = "select detail_id from cart_memory where detail_id =" + id;
+            string sqlHienThi2 = "select *,SL*ADULT_FARE as TONGTIEN from cart_memory";
+            string sqlTongTien = "SELECT SUM(sl*ADULT_FARE) FROM dbo.CART_MEMORY";
+            conn = connectDB.getConnection();
             conn.Open();
-            IDictionary<int, int> arr = new Dictionary<int, int>();
+            string sql1;
             DataTable dt2 = connectDB.getTable(sqlCart2);
-            for (int i =0; i< dt2.Rows.Count; i++)
+            DataTable dt3 = connectDB.getTable(sqlSL);
+            DataTable dt5 = connectDB.getTable(sqlTongTien);
+            
+            if (dt3.Rows.Count > 0)
             {
-                cartController.AddToCart(Int32.Parse(dt2.Rows[i][0].ToString()), dt2.Rows[i][1].ToString(), dt2.Rows[i][2].ToString(), dt2.Rows[i][3].ToString(), dt2.Rows[i][4].ToString(), dt2.Rows[i][5].ToString(), dt2.Rows[i][6].ToString(),Int32.Parse( dt2.Rows[i][7].ToString()), dt2.Rows[i][8].ToString(), dt2.Rows[i][9].ToString(),Decimal.Parse( dt2.Rows[i][10].ToString()), Decimal.Parse(dt2.Rows[i][11].ToString()), Decimal.Parse(dt2.Rows[i][12].ToString()), Decimal.Parse(dt2.Rows[i][13].ToString()));
+                sql1 = "UPDATE dbo.CART_MEMORY SET SL += 1 WHERE DETAIL_ID=" + id;
+                connectDB.ExecutedNonQuery(sql1);
             }
-           
-            DataTable dt = connectDB.getTable(sqlHienThi);
-            DataTable dt3 = connectDB.getTable(sqlTongTien);
+            else
+            {
+                cartController.AddToCard(Int32.Parse(dt2.Rows[0][0].ToString()), dt2.Rows[0][1].ToString(), dt2.Rows[0][2].ToString(), dt2.Rows[0][3].ToString(), dt2.Rows[0][4].ToString(), dt2.Rows[0][5].ToString(), dt2.Rows[0][6].ToString(), Int32.Parse(dt2.Rows[0][7].ToString()), dt2.Rows[0][8].ToString(), Decimal.Parse(dt2.Rows[0][9].ToString()), 1, "",DateTime.Parse(dt2.Rows[0][10].ToString()));
+            }
+            DataTable dt4 = connectDB.getTable(sqlHienThi2);
+            ListCart.DataSource = dt4;
+            ListCart.DataBind();
             ListQuocGia.DataSource = GetDataReader(sqlQuocGia);
             ListQuocGia.DataTextField = "COUNTRY_NAME";
             ListQuocGia.DataBind();
             ListQuyDanh.Items.Insert(0, new ListItem("Ông", "0"));
             ListQuyDanh.Items.Insert(0, new ListItem("Bà", "1"));
-            ListCart.DataSource = dt;
-            ListCart.DataBind();
-            try
-            {
-                txtTongTien.Text = String.Format("{0:#,###đ}", Convert.ToDecimal(dt3.Rows[0][0].ToString()));
-            }
-            catch (Exception ex) { }
-
+            //ListCart.DataSource = dt;
+            //ListCart.DataBind();
+           
             if (Session["user"] != null)
             {
                 Account acc = accountController.getByEmail(Session["user"].ToString());
@@ -85,9 +87,19 @@ namespace HanoiTourist.Views
         {
             LinkButton btn = sender as LinkButton;
             int idDel = Convert.ToInt32(btn.CommandArgument.ToString());
-            string sql = "DELETE  FROM dbo.CART_MEMORY WHERE ID = " + idDel;
+            string sql = "UPDATE dbo.CART_MEMORY SET sl -= 1 WHERE DETAIL_ID =" + idDel;
+            string sql2 = "select sl from cart_memory where detail_id=" + idDel;
+            conn.Open();
             connectDB.ExecutedNonQuery(sql);
+            DataTable dt = connectDB.getTable(sql2);
+            if(Int32.Parse(dt.Rows[0][0].ToString()) == 0)
+            {
+                string sqlDel = "delete from cart_memory where detail_id =" + idDel;
+                connectDB.ExecutedNonQuery(sqlDel);
+            }
             Response.Redirect("CartDetail.aspx");
+            conn.Close();
+           
         }
     }
 }
