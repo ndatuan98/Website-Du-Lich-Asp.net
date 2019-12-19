@@ -1676,6 +1676,7 @@
     <Content Include="Admin\View\Accounts\CreateUser.aspx" />
     <Content Include="Admin\View\Accounts\Index.aspx" />
     <Content Include="Admin\View\Accounts\UpdateUser.aspx" />
+    <Content Include="Admin\View\Carts\ConfirmCart.aspx" />
     <Content Include="Admin\View\Carts\Index.aspx" />
     <Content Include="Admin\View\ForgotPassword.aspx" />
     <Content Include="Admin\View\Login.aspx" />
@@ -1915,6 +1916,13 @@
     </Compile>
     <Compile Include="Admin\View\Accounts\UpdateUser.aspx.designer.cs">
       <DependentUpon>UpdateUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\View\Carts\ConfirmCart.aspx.cs">
+      <DependentUpon>ConfirmCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\View\Carts\ConfirmCart.aspx.designer.cs">
+      <DependentUpon>ConfirmCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\View\Carts\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

@@ -44,7 +44,8 @@
             <a class="collapse-item" href="../Tours/Index.aspx">Danh sách Tour</a>
              <a class="collapse-item" href="../Tours/CreateTour.aspx">Thêm Tour</a>
             <h6 class="collapse-header">Đơn đặt hàng :</h6>
-            <a class="collapse-item" href="../Carts/Index.aspx">Danh sách Tour</a>
+            <a class="collapse-item" href="../Carts/Index.aspx">Đơn chờ xác nhận</a>
+            <a class="collapse-item" href="../Carts/ConfirmCart.aspx">Đơn đã xác nhận</a>
             <a class="collapse-item active" href="blank.html"></a>
           </div>
         </div>

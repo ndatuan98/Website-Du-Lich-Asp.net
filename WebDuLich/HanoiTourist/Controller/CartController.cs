@@ -67,5 +67,18 @@ namespace HanoiTourist.Controller
             connectDB.ExecutedNonQuery(sql);
             
         }
+        public bool Comfirm_Cart(int id)
+        {
+            try
+            {
+                string sql = "UPDATE dbo.CART SET IS_DELETED = 1 WHERE ID = " + id;
+                connectDB.ExecutedNonQuery(sql);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
 }
