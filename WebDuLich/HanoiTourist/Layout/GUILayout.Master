@@ -265,7 +265,7 @@
                 </script>
                <a class="showhide" onclick="showInfo()">
                    <asp:Label runat="server" ID="lblFullname" CssClass="mr-2 d-none d-lg-inline text-gray-600 small" />
-                    <img height="35px" class="rounded-circle" src="../images/avatar.png">
+                    <img height="35px" class="rounded-circle" src="../images/avt1.png">
               </a>
               <!-- Dropdown - User Information -->
               <div style="z-index: 9999; right: 200px;" class="dropdown-menu dropdown-menu-right shadow animated--grow-in" id="showInfo">
