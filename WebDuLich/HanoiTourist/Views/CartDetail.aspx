@@ -1,15 +1,15 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout/GUILayout.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="HanoiTourist.Views.Cart" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout/GUILayout.Master" AutoEventWireup="true" CodeBehind="CartDetail.aspx.cs" Inherits="HanoiTourist.Views.CartDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderID1" runat="server">
     <div class="row" style="background-color: #FFFFFF; padding-bottom: 20px;padding-top: 20px;">
         <div class ="col-md-8" style="background-color: rgba(0,135,255,.3);left: 18%;">
+             <center><h5><asp:Label runat="server" ID="txtThongBao" ForeColor="Red"></asp:Label></h5></center>
             <div style="background-color: rgba(0,135,255,.3);">
-                <asp:DataList runat="server" ID="ListCart">
+                <asp:DataList runat="server" ID="ListCart" OnEditCommand="EditList" OnItemCommand="ItemCommand">
                 <ItemTemplate>
-                    <asp:LinkButton runat="server" ID="btnHuyTour" Text="X"  CommandArgument='<%# Eval("ID") %>' OnClick="btnHuyTour_Click"/>
-                    <table>
-                        <tr style="margin: 10px;">
+                    <table style="left: 20%;">
+                        <tr style="margin: 10px;left: 300px;">
                             <td width="30%">
                                 <asp:Image  runat="server" ImageUrl='<%#Eval("Image") %>'  Height="180px" Width="320px"/>
                             </td>
@@ -18,6 +18,7 @@
                                     <h5>(TOUR)
                                         <asp:Label runat="server" Text='<%#Eval("NAME_TOUR") %>'></asp:Label>
                                     </h5>
+                                    <asp:LinkButton runat="server" ID="btnHuyTour" Text="X" OnClick="btnHuyTour_Click" CommandArgument='<%# Eval("ID") %>'/>
                                     <p>
                                     </p>
                                     <p>
@@ -59,6 +60,11 @@
             </asp:DataList>
             </div>
             <h5 style="padding-top:10px;">TỔNG TIỀN: <span> </span><asp:Label runat="server" ID="txtTongTien" ForeColor="Red"></asp:Label></h5>
+            <asp:DataList runat="server" ID="ListCartAdd">
+                <ItemTemplate>
+                   <h1><asp:Label runat="server" Text='<%# Eval("Image") %>'></asp:Label></h1> 
+                </ItemTemplate>
+            </asp:DataList>
             <div>
                 <h5 style="margin-top: 10px;">THÔNG TIN LIÊN HỆ</h5>
                 <p>Thông tin có dấu (*) là bắt buộc phải nhập. Xin quý khách vui lòng kiểm tra kỹ thông tin email, điện thoại để tránh bị sai sót.</p>
@@ -95,7 +101,8 @@
                         </tr>
                     </table>
                 </form>
-                <asp:Button  runat="server" ID="btnThanhToan" Text="Thanh toán" CssClass="btn-primary" OnClick="btnThanhToan_Click" style="text-align: center;margin: 10px;margin-left: 20px;" Height="40px" Width="170px"/>
+                <h5 style="padding-top:10px;"><span> </span><asp:Label runat="server" ID="txtThongbao2" ForeColor="Red"></asp:Label></h5>
+                <asp:Button  runat="server" ID="btnThanhToan" Text="Thanh toán" CssClass="btn-primary"  style="text-align: center;margin: 10px;margin-left: 20px;" Height="40px" Width="170px" OnClick="btnThanhToan_Click"/>
             </div>
         </div>
         <div class="col-md-4">

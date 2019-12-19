@@ -10,7 +10,7 @@
 namespace HanoiTourist.Views {
     
     
-    public partial class News {
+    public partial class MICE {
         
         /// <summary>
         /// ListTourHienThi control.

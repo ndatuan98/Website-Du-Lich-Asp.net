@@ -17,7 +17,7 @@ namespace HanoiTourist.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            string sqlHotTour = "SELECT top 5 b.NAME_TOUR,b.VEHICLE,a.DEPARTURE_DATE,b.ADULT_FARE,b.Image,a.Detail_Id FROM dbo.TOUR a,dbo.DETAILS_TOUR b WHERE a.DETAIL_ID = b.ID and b.IS_HOT_TOUR = 1";
+            string sqlHotTour = "SELECT top 5 b.NAME_TOUR,b.VEHICLE,a.DEPARTURE_DATE,b.ADULT_FARE,b.Image,a.Detail_Id,b.ID FROM dbo.TOUR a,dbo.DETAILS_TOUR b WHERE a.DETAIL_ID = b.ID and b.IS_HOT_TOUR = 1";
             string sqlTourTN = "SELECT top 5 b.NAME_TOUR,b.VEHICLE,a.DEPARTURE_DATE,b.ADULT_FARE,b.Image,a.Detail_Id FROM dbo.TOUR a,dbo.DETAILS_TOUR b WHERE a.DETAIL_ID = b.ID and a.COUNTRY_ID = 0";
             string sqlTourNN = "SELECT top 5 a.NAME_TOUR,a.VEHICLE,b.DEPARTURE_DATE,a.ADULT_FARE,a.Image,b.Detail_Id "+
                                   "  FROM dbo.DETAILS_TOUR AS  a INNER JOIN dbo.TOUR AS b on a.ID = b.DETAIL_ID "+

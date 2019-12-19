@@ -10,7 +10,16 @@
 namespace HanoiTourist.Views {
     
     
-    public partial class Cart {
+    public partial class CartDetail {
+        
+        /// <summary>
+        /// txtThongBao control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtThongBao;
         
         /// <summary>
         /// ListCart control.
@@ -29,6 +38,15 @@ namespace HanoiTourist.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label txtTongTien;
+        
+        /// <summary>
+        /// ListCartAdd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList ListCartAdd;
         
         /// <summary>
         /// ListQuyDanh control.
@@ -92,6 +110,15 @@ namespace HanoiTourist.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtNoiDung;
+        
+        /// <summary>
+        /// txtThongbao2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtThongbao2;
         
         /// <summary>
         /// btnThanhToan control.

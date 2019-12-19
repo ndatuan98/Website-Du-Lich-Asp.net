@@ -1866,18 +1866,23 @@
     <Content Include="Views\Count.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="images\www.png" />
     <Content Include="Videos\video1.mp4" />
     <Content Include="Views\Cart.aspx" />
+    <Content Include="Views\CartDetail.aspx" />
     <Content Include="Views\ComboDuLich.aspx" />
     <Content Include="Views\Contact.aspx" />
+    <Content Include="Views\Detail_News.aspx" />
     <Content Include="Views\Detail_Tour.aspx" />
     <Content Include="Views\Home.aspx" />
     <Content Include="Views\Library.aspx" />
     <Content Include="Views\ListTour.aspx" />
     <Content Include="Views\ListTourWithMenu.aspx" />
+    <Content Include="Views\MICE.aspx" />
     <Content Include="Views\News.aspx" />
     <Content Include="Views\ProfileAcc.aspx" />
     <Content Include="Views\SearchResult.aspx" />
+    <Content Include="Views\ThanhToan.aspx" />
     <Content Include="Views\Transport.aspx" />
     <Content Include="Web.config" />
     <Content Include="Layout\GUILayout.Master" />
@@ -2002,6 +2007,13 @@
     <Compile Include="Views\Cart.aspx.designer.cs">
       <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\CartDetail.aspx.cs">
+      <DependentUpon>CartDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CartDetail.aspx.designer.cs">
+      <DependentUpon>CartDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\ComboDuLich.aspx.cs">
       <DependentUpon>ComboDuLich.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2015,6 +2027,13 @@
     </Compile>
     <Compile Include="Views\Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Detail_News.aspx.cs">
+      <DependentUpon>Detail_News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Detail_News.aspx.designer.cs">
+      <DependentUpon>Detail_News.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Detail_Tour.aspx.cs">
       <DependentUpon>Detail_Tour.aspx</DependentUpon>
@@ -2051,6 +2070,13 @@
     <Compile Include="Views\ListTourWithMenu.aspx.designer.cs">
       <DependentUpon>ListTourWithMenu.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\MICE.aspx.cs">
+      <DependentUpon>MICE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\MICE.aspx.designer.cs">
+      <DependentUpon>MICE.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\News.aspx.cs">
       <DependentUpon>News.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2071,6 +2097,13 @@
     </Compile>
     <Compile Include="Views\SearchResult.aspx.designer.cs">
       <DependentUpon>SearchResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ThanhToan.aspx.cs">
+      <DependentUpon>ThanhToan.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\ThanhToan.aspx.designer.cs">
+      <DependentUpon>ThanhToan.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\Transport.aspx.cs">
       <DependentUpon>Transport.aspx</DependentUpon>
