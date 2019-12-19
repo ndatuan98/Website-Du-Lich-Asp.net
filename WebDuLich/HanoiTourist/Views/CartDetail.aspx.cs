@@ -19,42 +19,24 @@ namespace HanoiTourist.Views
         ConnectDB connectDB = new ConnectDB();
         CartController cartController = new CartController();
         AccountController accounController = new AccountController();
-        string sqlHienThi = "SELECT DISTINCT b.ID, b.DETAIL_ID,b.CODE,b.NAME_TOUR,b.Image,b.DEPARTURE,b.VEHICLE,b.SEATS,b.DEPARTURE_DATE,b.SCHEDULE_TOUR,a.count " +
-                                  "  FROM dbo.Cart_Memory AS b " +
-                                  "  LEFT JOIN(SELECT DETAIL_ID AS id, COUNT(DETAIL_ID) AS count FROM dbo.CART_MEMORY GROUP BY DETAIL_ID) AS a " +
-                                  "  ON a.id = b.DETAIL_ID";
         DataTable dt1 = new DataTable();
+        SqlConnection conn = new SqlConnection();
         protected void Page_Load(object sender, EventArgs e)
         {
-            //string sqlHienThi = "SELECT DISTINCT b.DETAIL_ID,b.CODE,b.NAME_TOUR,b.Image,b.DEPARTURE,b.VEHICLE,b.SEATS,b.SCHEDULE_TOUR,a.count " +
-            //                      "  FROM dbo.Cart_Memory AS b " +
-            //                      "  LEFT JOIN(SELECT DETAIL_ID AS id, COUNT(DETAIL_ID) AS count FROM dbo.CART_MEMORY GROUP BY DETAIL_ID) AS a " +
-            //                      "  ON a.id = b.DETAIL_ID";
-            string sqlTongTien = "SELECT SUM(adult_fare) AS TongTien FROM dbo.CART_MEMORY";
+
             string sqlQuocGia = "SELECT id,COUNTRY_NAME FROM dbo.COUNTRIES ";
-            SqlConnection conn = connectDB.getConnection();
+            string sqlHienThi2 = "select *,SL*ADULT_FARE as TONGTIEN from cart_memory";
+            conn = connectDB.getConnection();
             conn.Open();
-            dt1 = connectDB.getTable(sqlHienThi);
-            DataTable dt2 = connectDB.getTable(sqlTongTien);
-            ListCart.DataSource = dt1;
+            dt1 = connectDB.getTable(sqlHienThi2);
+            DataTable dt2 = connectDB.getTable(sqlHienThi2);
+            ListCart.DataSource = dt2;
             ListCart.DataBind();
             ListQuocGia.DataSource = GetDataReader(sqlQuocGia);
             ListQuocGia.DataTextField = "COUNTRY_NAME";
             ListQuocGia.DataBind();
             ListQuyDanh.Items.Insert(0, new ListItem("Ông", "0"));
             ListQuyDanh.Items.Insert(0, new ListItem("Bà", "1"));
-            try
-            {
-                if (dt2.Rows[0][0].ToString() == null || dt2.Rows[0][0].ToString() == "")
-                {
-                    txtTongTien.Text = "";
-                }
-                else
-                {
-                    txtTongTien.Text = String.Format("{0:#,###đ}", Convert.ToDecimal(dt2.Rows[0][0].ToString()));
-                }
-            }catch(Exception ex) { }
-            
 
             if (Session["user"] != null)
             {
@@ -91,7 +73,7 @@ namespace HanoiTourist.Views
             }
             else
             {
-                Response.Redirect("Home.aspx");
+                Response.Redirect("ThanhToan.aspx");
             }
                
         }
@@ -101,9 +83,18 @@ namespace HanoiTourist.Views
             LinkButton btn = sender as LinkButton;
             txtThongbao2.Text = btn.CommandArgument.ToString();
             int idDel =Convert.ToInt32( btn.CommandArgument.ToString());
-            string sql = "DELETE  FROM dbo.CART_MEMORY WHERE ID = " + idDel;
+            string sql = "UPDATE dbo.CART_MEMORY SET sl -= 1 WHERE DETAIL_ID=" + idDel;
+            string sql2 = "select sl from cart_memory where detail_id = " + idDel;
+            conn.Open();
             connectDB.ExecutedNonQuery(sql);
+            dt1 = connectDB.getTable(sql2);
+            if(Int32.Parse(dt1.Rows[0][0].ToString()) == 0)
+            {
+                string sqlDel = "Delete from cart_memory where detail_id =" + idDel;
+                connectDB.ExecutedNonQuery(sqlDel);
+            }
             Response.Redirect("CartDetail.aspx");
+            conn.Close();
         }
 
         protected void ItemCommand(object source, DataListCommandEventArgs e)

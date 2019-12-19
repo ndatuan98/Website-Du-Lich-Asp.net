@@ -8,6 +8,7 @@
             <div style="background-color: rgba(0,135,255,.3);">
                 <asp:DataList runat="server" ID="ListCart" OnEditCommand="EditList" OnItemCommand="ItemCommand">
                 <ItemTemplate>
+                    <asp:LinkButton runat="server" ID="btnHuyTour" Text="X" OnClick="btnHuyTour_Click" CommandArgument='<%# Eval("DETAIL_ID") %>'/>
                     <table style="left: 20%;">
                         <tr style="margin: 10px;left: 300px;">
                             <td width="30%">
@@ -18,7 +19,6 @@
                                     <h5>(TOUR)
                                         <asp:Label runat="server" Text='<%#Eval("NAME_TOUR") %>'></asp:Label>
                                     </h5>
-                                    <asp:LinkButton runat="server" ID="btnHuyTour" Text="X" OnClick="btnHuyTour_Click" CommandArgument='<%# Eval("ID") %>'/>
                                     <p>
                                     </p>
                                     <p>
@@ -48,9 +48,10 @@
                                     <p>
                                         <asp:Label runat="server" ForeColor="#ff0000" Text="Số lượng:"></asp:Label>
                                         <span></span><b>
-                                        <asp:Label runat="server" Text='<%#Eval("count") %>'></asp:Label>
+                                        <asp:Label runat="server" Text='<%#Eval("SL") %>'></asp:Label>
                                         </b>
                                     </p>
+                                    <h5 style="padding-top:10px;">TỔNG TIỀN: <span> </span><asp:Label runat="server"  ForeColor="Red" Text='<%# Eval("TONGTIEN","{0:#,###đ}") %>'></asp:Label></h5>
                                 </p>
                                 
                             </td>
@@ -59,12 +60,12 @@
                 </ItemTemplate>
             </asp:DataList>
             </div>
-            <h5 style="padding-top:10px;">TỔNG TIỀN: <span> </span><asp:Label runat="server" ID="txtTongTien" ForeColor="Red"></asp:Label></h5>
             <asp:DataList runat="server" ID="ListCartAdd">
                 <ItemTemplate>
                    <h1><asp:Label runat="server" Text='<%# Eval("Image") %>'></asp:Label></h1> 
                 </ItemTemplate>
             </asp:DataList>
+            <h5 style="padding-top:10px;">TỔNG TIỀN CÁC TOUR: <span> </span><asp:Label runat="server" ID="txtTongTien"  ForeColor="Red" ></asp:Label></h5>
             <div>
                 <h5 style="margin-top: 10px;">THÔNG TIN LIÊN HỆ</h5>
                 <p>Thông tin có dấu (*) là bắt buộc phải nhập. Xin quý khách vui lòng kiểm tra kỹ thông tin email, điện thoại để tránh bị sai sót.</p>

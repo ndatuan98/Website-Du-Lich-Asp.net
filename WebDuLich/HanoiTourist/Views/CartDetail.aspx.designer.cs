@@ -31,15 +31,6 @@ namespace HanoiTourist.Views {
         protected global::System.Web.UI.WebControls.DataList ListCart;
         
         /// <summary>
-        /// txtTongTien control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label txtTongTien;
-        
-        /// <summary>
         /// ListCartAdd control.
         /// </summary>
         /// <remarks>
@@ -47,6 +38,15 @@ namespace HanoiTourist.Views {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DataList ListCartAdd;
+        
+        /// <summary>
+        /// txtTongTien control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtTongTien;
         
         /// <summary>
         /// ListQuyDanh control.
