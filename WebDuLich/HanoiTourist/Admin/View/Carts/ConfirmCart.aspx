@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1 class=" h3 text-gray-900 mb-4">Tour đã xác nhận</h1>
-    <asp:GridView runat="server" ID="ListCart" CellPadding="4" Width="100%" AllowPaging="True" AutoGenerateColumns="False" ForeColor="#333333" GridLines="None" DataKeyNames="ID" PagerSettings-Mode="NextPreviousFirstLast" AllowSorting="False" EnableSortingAndPagingCallbacks="False" OnPageIndexChanging="ListCart_PageIndexChanging" PageSize="5">
+    <asp:GridView runat="server" ID="ListCart" CellPadding="4" Width="100%" AllowPaging="True" AutoGenerateColumns="False" ForeColor="#333333" GridLines="None" DataKeyNames="ID" OnPageIndexChanging="ListCart_PageIndexChanging" PageSize="5">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="ID" HeaderText="ID" Visible="False" />
@@ -21,7 +21,6 @@
         <EditRowStyle BackColor="#2461BF" />
         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
-        <PagerSettings Mode="NextPrevious" />
         <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
         <RowStyle BackColor="#EFF3FB" />
         <SelectedRowStyle BackColor="#D1DDF1" Font-Bold="True" ForeColor="#333333" />
