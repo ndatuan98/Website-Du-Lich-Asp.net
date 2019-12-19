@@ -31,7 +31,7 @@ namespace HanoiTourist.Controllers
                        " FROM dbo.DETAILS_TOUR AS  a INNER JOIN dbo.TOUR AS b on a.ID = b.DETAIL_ID" +
                        " WHERE b.COUNTRY_ID = 0 ";
             }
-            else if(id == -3)
+            else if(id == -2)
             {
                 sql = "SELECT a.NAME_TOUR,a.VEHICLE,b.DEPARTURE_DATE,a.ADULT_FARE,a.Image,b.Detail_Id " +
                        " FROM dbo.DETAILS_TOUR AS  a INNER JOIN dbo.TOUR AS b on a.ID = b.DETAIL_ID " +
