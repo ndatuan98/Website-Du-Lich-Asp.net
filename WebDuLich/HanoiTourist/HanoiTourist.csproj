@@ -1786,6 +1786,8 @@
     <Content Include="images\banner1.jpg" />
     <Content Include="images\banner2.jpg" />
     <Content Include="images\banner3.jpg" />
+    <Content Include="images\calendar.svg" />
+    <Content Include="images\clock.svg" />
     <Content Include="images\dangky.png" />
     <Content Include="images\date.png" />
     <Content Include="images\favicon.ico" />
@@ -1805,6 +1807,8 @@
     <Content Include="images\footer_banner3.png" />
     <Content Include="images\footer_banner4.png" />
     <Content Include="images\footer_banner5.png" />
+    <Content Include="images\hm-avt.svg" />
+    <Content Include="images\icon-food.png" />
     <Content Include="images\icon1.png" />
     <Content Include="images\icon12.png" />
     <Content Include="images\icon13.png" />
@@ -1820,13 +1824,20 @@
     <Content Include="images\icon_phone.png" />
     <Content Include="images\icon_phone_right.png" />
     <Content Include="images\icon_zalo.png" />
+    <Content Include="images\image-icon.png" />
+    <Content Include="images\location.svg" />
     <Content Include="images\logo.png" />
     <Content Include="images\logo5.png" />
     <Content Include="images\logo6.png" />
     <Content Include="images\logo_footer.png" />
+    <Content Include="images\mail.svg" />
+    <Content Include="images\phone.svg" />
     <Content Include="images\picture.png" />
     <Content Include="images\primary.png" />
+    <Content Include="images\qr.svg" />
     <Content Include="images\sdlhn.png" />
+    <Content Include="images\suitcase.svg" />
+    <Content Include="images\t-traveler.svg" />
     <Content Include="images\thuvien1.jpg" />
     <Content Include="images\thuvien10.jpg" />
     <Content Include="images\thuvien11.png" />
@@ -1849,6 +1860,8 @@
     <Content Include="images\thuvien8.jpg" />
     <Content Include="images\thuvien9.png" />
     <Content Include="images\traveler.png" />
+    <Content Include="images\video-icon.png" />
+    <Content Include="Videos\video1.mp4" />
     <Content Include="Views\Cart.aspx" />
     <Content Include="Views\ComboDuLich.aspx" />
     <Content Include="Views\Contact.aspx" />
@@ -1937,6 +1950,7 @@
     <Compile Include="Controller\AccountController.cs" />
     <Compile Include="Controller\CartController.cs" />
     <Compile Include="Controller\HomeController.cs" />
+    <Compile Include="Controller\Image_Tour.cs" />
     <Compile Include="Controller\LibraryController.cs" />
     <Compile Include="Controller\TourController.cs" />
     <Compile Include="DTO\ConnectDB.cs" />

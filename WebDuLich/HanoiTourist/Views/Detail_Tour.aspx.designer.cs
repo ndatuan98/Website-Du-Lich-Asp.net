@@ -13,12 +13,21 @@ namespace HanoiTourist.Views {
     public partial class Detail_Tour {
         
         /// <summary>
-        /// test control.
+        /// DetailTour control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label test;
+        protected global::System.Web.UI.WebControls.DataList DetailTour;
+        
+        /// <summary>
+        /// ListGia control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList ListGia;
     }
 }
