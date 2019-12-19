@@ -104,7 +104,7 @@
     </asp:ContentPlaceHolder>
 </head>
 
-<body style="overflow-x: hidden;">
+<body style="overflow-x: hidden; padding: 0px; ">
     <form id="form1" runat="server">
     <div class="sticky-container" style="background-color: #FFF;">
     <ul class="sticky">
@@ -269,10 +269,9 @@
               </a>
               <!-- Dropdown - User Information -->
               <div style="z-index: 9999; right: 200px;" class="dropdown-menu dropdown-menu-right shadow animated--grow-in" id="showInfo">
-                <a class="dropdown-item" href="#">
-                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
-                </a>
+                  <asp:LinkButton ID="btnProfile" runat="server" OnClick="btnProfile_Click" CssClass="dropdown-item">
+                      <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile</asp:LinkButton>
                 <div class="dropdown-divider"></div>
                   <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click" CssClass="dropdown-item">
                       <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>

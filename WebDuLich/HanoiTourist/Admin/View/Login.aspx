@@ -56,12 +56,13 @@
                       </div>
                       <asp:Button runat="server" Text="Login" CssClass="btn btn-primary btn-user btn-block" OnClick="Unnamed1_Click" />
                     <hr>
-                    <a href="#" class="btn btn-google btn-user btn-block">
+                    <%--<a href="#" class="btn btn-google btn-user btn-block">
                       <i class="fab fa-google fa-fw"></i> Login with Google
-                    </a>
-                    <a href="#" class="btn btn-facebook btn-user btn-block">
+                    </a>--%>
+                    <asp:Button runat="server" Text="Quay lại trang chủ" CssClass="btn btn-google btn-user btn-block" OnClick="GoHome_Click" />
+                    <%--<a href="#" class="btn btn-facebook btn-user btn-block">
                       <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                    </a>
+                    </a>--%>
                   </form>
                   <hr>
                   <div class="text-center">

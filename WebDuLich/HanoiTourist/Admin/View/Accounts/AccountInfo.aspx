@@ -45,7 +45,7 @@
                     <asp:Label runat="server" ID="txtThongbao"></asp:Label>
                 </div><br />
                 <div class="col-sm-8">
-                    <asp:Button runat="server" Text="Cập nhật tài khoản" class="btn btn-primary btn-user btn-block" />
+                    <asp:Button runat="server" Text="Cập nhật tài khoản" class="btn btn-primary btn-user btn-block" OnClick="Update_Click" />
                     <asp:Button runat="server" Text="Quay lại" class="btn btn-basic btn-user btn-block" OnClick="Back_Click"/>
                 </div>
                     <hr>

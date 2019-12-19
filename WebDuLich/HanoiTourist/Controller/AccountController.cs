@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using HanoiTourist.DTO;
 using System.Security.Cryptography;
+using HanoiTourist.Models;
 
 namespace HanoiTourist.Controllers
 {
@@ -84,11 +85,26 @@ namespace HanoiTourist.Controllers
                 }
             }
         }
-        public void Update(int userId,string email, string fullname, string pass, string phone, string dateOfBirth, string Address)
+        public Account getByEmail(string email)
+        {
+            Account res = new Account();
+            string sql = "select * from dbo.ACCOUNT where EMAIL = '" + email.Trim() + "'";
+            DataTable dt = connectDB.getTable(sql);
+            res.Id = Int32.Parse(dt.Rows[0][0].ToString());
+            res.Email = dt.Rows[0][1].ToString();
+            res.Fullname = dt.Rows[0][2].ToString();
+            res.Pass = dt.Rows[0][3].ToString();
+            res.Phone = dt.Rows[0][4].ToString();
+            res.DateOfBirth = dt.Rows[0][5].ToString();
+            res.Address = dt.Rows[0][6].ToString();
+            res.Is_Admin = bool.Parse(dt.Rows[0][7].ToString());
+            return res; 
+        }
+        public void Update(int userId,string email, string fullname, string pass, string phone, string dateOfBirth, string Address , bool isAdmin)
         {
             SqlConnection conn = connectDB.getConnection();
             string sqlUpdate = "UPDATE dbo.ACCOUNT SET EMAIL=@email,FULLNAME = @fullname, PASS = @pass, " +
-                        "PHONE = @phone, DATE_OF_BIRTH = @date_of_birth, ADDRESS = @address WHERE ID =" + userId;
+                        "PHONE = @phone, DATE_OF_BIRTH = @date_of_birth, ADDRESS = @address, IS_ADMIN = @isAdmin WHERE ID =" + userId;
             SqlCommand cmd =  new SqlCommand(sqlUpdate, conn);
             cmd.Parameters.AddWithValue("@Email",email);
             cmd.Parameters.AddWithValue("@FullName", fullname);
@@ -96,6 +112,7 @@ namespace HanoiTourist.Controllers
             cmd.Parameters.AddWithValue("@Phone", phone);
             cmd.Parameters.AddWithValue("@date_of_birth", dateOfBirth);
             cmd.Parameters.AddWithValue("@address", Address);
+            cmd.Parameters.AddWithValue("@isAdmin", isAdmin);
             conn.Open();
             cmd.ExecuteNonQuery();
             conn.Close();

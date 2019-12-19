@@ -11,7 +11,18 @@ namespace HanoiTourist.Layout
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["user"] == null)
+            {
+                Response.Redirect("../Login.aspx");
+            }
+            else {
+                lblUser.Text = Session["user"].ToString();
+            }
+        }
+        protected void btnLogout_Click(object sender, EventArgs e)
+        {
+            Session.Remove("user");
+            Page_Load(sender, e);
         }
     }
 }

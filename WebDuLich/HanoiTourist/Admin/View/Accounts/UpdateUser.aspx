@@ -45,6 +45,9 @@
                     </div>
                 </div>
                 <div class="col-sm-8">
+                    <asp:CheckBox ID="cbIsAdmin" runat="server" oncheckedchanged="cbIsAdmin_Checked" Text="Tài khoản quản trị" />
+                </div>
+                <div class="col-sm-8">
                     <asp:Label runat="server" ID="txtThongbao"></asp:Label>
                 </div><br />
                 <div class="col-sm-8">

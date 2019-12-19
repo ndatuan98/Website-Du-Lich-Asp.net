@@ -15,6 +15,5 @@
   <!-- Custom styles for this template-->
   <link href="../admin/css/sb-admin-2.min.css" rel="stylesheet">
 </asp:Content>
-</asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 </asp:Content>
