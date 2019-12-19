@@ -258,7 +258,7 @@
                                                 <p>
                                                     <img src="../images/date.png"/>
                                                     <asp:Label runat="server" Text='<%#Eval("DEPARTURE_DATE") %>'> </asp:Label>
-                                                </p>s
+                                                </p>
 							                </div>
 							                <div class="snipcart-details top_brand_home_details" style="height:70px;">
 								                <form action="#" method="post" style="padding-left: 175px; position:relative; bottom: 50px;">
