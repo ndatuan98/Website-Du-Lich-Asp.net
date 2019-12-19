@@ -1,14 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout/GUILayout.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="HanoiTourist.Views.Cart" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout/GUILayout.Master" AutoEventWireup="true" CodeBehind="CartDetail.aspx.cs" Inherits="HanoiTourist.Views.CartDetail" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolderID1" runat="server">
     <div class="row" style="background-color: #FFFFFF; padding-bottom: 20px;padding-top: 20px;">
         <div class ="col-md-8" style="background-color: rgba(0,135,255,.3);left: 18%;">
+             <center><h5><asp:Label runat="server" ID="txtThongBao" ForeColor="Red"></asp:Label></h5></center>
             <div style="background-color: rgba(0,135,255,.3);">
+               
                 <asp:DataList runat="server" ID="ListCart">
                 <ItemTemplate>
-                    <table>
-                        <tr style="margin: 10px;">
+                    <table style="left: 20%;">
+                        <tr style="margin: 10px;left: 300px;">
                             <td width="30%">
                                 <asp:Image  runat="server" ImageUrl='<%#Eval("Image") %>'  Height="180px" Width="320px"/>
                             </td>
@@ -82,7 +84,7 @@
                         </tr>
                     </table>
                 </form>
-                <asp:Button  runat="server" ID="btnThanhToan" Text="Thanh toán" CssClass="btn-primary" OnClick="btnThanhToan_Click" style="text-align: center;margin: 10px;margin-left: 20px;" Height="40px" Width="170px"/>
+                <asp:Button  runat="server" ID="btnThanhToan" Text="Thanh toán" CssClass="btn-primary"  style="text-align: center;margin: 10px;margin-left: 20px;" Height="40px" Width="170px" OnClick="btnThanhToan_Click"/>
             </div>
         </div>
         <div class="col-md-4">

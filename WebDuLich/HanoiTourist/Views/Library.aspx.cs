@@ -14,15 +14,25 @@ namespace HanoiTourist.Views
         ConnectDB connectDB = new ConnectDB();
         protected void Page_Load(object sender, EventArgs e)
         {
-            SqlConnection conn = connectDB.getConnection();
-            conn.Open();
-            string sql = "SELECT image FROM dbo.DETAILS_TOUR";
-            DataTable dt = connectDB.getTable(sql);
-            ListHinhAnh.DataSource = dt;
-            ListHinhAnh.DataBind();
+            try
+            {
+                SqlConnection conn = connectDB.getConnection();
+                conn.Open();
+                string sql = "SELECT image FROM dbo.DETAILS_TOUR";
+                DataTable dt = connectDB.getTable(sql);
+                ListHinhAnh.DataSource = dt;
+                ListHinhAnh.DataBind();
 
-            ListVideo.DataSource = dt;
-            ListVideo.DataBind();
+                ListVideo.DataSource = dt;
+                ListVideo.DataBind();
+                conn.Close();
+            }
+            catch(Exception ex)
+            {
+                Response.Write("<script>Có lỗi xảy ra</script>");
+            }
+            
+            
         }
     }
 }
