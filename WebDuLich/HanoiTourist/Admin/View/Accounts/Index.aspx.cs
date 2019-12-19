@@ -16,18 +16,22 @@ namespace HanoiTourist.Admin.View
         ConnectDB connect = new ConnectDB();
         Account account = new Account();
         AccountController accountController = new AccountController();
-        protected void Page_Load(object sender, EventArgs e)
+        void load_data()
         {
-            if(Session["user"] == null)
-            {
-                Response.Redirect("../Login.aspx");
-            }
             SqlConnection conn = connect.getConnection();
             string sql = "SELECT *FROM dbo.ACCOUNT";
             DataTable dt = new DataTable();
             dt = connect.getTable(sql);
             DanhSachUser.DataSource = dt;
             DanhSachUser.DataBind();
+        }
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if(Session["user"] == null)
+            {
+                Response.Redirect("../Login.aspx");
+            }
+            load_data();
         }
         protected void DanhSachUser_Editing(object sender, GridViewEditEventArgs e)
         {
@@ -47,6 +51,19 @@ namespace HanoiTourist.Admin.View
             }
             catch (Exception ex)
             { }
+        }
+        int stt = 1;
+        public string get_stt()
+        {
+            return Convert.ToString(stt++);
+        }
+        protected void DanhSachUser_PageIndexChanging(object sender, GridViewPageEventArgs e)
+        {
+            DanhSachUser.PageIndex = e.NewPageIndex;   //trang hien tai
+            int trang_thu = e.NewPageIndex;      //the hien trang thu may
+            int so_dong = DanhSachUser.PageSize;       //moi trang co bao nhieu dong
+            stt = trang_thu * so_dong + 1;
+            load_data();
         }
     }
 }

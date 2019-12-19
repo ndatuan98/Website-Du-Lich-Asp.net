@@ -10,7 +10,7 @@ namespace HanoiTourist.DTO
     {
         public SqlConnection getConnection()
         {
-            return new SqlConnection(@"Data Source=DESKTOP-D5N4DEM\SQLEXPRESS;Initial Catalog=HANOITOURIST;Integrated Security=True");
+            return new SqlConnection(@"Data Source=DESKTOP-401CU18\TUANNDA;Initial Catalog=HANOITOURIST;Integrated Security=True");
         }
 
         public DataTable getTable(string sql)

@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout/AdminLayout.Master" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="HanoiTourist.Admin.View.Cart.Index" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Layout/AdminLayout.Master" AutoEventWireup="true" CodeBehind="ConfirmCart.aspx.cs" Inherits="HanoiTourist.Admin.View.Carts.ConfirmCart" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <h1 class=" h3 text-gray-900 mb-4">Tour chưa xác nhận</h1>
-    <asp:GridView runat="server" ID="ListCart" CellPadding="4" Width="100%" AllowPaging="True" AutoGenerateColumns="False" ForeColor="#333333" GridLines="None" OnRowEditing="ListCart_Editing"  DataKeyNames="ID" OnPageIndexChanging="ListCart_PageIndexChanging" PageSize="5">
+    <h1 class=" h3 text-gray-900 mb-4">Tour đã xác nhận</h1>
+    <asp:GridView runat="server" ID="ListCart" CellPadding="4" Width="100%" AllowPaging="True" AutoGenerateColumns="False" ForeColor="#333333" GridLines="None" DataKeyNames="ID" OnPageIndexChanging="ListCart_PageIndexChanging" PageSize="5">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="ID" HeaderText="ID" Visible="False" />
@@ -17,7 +17,6 @@
             <asp:BoundField DataField="MESSAGE" HeaderText="Lời nhắn" SortExpression="Message" />
             <asp:BoundField DataField="TYPE_NAME" HeaderText="Kiểu TT" SortExpression="TypeName" />
             <asp:BoundField DataField="METHOD_NAME" HeaderText="PTTT" SortExpression="MethodName" />
-            <asp:CommandField EditText="Xác nhận" ShowEditButton="True" CancelText="Huỷ" UpdateText="Cập nhật" />
         </Columns>
         <EditRowStyle BackColor="#2461BF" />
         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />

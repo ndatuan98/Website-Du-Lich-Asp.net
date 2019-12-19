@@ -7,18 +7,20 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HanoiTourist.Admin.View {
-    
-    
-    public partial class ListTour {
-        
+namespace HanoiTourist.Admin.View.Carts
+{
+
+
+    public partial class ConfirmCart
+    {
+
         /// <summary>
-        /// DanhSachTour control.
+        /// ListCart control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView DanhSachTour;
+        protected global::System.Web.UI.WebControls.GridView ListCart;
     }
 }

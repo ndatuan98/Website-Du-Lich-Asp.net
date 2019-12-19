@@ -14,7 +14,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h1 class=" h3 text-gray-900 mb-4">Danh sách tài khoản</h1>
-    <asp:GridView runat="server" ID="DanhSachUser" CellPadding="4" Width="100%" AllowPaging="True" AutoGenerateColumns="False" ForeColor="#333333" GridLines="None" OnRowDeleting="DanhSachUser_Delete" OnRowEditing="DanhSachUser_Editing" DataKeyNames="ID">
+    <asp:GridView runat="server" ID="DanhSachUser" CellPadding="4" Width="100%" AllowPaging="True" AutoGenerateColumns="False" ForeColor="#333333" GridLines="None" OnRowDeleting="DanhSachUser_Delete" OnRowEditing="DanhSachUser_Editing" DataKeyNames="ID" OnPageIndexChanging="DanhSachUser_PageIndexChanging">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="ID" HeaderText="ID" Visible="False" />
