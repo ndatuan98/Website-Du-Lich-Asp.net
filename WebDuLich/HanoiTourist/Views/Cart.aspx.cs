@@ -66,6 +66,7 @@ namespace HanoiTourist.Views
             {
                 conn.Close();
             }
+            Response.Redirect("CartDetail.aspx");
         }
 
         public SqlDataReader GetDataReader(string sql)

@@ -62,7 +62,7 @@ namespace HanoiTourist.Layout
         protected void btnLogout_Click(object sender, EventArgs e)
         {
             Session.Remove("user");
-            Page_Load(sender,e);
+            Response.Redirect("Home.aspx");
         }
     }
 }
