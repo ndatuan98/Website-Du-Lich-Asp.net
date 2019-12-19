@@ -19,11 +19,8 @@
 </html>--%>
 
 <!DOCTYPE html>
-<html lang="zxx">
-
-<head>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+<html>
+<head runat="server">
     <title>Hanoitourist: Tour Du Lịch, Dịch Vụ du lịch hàng đầu Việt Nam</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
@@ -53,8 +50,8 @@
             padding:0px;
             margin:0px;
             position:fixed;
-            right:-130px;
-            top: 570px;
+            right:-170px;
+            bottom: 10px;
             width:210px;
             z-index: 1100;
         }
@@ -103,10 +100,12 @@
             padding-top: 100px;
         }
 </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
 </head>
 
-<body>
-    <form runat="server">
+<body style="overflow-x: hidden; padding: 0px; ">
+    <form id="form1" runat="server">
     <div class="sticky-container" style="background-color: #FFF;">
     <ul class="sticky">
         <li title="Gọi tổng đài 19004518">
@@ -166,7 +165,7 @@
             <a href="" title="Liên hệ" style="padding: 5px;">
                 Liên hệ
             </a>
-            <a href="" title="Giỏ hàng">
+            <a href="../Views/CartDetail.aspx" title="Giỏ hàng">
                 Giỏ hàng
             </a>
            
@@ -180,69 +179,63 @@
                         <input type="checkbox" id="drop" />
                         <ul class="menu">
                             <li>
-                                <a href="index.html" class="active">TRANG CHỦ</a>
+                                <a href="../Views/Home.aspx" class="active">TRANG CHỦ</a>
                                 
                             </li>
-                            <li><a href="about.html">DU LỊCH TRONG NƯỚC</a></li>
+                            <li>
+                                <label for="drop-2" class="toggle toogle-2">DU LỊCH TRONG NƯỚC<span class="fa fa-angle-down"
+                                        aria-hidden="true"></span>
+                                </label>
+                                <asp:HyperLink runat="server" Text="Xem thêm" NavigateUrl="~/Views/ListTour.aspx?Country_ID=-1" >TOUR TRONG NƯỚC</asp:HyperLink>
+                                <input type="checkbox" id="drop-2" />
+                                <ul >
+                                    <asp:DataList runat="server" ID="MenuTN" RepeatColumns="2" Width="100%">
+                                        <ItemTemplate>
+                                            <li><asp:HyperLink runat="server" Text='<%#Eval("DESTINATION") %>' NavigateUrl='<%# "~/Views/ListTourWithMenu.aspx?Destination=" + Eval("DESTINATION") %>'></asp:HyperLink> </li>
+                                        </ItemTemplate>
+                                     </asp:DataList>
+                                </ul>
+                            </li>
                             <li>
                                 <label for="drop-2" class="toggle toogle-2">DU LỊCH NƯỚC NGOÀI<span class="fa fa-angle-down"
                                         aria-hidden="true"></span>
                                 </label>
-                                <a href="#">DU LỊCH NƯỚC NGOÀI</a>
+                                 <asp:HyperLink runat="server" Text="Xem thêm" NavigateUrl="~/Views/ListTour.aspx?Country_ID=-3" >TOUR NƯỚC NGOÀI</asp:HyperLink>
                                 <input type="checkbox" id="drop-2" />
-                                <ul style="width: 1000px;">
-                                    <li><a href="portfolio.html" class="drop-text">Portfolio</a></li>
-                                    <li><a href="single.html" class="drop-text">Blog Post</a></li>
-                                    <li><a href="index.html" class="drop-text">More</a></li>
+                                <ul>
+                                    <asp:DataList runat="server" ID="MenuNN" RepeatColumns="4" Width="100%">
+                                        <ItemTemplate>
+                                            <li><asp:HyperLink runat="server" Text='<%#Eval("COUNTRY_NAME") %>' NavigateUrl='<%# "~/Views/ListTour.aspx?Country_ID=" + Eval("Id") %>'></asp:HyperLink> </li>
+                                        </ItemTemplate>
+                                     </asp:DataList>
                                 </ul>
                             </li>
                             <li>
                                 <label for="drop-2" class="toggle toogle-2">HOT TOUR
                                 </label>
-                                <a href="#">HOT TOUR</a>
-                                <input type="checkbox" id="drop-2" />
-                                <ul>
-                                    <li><a href="portfolio.html" class="drop-text">Tour giờ chót</a></li>
-                                    <li><a href="single.html" class="drop-text">Tour khuyến mãi</a></li>
-                                </ul>
+                                 <asp:HyperLink runat="server" Text="Xem thêm" NavigateUrl="~/Views/ListTour.aspx?Country_ID=-3" >HOT TOUR</asp:HyperLink>
                             </li>
                             <li>
                                 <label for="drop-2" class="toggle toogle-2">COMBO DU LỊCH
                                 </label>
-                                <a href="#">COMBO DU LỊCH</a>
-                                <input type="checkbox" id="drop-2" />
-                                <ul>
-                                    <li><a href="portfolio.html" class="drop-text">Combo</a></li>
-                                    <li><a href="single.html" class="drop-text">Voucher</a></li>
-                                    <li><a href="index.html" class="drop-text">Khách sạn</a></li>
-                                    <li><a href="index.html" class="drop-text">Homestay</a></li>
-                                </ul>
+                                <a href="../Views/ComboDuLich.aspx">COMBO DU LỊCH</a>
                             </li>
-                            <li><a href="contact.html">MICE</a></li>
+                            <li><a href="../Views/MICE.aspx">MICE</a></li>
                             <li>
                                 <label for="drop-2" class="toggle toogle-2">VẬN CHUYỂN
                                 </label>
-                                <a href="#">VẬN CHUYỂN</a>
+                                <a href="../Views/Transport.aspx">VẬN CHUYỂN</a>
                                 <input type="checkbox" id="drop-2" />
-                                <ul>
-                                    <li><a href="portfolio.html" class="drop-text">Thuê xe du lịch</a></li>
-                                    <li><a href="single.html" class="drop-text">Vé máy bay</a></li>
-                                    <li><a href="index.html" class="drop-text">Du thuyền</a></li>
-                                </ul>
                             </li> 
                             <li>
                                 <label for="drop-2" class="toggle toogle-2">THƯ VIỆN<span class="fa fa-angle-down"
                                         aria-hidden="true"></span>
                                 </label>
-                                <a href="#">THƯ VIỆN</a>
+                                <a href="../Views/Library.aspx">THƯ VIỆN</a>
                                 <input type="checkbox" id="drop-2" />
-                                <ul>
-                                    <li><a href="portfolio.html" class="drop-text">Hình ảnh</a></li>
-                                    <li><a href="single.html" class="drop-text">Video</a></li>
-                                </ul>
                             </li> 
-                            <li><a href="contact.html">TIN TỨC</a></li> 
-                            <li><a href="contact.html">LIÊN HỆ</a></li> 
+                            <li><a href="../Views/News.aspx">TIN TỨC</a></li> 
+                            <li><a href="../Views/Contact.aspx">LIÊN HỆ</a></li> 
                         </ul>
                     </nav>
                 </div>
@@ -250,8 +243,42 @@
             </div>
         </div>
         <div class="col-md-12" style="position: absolute; top: 40px;padding-left: 1130px;">
-            <a  href="login.html" class="btn btn-default" style="font-size: 12px; border: 1px solid #FFA300; color: #FFA300;">Đăng ký</a>
-            <asp:Button runat="server" Text="Đăng nhập" CssClass="btn btn-warning" OnClick="btnLogin_Click" />
+            <asp:Panel ID="pnLogin" runat="server">
+                <asp:Button runat="server" Text="Đăng ký" CssClass="btn btn-default" style="font-size: 12px; border: 1px solid #FFA300; color: #FFA300; padding: 3px 5px;" OnClick="btnRegister_Click" />
+                <asp:Button runat="server" Text="Đăng nhập" CssClass="btn btn-warning" style="font-size: 12px; border: 1px solid #FFA300; color: #FFF; padding: 3px 5px;" OnClick="btnLogin_Click" />
+            </asp:Panel>
+            <asp:Panel ID="pnLogged" runat="server">
+                <style>
+                    .showhide{
+                        height: 30px;
+                    }
+                </style>
+                <script>
+                    function showInfo() {
+                        var x = document.getElementById("showInfo");
+                        if (x.style.display === "none") {
+                            x.style.display = "block";
+                        } else {
+                            x.style.display = "none";
+                        }
+                    }
+                </script>
+               <a class="showhide" onclick="showInfo()">
+                   <asp:Label runat="server" ID="lblFullname" CssClass="mr-2 d-none d-lg-inline text-gray-600 small" />
+                    <img height="35px" class="rounded-circle" src="../images/avatar.png">
+              </a>
+              <!-- Dropdown - User Information -->
+              <div style="z-index: 9999; right: 200px;" class="dropdown-menu dropdown-menu-right shadow animated--grow-in" id="showInfo">
+                  <asp:LinkButton ID="btnProfile" runat="server" OnClick="btnProfile_Click" CssClass="dropdown-item">
+                      <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Profile</asp:LinkButton>
+                <div class="dropdown-divider"></div>
+                  <asp:LinkButton ID="btnLogout" runat="server" OnClick="btnLogout_Click" CssClass="dropdown-item">
+                      <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Đăng xuất</asp:LinkButton>
+                </a>
+              </div>
+            </asp:Panel>
            <%-- <a  href="register.html" class="btn btn-warning" style="font-size: 12px; color: #FFF;">Đăng nhập</a>--%>
         </div>
     </header>
@@ -261,436 +288,7 @@
     <div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolderID1" runat="server">
             </asp:ContentPlaceHolder>
-        </div>
-    <!-- //banner -->
-    <!-- about-->
-  <%--  <section class="single_grid_w3_main align-w3-abt" id="about">
-        <div class="container">
-            <div class="wthree_pvt_title text-center">
-                <h4 class="w3pvt-title">Superior Services</h4>
-                <p class="sub-title">Subheadings stand out because they are like mini titles. They make your post stand
-                    out and
-                    make it more readable.</p>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="abt-grid">
-                        <div class="row">
-                            <div class="col-3">
-                                <div class="abt-icon">
-                                    <span class="fa fa-ravelry"></span>
-                                </div>
-                            </div>
-                            <div class="col-9">
-                                <div class="abt-txt">
-                                    <h4>takimata sanctus</h4>
-                                    <p>Lo sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 my-lg-0 my-4">
-                    <div class="abt-grid">
-                        <div class="row">
-                            <div class="col-3">
-                                <div class="abt-icon">
-                                    <span class="fa fa-pencil"></span>
-                                </div>
-                            </div>
-                            <div class="col-9">
-                                <div class="abt-txt">
-                                    <h4>takimata sanctus</h4>
-                                    <p>Lo sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="abt-grid">
-                        <div class="row">
-                            <div class="col-3">
-                                <div class="abt-icon">
-                                    <span class="fa fa-laptop"></span>
-                                </div>
-                            </div>
-                            <div class="col-9">
-                                <div class="abt-txt">
-                                    <h4>takimata sanctus</h4>
-                                    <p>Lo sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex justify-content-center">
-                <a href="about.html" class="btn w3ls-btn">view more</a>
-            </div>
-        </div>
-    </section>--%>
-    <!-- //about -->
-    <!-- services -->
-   <%-- <section class="bg-services position-relative align-w3" id="services">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="services-bg-color">
-                        <div class="wthree_pvt_title mb-3">
-                            <h4 class="w3pvt-title">what we provide
-                            </h4>
-                            <span class="sub-title">add your caption here</span>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 service-title my-4">
-                                <h4 class="home-title text-theme">Sub heading</h4>
-                                <p class="sec-4">Itaque earum rerum hic tenetur a sapiente delectusum hic
-                                    tenetur yua.
-                                </p>
-                            </div>
-                            <div class="col-md-6 service-title my-md-4">
-                                <h4 class="home-title text-theme">Sub heading</h4>
-                                <p class="sec-4">Itaque earum rerum hic tenetur a sapiente delectusum hic
-                                    tenetur ap.
-                                </p>
-                            </div>
-                            <div class="col-md-6 service-title mt-4">
-                                <h4 class="home-title text-theme">Sub heading</h4>
-                                <p class="sec-4">Itaque earum rerum hic tenetur a sapiente delectusum hic
-                                    tenetur ar.
-                                </p>
-                            </div>
-                            <div class="col-md-6 service-title mt-4">
-                                <h4 class="home-title text-theme">Sub heading</h4>
-                                <p class="sec-4">Itaque earum rerum hic tenetur a sapiente delectusum hic
-                                    tenetur as.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-start">
-                            <a href="about.html" class="btn w3ls-btn">view more</a>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="offset-lg-2"></div>
-            </div>
-        </div>
-    </section>--%>
-    <!-- //services -->
-
-    <!-- Portfolio -->
-   <%-- <div class="wthree_pvtits-services align-w3" id="portfolio">
-        <div class="container">
-            <div class="wthree_pvt_title text-center">
-                <h4 class="w3pvt-title">Portfolio
-                </h4>
-                <p class="sub-title">Subheadings stand out because they are like mini titles. They make your post stand
-                    out and
-                    make it more readable.</p>
-            </div>
-            <ul class="demo row">
-                <li class="col-lg-4">
-                    <div class="img-grid">
-                        <div class="Portfolio-grid1">
-                            <a href="#gal1">
-                                <img src="../image/g1.jpg" alt=" " class="img-fluid" />
-                            </a>
-                        </div>
-                        <div class="port-desc text-center">
-                            <h6 class="main-title-w3pvt text-center">Some Description</h6>
-                            <p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed
-                                diam
-                                nonumy eirmod tempor invidunt ut.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-lg-4">
-                    <div class="img-grid">
-                        <div class="Portfolio-grid1">
-                            <a href="#gal2">
-                                <img src="images/g2.jpg" alt=" " class="img-fluid" />
-                            </a>
-                        </div>
-                        <div class="port-desc text-center">
-                            <h6 class="main-title-w3pvt text-center">Some Description</h6>
-                            <p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed
-                                diam
-                                nonumy eirmod tempor invidunt ut.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-lg-4">
-                    <div class="img-grid">
-                        <div class="Portfolio-grid1">
-                            <a href="#gal3">
-                                <img src="../image/g3.jpg" alt=" " class="img-fluid" />
-                            </a>
-                        </div>
-                        <div class="port-desc text-center">
-                            <h6 class="main-title-w3pvt text-center">Some Description</h6>
-                            <p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed
-                                diam
-                                nonumy eirmod tempor invidunt ut.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-lg-4">
-                    <div class="img-grid">
-                        <div class="Portfolio-grid1">
-                            <a href="#gal4">
-                                <img src="images/g4.jpg" alt=" " class="img-fluid" />
-                            </a>
-                        </div>
-                        <div class="port-desc text-center">
-                            <h6 class="main-title-w3pvt text-center">Some Description</h6>
-                            <p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed
-                                diam
-                                nonumy eirmod tempor invidunt ut.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-lg-4">
-                    <div class="img-grid">
-                        <div class="Portfolio-grid1">
-                            <a href="#gal5">
-                                <img src="images/g5.jpg" alt=" " class="img-fluid" />
-                            </a>
-                        </div>
-                        <div class="port-desc text-center">
-                            <h6 class="main-title-w3pvt text-center">Some Description</h6>
-                            <p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed
-                                diam
-                                nonumy eirmod tempor invidunt ut.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-                <li class="col-lg-4">
-                    <div class="img-grid">
-                        <div class="Portfolio-grid1">
-                            <a href="#gal6">
-                                <img src="images/g6.jpg" alt=" " class="img-fluid" />
-                            </a>
-                        </div>
-                        <div class="port-desc text-center">
-                            <h6 class="main-title-w3pvt text-center">Some Description</h6>
-                            <p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed
-                                diam
-                                nonumy eirmod tempor invidunt ut.
-                            </p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-            <div class="d-flex justify-content-center">
-                <a href="portfolio.html" class="btn w3ls-btn">view more</a>
-            </div>
-            <!-- popup-->
-            <div id="gal1" class="popup-effect animate">
-                <div class="popup">
-                    <img src="images/g1.jpg" alt="Popup Image" class="img-fluid" />
-                    <p class="editContent mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int.
-                        placerat placerat
-                        dolor.</p>
-                    <a class="close" href="#gallery">&times;</a>
-                </div>
-            </div>
-            <!-- //popup -->
-            <!-- popup-->
-            <div id="gal2" class="popup-effect animate">
-                <div class="popup">
-                    <img src="images/g2.jpg" alt="Popup Image" class="img-fluid" />
-                    <p class="editContent mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int.
-                        placerat placerat
-                        dolor.</p>
-                    <a class="close" href="#gallery">&times;</a>
-                </div>
-            </div>
-            <!-- //popup -->
-            <!-- popup-->
-            <div id="gal3" class="popup-effect animate">
-                <div class="popup">
-                    <img src="images/g3.jpg" alt="Popup Image" class="img-fluid" />
-                    <p class="editContent mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int.
-                        placerat placerat
-                        dolor.</p>
-                    <a class="close" href="#gallery">&times;</a>
-                </div>
-            </div>
-            <!-- //popup3 -->
-            <!-- popup-->
-            <div id="gal4" class="popup-effect animate">
-                <div class="popup">
-                    <img src="images/g4.jpg" alt="Popup Image" class="img-fluid" />
-                    <p class="editContent mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int.
-                        placerat placerat
-                        dolor.</p>
-                    <a class="close" href="#gallery">&times;</a>
-                </div>
-            </div>
-            <!-- //popup -->
-            <!-- popup-->
-            <div id="gal5" class="popup-effect animate">
-                <div class="popup">
-                    <img src="images/g5.jpg" alt="Popup Image" class="img-fluid" />
-                    <p class="editContent mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int.
-                        placerat placerat
-                        dolor.</p>
-                    <a class="close" href="#gallery">&times;</a>
-                </div>
-            </div>
-            <!-- //popup -->
-            <!-- popup-->
-            <div id="gal6" class="popup-effect animate">
-                <div class="popup">
-                    <img src="images/g6.jpg" alt="Popup Image" class="img-fluid" />
-                    <p class="editContent mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int.
-                        placerat placerat
-                        dolor.</p>
-                    <a class="close" href="#gallery">&times;</a>
-                </div>
-            </div>
-            <!-- //popup -->
-        </div>
-    </div>--%>
-    <!-- //Portfolio -->
-
-    <!-- slide -->
-   <%-- <section class="wthree-slie-btm py-lg-5">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="slide-banner pl-0">
-                    </div>
-                </div>
-                <div class="col-lg-6 mt-lg-0 mt-4">
-                    <div class="container">
-                        <div class="wthree_pvt_title">
-                            <h4 class="w3pvt-title">creative solutions
-                            </h4>
-                            <span class="sub-title">add your caption here</span>
-                        </div>
-                        <div class="row flex-column">
-                            <div class="abt-grid">
-                                <div class="row">
-                                    <div class="col-3">
-                                        <div class="abt-icon">
-                                            <span class="fa fa-ravelry"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-9">
-                                        <div class="abt-txt ml-0">
-                                            <h4>sanctus takimata </h4>
-                                            <p>Lo sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="abt-grid mt-4 pt-lg-2">
-                                <div class="row">
-                                    <div class="col-3">
-                                        <div class="abt-icon">
-                                            <span class="fa fa-laptop"></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-9">
-                                        <div class="abt-txt ml-0">
-                                            <h4>takimata sanctus</h4>
-                                            <p>Lo sea takimata sanctus est Lorem ipsum dolor sit amet.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="d-flex justify-content-start">
-                            <a href="about.html" class="btn w3ls-btn">view more</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>--%>
-    <!-- //slide -->
-    <!-- blog -->
-   <%-- <section class="blog_w3ls align-w3" id="posts">
-        <div class="container">
-            <div class="wthree_pvt_title tex t-center">
-                <h4 class="w3pvt-title">latest posts
-                </h4>
-                <p class="sub-title">Subheadings stand out because they are like mini titles. They make your post stand
-                    out and
-                    make it more readable.</p>
-            </div>
-            <div class="row space-sec">
-                <!-- blog grid -->
-                <div class="col-lg-4 col-md-6 mt-sm-0 mt-4">
-                    <div class="card">
-                        <div class="card-header p-0 position-relative">
-                            <a href="single.html">
-                                <img class="card-img-bottom" src="images/g1.jpg" alt="Card image cap">
-                                <span class="post-icon">blog post</span>
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="blog-title card-title font-weight-bold">
-                                <a href="single.html">Cras ultricies ligula sed.</a>
-                            </h5>
-                            <p>At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit
-                                ametLorem ipsum dolor sit amet,sed diam nonumy.</p>
-                            <a href="single.html" class="blog_link">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- //blog grid -->
-                <!-- blog grid -->
-                <div class="col-lg-4 col-md-6 mt-md-0  mt-4">
-                    <div class="card">
-                        <div class="card-header p-0 position-relative">
-                            <a href="single.html">
-                                <img class="card-img-bottom" src="images/g2.jpg" alt="Card image cap">
-                                <span class="post-icon">blog post</span>
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="blog-title card-title font-weight-bold">
-                                <a href="single.html">magna porta au blandita.</a>
-                            </h5>
-                            <p>At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit
-                                ametLorem ipsum dolor sit amet,sed diam nonumy.</p>
-                            <a href="single.html" class="blog_link">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- //blog grid -->
-                <!-- blog grid -->
-                <div class="col-lg-4 col-md-6 mt-lg-0 mt-4 mx-auto blog-end">
-                    <div class="card">
-                        <div class="card-header p-0  position-relative">
-                            <a href="single.html">
-                                <img class="card-img-bottom" src="images/g3.jpg" alt="Card image cap">
-                                <span class="post-icon">blog post</span>
-                            </a>
-                        </div>
-                        <div class="card-body">
-                            <h5 class="blog-title card-title font-weight-bold">
-                                <a href="single.html">Cras ultricies ligula sed.</a>
-                            </h5>
-                            <p>At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit
-                                ametLorem ipsum dolor sit amet,sed diam nonumy.</p>
-                            <a href="single.html" class="blog_link">Read more</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- //blog grid -->
-            </div>
-        </div>
-    </section>--%>
+   </div>
     <div class="col-md-12" style="width: 100%; padding: 0px; background-color: #FFF;">
         <img src="../images/footer_banner1.jpg" width="33%">
         <img src="../images/footer_banner2.jpg" width="33%">
@@ -699,38 +297,38 @@
      </div>
 
      <!--Footer -->
- <footer class="footer py-md-5 pt-md-3 pb-sm-5">
+ <footer class="footer py-md-5 pt-md-3 pb-sm-5" style="padding-bottom: 0px !important;">
         <div style="background-image: url(../images/footer_banner4.png); position: fixed;width: 100%;bottom: 20px; z-index: -100;background-attachment: fixed;background-size: cover;">
         </div>
         <div class="container" >
             <div class="row p-sm-4 px-3 py-3">
                 <div class="col-lg-3  col-md-6 mt-lg-0 mt-4">
                     <div class="footerv2-w3ls">
-                        <h3 class="mb-3 w3f_title">TOUR TRONG NƯỚC</h3>
+                        <h3 class="mb-3 w3f_title" style="border-left:3px solid #ff9300; padding-left: 7px;">TOUR TRONG NƯỚC</h3>
                         <hr>
                         <ul class="list-w3pvtits">
                             <li>
-                                <a href="index.html">
+                                <a href="#">
                                     Combo du lịch
                                 </a>
                             </li>
                             <li class="my-2">
-                                <a href="about.html">
+                                <a href="#">
                                     Tour giờ chót
                                 </a>
                             </li>
                             <li class="my-2">
-                                <a href="portfolio.html">
+                                <a href="#">
                                     Tour thường xuyên
                                 </a>
                             </li>
                             <li class="mb-2">
-                                <a href="single.html">
+                                <a href="#">
                                     Tour giờ chót
                                 </a>
                             </li>
                             <li>
-                                <a href="contact.html">
+                                <a href="#">
                                     Combo du lịch
                                 </a>
                             </li>
@@ -739,26 +337,26 @@
                 </div>
                 <div class="col-lg-3  col-md-6 mt-lg-0 mt-4">
                     <div class="footerv2-w3ls">
-                        <h3 class="mb-3 w3f_title">TOUR NƯỚC NGOÀI</h3>
+                        <h3 class="mb-3 w3f_title" style="border-left:3px solid #ff9300; padding-left: 7px;">TOUR NƯỚC NGOÀI</h3>
                         <hr>
                         <ul class="list-w3pvtits">
                             <li class="my-2">
-                                <a href="single.html">
+                                <a href="#">
                                     Tour theo điểm đến
                                 </a>
                             </li>
                             <li class="my-2">
-                                <a href="portfolio.html">
+                                <a href="#">
                                     Tour thường xuyên
                                 </a>
                             </li>
                             <li class="mb-2">
-                                <a href="contact.html">
+                                <a href="#">
                                     Tour giờ chót
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html">
+                                <a href="#">
                                     Combo du lịch
                                 </a>
                             </li>
@@ -767,31 +365,31 @@
                 </div>
                 <div class="col-lg-3 col-md-6 mt-lg-0 mt-4">
                     <div class="footerv2-w3ls">
-                        <h3 class="mb-3 w3f_title">DỊCH VỤ</h3>
+                        <h3 class="mb-3 w3f_title" style="border-left:3px solid #ff9300; padding-left: 7px;">DỊCH VỤ</h3>
                         <hr>
                         <ul class="list-w3pvtits">
                             <li>
-                                <a href="single.html">
+                                <a href="#">
                                     Visa
                                 </a>
                             </li>
                             <li class="my-2">
-                                <a href="portfolio.html">
+                                <a href="#">
                                     Du thuyền
                                 </a>
                             </li>
                             <li class="my-2">
-                                <a href="about.html">
+                                <a href="#">
                                     Khách sạn
                                 </a>
                             </li>
                             <li class="mb-2">
-                                <a href="contact.html">
+                                <a href="#">
                                     Vé máy bay
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html">
+                                <a href="#">
                                     Du lịch MICE
                                 </a>
                             </li>
@@ -800,32 +398,32 @@
                 </div>
                 <div class="col-lg-3  col-md-6 mt-lg-0 mt-4">
                     <div class="footerv2-w3ls">
-                        <h3 class="mb-3 w3f_title" >VỀ HANOITOURIST</h3>
+                        <h3 class="mb-3 w3f_title" style="border-left:3px solid #ff9300; padding-left: 7px;">VỀ HANOITOURIST</h3>
                         <hr>
-                        <ul class="list-w3pvtits">
+                        <ul class="list-w3pvtits" style="">
                             <li class="my-2">
-                                <a href="portfolio.html">
+                                <a href="#">
                                     Giới thiệu
                                 </a>
                             </li>
                             <li>
-                                <a href="about.html">
+                                <a href="#">
                                     Liên hệ
                                 </a>
                             </li>
                             <li class="my-2">
-                                <a href="single.html">
+                                <a href="#">
                                     Tin tức
                                 </a>
                             </li>
 
                             <li class="mb-2">
-                                <a href="contact.html">
+                                <a href="#">
                                     Thư viện
                                 </a>
                             </li>
                             <li>
-                                <a href="index.html">
+                                <a href="#">
                                     Cam kết bảo mật
                                 </a>
                             </li>
@@ -833,8 +431,8 @@
                     </div>
                 </div>
             </div>
-            <hr style="height: 4px; color: #FFF;">
-            <div class="p-sm-4 px-3 py-3">
+            <hr style="height: 0.3px; border: 0.3px solid white;" />
+            <div class="p-sm-4 px-3 py-3" style="padding: 0px !important;">
                 <p>
                     <img src="../images/logo_footer.png" width="250px" height="86px" />
                 </p>
@@ -842,30 +440,38 @@
                         HANOITOURIST*UY TÍN*CHẤT LƯỢNG
                 </h5>
             </div>
-            <div class="row p-sm-12 px-3 py-3">
-                 <div class="col-lg-6  col-md-6 mt-lg-0 mt-4" style="color: #FFF;">
-                    <ul>
-                        <li class="fv3-contact mt-2">
-                            <img src="../images/icon1.png">
+            <div class="row p-sm-12 px-3 py-3" style="padding-bottom: 0px !important;">
+                 <div class="col-lg-6  col-md-6 mt-lg-0 mt-4" style="color: #FFF; font-size: 14px;">
+                     <div class="fv3-contact mt-2">
+                        <p>
+                            <img src="../images/icon12.png">
                             Trụ sở chính:18 Lý Thường Kiệt, Ph.Phan Chu Trinh, Q.Hoàn Kiếm, Hà Nội
-                        </li>
-                        <li class="fv3-contact my-2">
-                            <img src="../images/icon1.png">
-                            +Chi nhánh:Hanoitourist Ba Đình, 134 Nguyễn Thái Học, Q.Ba Đình, Hà Nội
-                        </li>
-                        <li class="fv3-contact">
+                        </p>
+                    </div>
+                     <div class="fv3-contact mt-2">
+                        <p>
+                            <img src="../images/icon12.png">
+                            Chi nhánh:Hanoitourist Ba Đình, 134 Nguyễn Thái Học, Q.Ba Đình, Hà Nội
+                        </p>
+                    </div>
+                     <div class="fv3-contact mt-2">
+                        <p>
                             <img src="../images/icon13.png"><span> </span>
                            Website: <a href="#">http://www.hanoitourist.vn</a>
-                        </li>
-                        <li class="fv3-contact">
+                        </p>
+                    </div>
+                     <div class="fv3-contact mt-2">
+                        <p>
                             <img src="../images/icon14.png"><span> </span>
                            Email: sales@hanoitourist.vn
-                        </li>
-                        <li class="fv3-contact">
+                        </p>
+                    </div>
+                     <div class="fv3-contact mt-2">
+                        <p>
                             <img src="../images/icon15.png"><span> </span>
                            Hotline:19004518 ( Ext: 8)
-                        </li>
-                    </ul>
+                        </p>
+                    </div>
                 </div>
                 <div class="col-lg-6  col-md-6 mt-lg-0 mt-4" style="color: #FFF;">
                     <div class="fv3-contact mt-2">
@@ -900,15 +506,15 @@
                     </div>
                 </div>
             </div>
-            <hr style="height: 4px; color: #FFF;">
+            <hr style="height: 0.3px; border: 0.3px solid white;">
             <div class="row p-sm-12 px-3 py-3">
                 <div class="col-lg-6  col-md-6 mt-lg-0 mt-4 ">
                     <img src="../images/logo5.png">
                     <img src="../images/logo6.png" style="padding-left: 10px;">
                     <img src="../images/sdlhn.png" style="padding-left: 10px;">
                 </div>
-                <div class="col-lg-6  col-md-6 mt-lg-0 mt-4" >
-                Liên hệ cộng đồng : 
+                <div class="col-lg-6  col-md-6 mt-lg-0 mt-4" style="text-align: right; color: #fff;" >
+                    Liên hệ cộng đồng : 
                     <a href=""><img src="../images/icon16.png" style="padding-left: 10px;"></a> 
                     <a href=""> <img src="../images/icon17.png" style="padding-left: 10px;"></a>
                     <a href=""><img src="../images/icon18.png" style="padding-left: 10px;"></a> 
@@ -923,13 +529,13 @@
         <img src="../images/footer_banner4.png" height="754px" width="100%" style="background-attachment: fixed; background-size: cover;z-index: -300;position: fixed;bottom: 0px;">
     </div>
        <!-- copyright -->
-    <div class="cpy-right text-center col-md-12" >
+    <div class="cpy-right text-center col-md-12" style="padding: 0px;" >
 
-        <p class="text-bl">© 2019 Intense. All rights reserved | Design by
+        <p class="text-bl" style="margin: 0px;">© 2019 Intense. All rights reserved | Design by
             <a href="#"> Nhóm 4.</a>
         </p>
     </div>
-        </form>
+    </form>
 </body>
 
 </html>

@@ -36,11 +36,13 @@ namespace HanoiTourist.Admin.View
                 else
                 {
                     lblThongbao.Text = "Tài khoản hoặc mật khẩu không chính xác!";
+                    lblThongbao.ForeColor = System.Drawing.Color.Red;
                 }
             }
             catch(Exception)
             {
                 lblThongbao.Text = "Lỗi kết nối database";
+                lblThongbao.ForeColor = System.Drawing.Color.Red;
             }
         }
 
@@ -52,6 +54,10 @@ namespace HanoiTourist.Admin.View
         protected void Unnamed_Click1(object sender, EventArgs e)
         {
             Response.Redirect("Register.aspx");
+        }
+        protected void GoHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../../Views/Home.aspx");
         }
     }
 }

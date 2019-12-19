@@ -45,7 +45,16 @@
                     <div class="form-group">
                         <asp:TextBox runat="server" ID="txtPhone" CssClass="form-control form-control-user" TextMode="Phone" SkinID="exampleInputEmail" aria-describedby="emailHelp" placeholder="Nhập số điện thoại..." />
                     </div>
-                      <asp:Button runat="server" CssClass="btn btn-primary btn-user btn-block" Text="Lấy lại mật khẩu" OnClick="Forgot_Button" />
+                    <div class="form-group">
+                        <asp:TextBox runat="server" ID="txtPass" CssClass="form-control form-control-user" TextMode="Password" SkinID="exampleInputEmail" aria-describedby="emailHelp" placeholder="Nhập mật khẩu mới..." />
+                    </div>
+                    <div class="form-group">
+                        <asp:TextBox runat="server" ID="txtRePass" CssClass="form-control form-control-user" TextMode="Password" SkinID="exampleInputEmail" aria-describedby="emailHelp" placeholder="Nhập lại mật khẩu mới..." />
+                    </div>
+                      <div class="form-group">
+                          <asp:Label runat="server" ID="lblThongbao"></asp:Label>
+                      </div>
+                      <asp:Button ID="btnForgot" runat="server" CssClass="btn btn-primary btn-user btn-block" Text="Lấy lại mật khẩu" OnClick="Forgot_Button" />
                   </form>
                   <hr>
                   <div class="text-center">

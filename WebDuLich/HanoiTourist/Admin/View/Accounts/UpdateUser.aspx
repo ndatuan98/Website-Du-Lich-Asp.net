@@ -9,11 +9,11 @@
   <title>Cập nhật tài khoản</title>
 
   <!-- Custom fonts for this template-->
-  <link href="../Admin/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="../admin/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
         <h1 class=" h3 text-gray-900 mb-4">Cập nhật tài khoản</h1>
@@ -43,6 +43,9 @@
                     <div class="col-sm-4">
                         <asp:TextBox runat="server" TextMode="password" class="form-control form-control-user" id="txtRepass" placeholder="Nhập lại mật khẩu"></asp:TextBox>
                     </div>
+                </div>
+                <div class="col-sm-8">
+                    <asp:CheckBox ID="cbIsAdmin" runat="server" oncheckedchanged="cbIsAdmin_Checked" Text="Tài khoản quản trị" />
                 </div>
                 <div class="col-sm-8">
                     <asp:Label runat="server" ID="txtThongbao"></asp:Label>

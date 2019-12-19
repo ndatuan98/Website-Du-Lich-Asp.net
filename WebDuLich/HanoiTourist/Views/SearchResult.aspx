@@ -7,7 +7,7 @@
             <u><h3 >KẾT QUẢ TÌM KIẾM</h3></u>
         </div>
         <div>
-            <div class="row" style="margin-right:0px; background-color: #FFF;">
+            <div class="row" style="margin-right:0px; background-color: #FFF; padding-bottom: 30px;">
             <asp:DataList runat="server" ID="ListKetQua" RepeatColumns="5">
                 <ItemTemplate>
                     <div class="form-Tour" style="background-color: #FFF; padding-left:0px; padding-left: 8px;width:20%;box-sizing:border-box;border-radius: 2px; width:100%;">
@@ -34,8 +34,8 @@
 								                <form action="#" method="post" style="padding-left: 175px; position:relative; bottom: 50px;">
 									                <fieldset>
                                                        <label style="margin-bottom:0px;">Giá từ</label><br />
-                                                       <asp:Label runat="server" Text='<%#Eval("ADULT_FARE") %>'> </asp:Label><br />
-										                <input type="submit" name="submit" value="Giữ chỗ" style="color: #FFF;" class="btn btn-warning"/>
+                                                       <asp:Label runat="server" Text='<%#Eval("ADULT_FARE","{0:#,###đ}") %>'> </asp:Label><br />
+										                <asp:HyperLink runat="server" ForeColor="#FFFFFF" Text="Giữ chỗ" NavigateUrl='<%# "Cart.aspx?Detail_Id=" + Eval("Detail_ID") %>' class="btn btn-warning"></asp:HyperLink>
 									                </fieldset>
 								                </form>
 							                </div>
@@ -49,10 +49,6 @@
                 </ItemTemplate>
             </asp:DataList>
         </div>
-            <div style="text-align: center; padding: 15px;color: #FFF;">
-                 <asp:HyperLink runat="server" Text="Xem thêm" CssClass="btn btn-primary"></asp:HyperLink>
-            </div>
-           
         </div>
         
     </div>
