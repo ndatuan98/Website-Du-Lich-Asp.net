@@ -145,11 +145,11 @@
             </ul>
        </div>
        <div class="col-md-4" style=" position: absolute;top: 46px; right: 300px; ">
-            <a href="">
+            <a href="tel:19004518">
                 <img src="../images/icon_phone.png" style="height: 16px; width: 16px;margin: 5px;">
                 19004518
             </a>
-            <a href="">
+            <a href="mailto:sales@hanoitourist.vn">
                 <img src="../images/icon_mail.png" style="height: 16px; width: 16px; margin: 5px;">
                 sales@hanoitourist.vn
             </a>
