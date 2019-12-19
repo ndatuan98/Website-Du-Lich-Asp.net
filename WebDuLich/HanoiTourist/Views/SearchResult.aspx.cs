@@ -48,7 +48,7 @@ namespace HanoiTourist.Views
             {
                 khoangGia = "OR a.ADULT_FARE >= 40000000";
             }
-            string sql = "SELECT NAME_TOUR,VEHICLE,DEPARTURE_DATE,ADULT_FARE,Image FROM dbo.DETAILS_TOUR as a " +
+            string sql = "SELECT NAME_TOUR,VEHICLE,DEPARTURE_DATE,ADULT_FARE,Image,detail_id FROM dbo.DETAILS_TOUR as a " +
                            " INNER JOIN dbo.TOUR AS b ON a.ID = b.DETAIL_ID" +
                            " WHERE a.DEPARTURE LIKE N'" + diemXP + "'" +
                           "  OR A.DESTINATION LIKE N'" + dich + "'" +

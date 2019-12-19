@@ -6,8 +6,7 @@
         <div class ="col-md-8" style="background-color: rgba(0,135,255,.3);left: 18%;">
              <center><h5><asp:Label runat="server" ID="txtThongBao" ForeColor="Red"></asp:Label></h5></center>
             <div style="background-color: rgba(0,135,255,.3);">
-               
-                <asp:DataList runat="server" ID="ListCart">
+                <asp:DataList runat="server" ID="ListCart" OnEditCommand="EditList" OnItemCommand="ItemCommand">
                 <ItemTemplate>
                     <table style="left: 20%;">
                         <tr style="margin: 10px;left: 300px;">
@@ -19,22 +18,39 @@
                                     <h5>(TOUR)
                                         <asp:Label runat="server" Text='<%#Eval("NAME_TOUR") %>'></asp:Label>
                                     </h5>
-                                </p>
-                                <p>
-                                    <img src="../images/traveler.png"  width="14px" height="14px" /><span> </span><b>Điểm khởi hành:<span> </span> <asp:Label runat="server" Text='<%# Eval("DEPARTURE ") %>' ></asp:Label></b>
-                                </p>
-                                <p>
-                                    <img src="../images/icon12.png"  width="14px" height="14px" /><span> </span>Phương tiện:<span> </span><b><asp:Label runat="server" Text='<%# Eval("VEHICLE") %>'></asp:Label></b> 
-                                </p>
-                                <p>
-                                    <img src="../images/primary.png"  width="14px" height="14px" /><span> </span>Số chỗ trống:<span> </span><b> <asp:Label runat="server" Text='<%# Eval("SEATS") %>'></asp:Label></b>
-                                </p>
-                                <p>
-                                    <img src="../images/2.png"  width="14px" height="14px"/><span> </span>Thời gian:<span> </span><b> <asp:Label runat="server" Text='<%# Eval("SCHEDULE_TOUR ") %>'></asp:Label></b>
-                                </p>
-                                <p>
-                                    <asp:Label runat="server" Text="Số lượng:" ForeColor="#ff0000"></asp:Label><span> </span>
-                                    <b><asp:Label runat="server" Text='<%#Eval("count") %>'></asp:Label></b>
+                                    <asp:LinkButton runat="server" ID="btnHuyTour" Text="X" OnClick="btnHuyTour_Click" CommandArgument='<%# Eval("ID") %>'/>
+                                    <p>
+                                    </p>
+                                    <p>
+                                        <img src="../images/traveler.png"  width="14px" height="14px" />
+                                        <span></span><b>Điểm khởi hành:<span> </span>
+                                        <asp:Label runat="server" Text='<%# Eval("DEPARTURE ") %>'></asp:Label>
+                                        </b>
+                                    </p>
+                                    <p>
+                                        <img src="../images/icon12.png"  width="14px" height="14px" />
+                                        <span></span>Phương tiện:<span> </span><b>
+                                        <asp:Label runat="server" Text='<%# Eval("VEHICLE") %>'></asp:Label>
+                                        </b>
+                                    </p>
+                                    <p>
+                                        <img src="../images/primary.png"  width="14px" height="14px" />
+                                        <span></span>Số chỗ trống:<span> </span><b>
+                                        <asp:Label runat="server" Text='<%# Eval("SEATS") %>'></asp:Label>
+                                        </b>
+                                    </p>
+                                    <p>
+                                        <img src="../images/2.png"  width="14px" height="14px"/>
+                                        <span></span>Thời gian:<span> </span><b>
+                                        <asp:Label runat="server" Text='<%# Eval("DEPARTURE_DATE","{0:d}") %>'></asp:Label>
+                                        </b>
+                                    </p>
+                                    <p>
+                                        <asp:Label runat="server" ForeColor="#ff0000" Text="Số lượng:"></asp:Label>
+                                        <span></span><b>
+                                        <asp:Label runat="server" Text='<%#Eval("count") %>'></asp:Label>
+                                        </b>
+                                    </p>
                                 </p>
                                 
                             </td>
@@ -43,6 +59,7 @@
                 </ItemTemplate>
             </asp:DataList>
             </div>
+            <h5 style="padding-top:10px;">TỔNG TIỀN: <span> </span><asp:Label runat="server" ID="txtTongTien" ForeColor="Red"></asp:Label></h5>
             <asp:DataList runat="server" ID="ListCartAdd">
                 <ItemTemplate>
                    <h1><asp:Label runat="server" Text='<%# Eval("Image") %>'></asp:Label></h1> 
@@ -84,6 +101,7 @@
                         </tr>
                     </table>
                 </form>
+                <h5 style="padding-top:10px;"><span> </span><asp:Label runat="server" ID="txtThongbao2" ForeColor="Red"></asp:Label></h5>
                 <asp:Button  runat="server" ID="btnThanhToan" Text="Thanh toán" CssClass="btn-primary"  style="text-align: center;margin: 10px;margin-left: 20px;" Height="40px" Width="170px" OnClick="btnThanhToan_Click"/>
             </div>
         </div>

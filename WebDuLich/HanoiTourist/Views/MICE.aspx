@@ -42,7 +42,7 @@
 									                        <fieldset>
                                                                <label style="margin-bottom:0px;">Giá từ</label><br />
                                                                <asp:Label runat="server" ForeColor="#FF0013" Text='<%#Eval("ADULT_FARE","{0:#,###đ}") %>'> </asp:Label><br />
-										                        <asp:Button ID="Button1" runat="server" Text="Giữ chỗ" class="btn btn-warning"  ForeColor="#FFFFFF"  />
+										                        <asp:HyperLink runat="server" ForeColor="#FFFFFF" Text="Giữ chỗ" NavigateUrl='<%# "Cart.aspx?Detail_Id=" + Eval("Detail_ID") %>' class="btn btn-warning"></asp:HyperLink>
 									                        </fieldset>
 								                        </form>
                                                 </div>
