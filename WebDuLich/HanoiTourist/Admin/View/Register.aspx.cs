@@ -72,5 +72,9 @@ namespace HanoiTourist.Admin.View
         {
             Response.Redirect("ForgotPassword.aspx");
         }
+        protected void GoHome_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("../../Views/Home.aspx");
+        }
     }
 }

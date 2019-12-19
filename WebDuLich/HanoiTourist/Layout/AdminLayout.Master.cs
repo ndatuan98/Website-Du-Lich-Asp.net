@@ -18,6 +18,7 @@ namespace HanoiTourist.Layout
             else {
                 lblUser.Text = Session["user"].ToString();
             }
+            lbTC.Text = Application["SLTruyCap"].ToString();
         }
         protected void btnLogout_Click(object sender, EventArgs e)
         {
