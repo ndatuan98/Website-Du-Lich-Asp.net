@@ -73,6 +73,7 @@ namespace HanoiTourist.Views
             }
             else
             {
+                cartController.DeleteTable();
                 Response.Redirect("ThanhToan.aspx");
             }
                
