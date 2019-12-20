@@ -200,7 +200,7 @@
                                 <label for="drop-2" class="toggle toogle-2">DU LỊCH NƯỚC NGOÀI<span class="fa fa-angle-down"
                                         aria-hidden="true"></span>
                                 </label>
-                                 <asp:HyperLink runat="server" Text="Xem thêm" NavigateUrl="~/Views/ListTour.aspx?Country_ID=-3" >TOUR NƯỚC NGOÀI</asp:HyperLink>
+                                 <asp:HyperLink runat="server" Text="Xem thêm" NavigateUrl="~/Views/ListTour.aspx?Country_ID=-2" >TOUR NƯỚC NGOÀI</asp:HyperLink>
                                 <input type="checkbox" id="drop-2" />
                                 <ul>
                                     <asp:DataList runat="server" ID="MenuNN" RepeatColumns="4" Width="100%">
